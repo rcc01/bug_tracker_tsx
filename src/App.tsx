@@ -1,26 +1,76 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
+import { LoginForm } from './components/LoginForm/LoginForm';
 
-function App() {
+
+
+
+
+// What's gonna happen with user state, where is it going to be? watch the video again!!! on Youtube!
+
+
+const App: React.FC = () => {
+
+  const [user, setUser] = useState({ email: "" });
+  const [error, setError] = useState("");
+
+
+
+  const adminUser = {
+    email: "admin@admin.com",
+    password: "admin123",
+  };
+
+  const Logout = () => {
+    setUser({
+      email: ""
+    });
+  };
+
+
+
+  const Login = (details: { email: string; password: string; }) => {
+    if (details.email === adminUser.email &&
+      details.password === adminUser.password) {
+      console.log("Logged in!");
+      setUser({
+        email: details.email
+      });
+      navigate('dashboard')
+    } else {
+      console.log("Details do not match. Please try again!");
+      setError("Details do not match. Please try again!")
+    }
+  }
+
+
+  let navigate = useNavigate();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+
+
+
+
+      {user.email !== "" ? (
+        <div>
+          <div className="welcome">
+            <p>
+              Welcome <span>{user.email}!</span>
+            </p>
+            <button onClick={Logout}>Logout</button>
+          </div>
+        </div>
+      ) : (
+        <LoginForm Login={Login} error={error} />
+      )}
+
+
     </div>
-  );
+  )
 }
 
 export default App;
