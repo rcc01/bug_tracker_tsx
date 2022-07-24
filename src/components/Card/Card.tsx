@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import "./Card.css"
 import Chart from "react-apexcharts";
 
-interface Props {
+interface CardProps {
   title: string,
   color: {
     backGround: string;
@@ -20,31 +20,34 @@ interface Props {
   }[]
 }
 
-
-const Card: React.FC<Props> = () => {
-  const [expanded, setExpanded] = useState(false)
-
-  return (
-    <AnimatePresence>
-      {expanded ? (
-        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
-      ) : (
-        <CompactCard param={props} setExpanded={() => setExpanded(true)} />
-      )}
-    </AnimatePresence>
-
-  )
+interface SpecialisedCardProps {
+  cardProps: CardProps;
+  setExpanded: () => void;
 }
 
-//CompactCard
-function CompactCard({ param, setExpanded }) {
-  const Png = param.png;
+const Card = (props: CardProps) => {
+  const [expanded, setExpanded] = useState(false)
+
+  return <>
+    <AnimatePresence>
+      {expanded ? (
+        <ExpandedCard cardProps={props} setExpanded={() => setExpanded(false)} />
+      ) : (
+        <CompactCard cardProps={props} setExpanded={() => setExpanded(true)} />
+      )}
+    </AnimatePresence>
+  </>
+}
+
+// CompactCard
+const CompactCard = ({ cardProps, setExpanded }: SpecialisedCardProps) => {
+  const Png = cardProps.png;
   return (
     <motion.div
       className="CompactCard"
       style={{
-        background: param.color.backGround,
-        boxShadow: param.color.boxShadow,
+        background: cardProps.color.backGround,
+        boxShadow: cardProps.color.boxShadow,
       }}
       onClick={setExpanded}
       whileHover={{ scale: 1.045 }}
@@ -52,29 +55,28 @@ function CompactCard({ param, setExpanded }) {
     >
       <div className="radialBar">
         <CircularProgressbar
-          value={param.barValue}
-          text={`${param.barValue}% `}
+          value={cardProps.barValue}
+          text={`${cardProps.barValue}% `}
         />
-        <span>{param.title}</span>
+        <span>{cardProps.title}</span>
       </div>
       <div className="detail">
         <Png />
-        <span>${param.value}</span>
+        <span>${cardProps.value}</span>
         <span>Last 24 hours</span>
       </div>
     </motion.div>
   );
 }
 
-
-function ExpandedCard({ param, setExpanded }) {
+// ExpandedCard
+const ExpandedCard = ({ cardProps, setExpanded }: SpecialisedCardProps) => {
   const data = {
     options: {
       chart: {
         type: "area",
         height: "auto",
       },
-
       dropShadow: {
         enabled: false,
         enabledOnSeries: undefined,
@@ -84,7 +86,6 @@ function ExpandedCard({ param, setExpanded }) {
         color: "#000",
         opacity: 0.35,
       },
-
       fill: {
         colors: ["#fff"],
         type: "gradient",
@@ -123,8 +124,8 @@ function ExpandedCard({ param, setExpanded }) {
     <motion.div
       className="ExpandedCard"
       style={{
-        background: param.color.backGround,
-        boxShadow: param.color.boxShadow,
+        background: cardProps.color.backGround,
+        boxShadow: cardProps.color.boxShadow,
       }}
     // whileHover={{ scale: 1.1 }}
     // whileTap={{ scale: 1.1 }}
@@ -139,18 +140,13 @@ function ExpandedCard({ param, setExpanded }) {
       >
         <CloseIcon onClick={setExpanded} />
       </div>
-      <span>{param.title}</span>
+      <span>{cardProps.title}</span>
       <div className="chartContainer">
-        <Chart series={param.series} type="area" options={data.options} />
+        <Chart series={cardProps.series} type="area" options={data.options} />
       </div>
       <span>Last 24 hours</span>
     </motion.div>
   );
 }
 
-
-
-
-
-
-export { Card }
+export default Card;

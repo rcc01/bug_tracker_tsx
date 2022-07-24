@@ -1,25 +1,16 @@
-import React from "react";
 import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
+import useLogin, { LoginProps } from "../../hooks/auth/useLogin";
 
-
-interface Props {
-  Login: (props: any) => void
-  error: string;
-
-}
-
-
-
-const LoginForm: React.FC<Props> = ({ Login = () => { }, error }) => {
-
-  const [details, setDetails] = useState({ email: "", password: "" });
-
+const LoginForm = () => {
+  const [details, setDetails] = useState<LoginProps>({ email: "", password: "" });
+  const [error, setError] = useState("");
 
   const submitHandler = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    Login(details);
+    const error = useLogin(details);
+    setError(error);
     // navigate('/dashboard')
   }
 
@@ -32,7 +23,6 @@ const LoginForm: React.FC<Props> = ({ Login = () => { }, error }) => {
 
   return (
     <div>
-
       <div className="text-center">
         <img
           src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
@@ -67,7 +57,6 @@ const LoginForm: React.FC<Props> = ({ Login = () => { }, error }) => {
           ) : (
             ""
           )}
-
 
           <div>
             <input
@@ -113,13 +102,8 @@ const LoginForm: React.FC<Props> = ({ Login = () => { }, error }) => {
               Sign up
             </button>
           </div>
-
-
-
         </div>
-
       </form>
-
     </div>
   )
 }
