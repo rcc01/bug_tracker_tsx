@@ -1,7 +1,6 @@
 import { useContext } from 'react';
-import { LoginForm } from '../../components/LoginForm/LoginForm';
+import LoginForm from '../../components/LoginForm/LoginForm';
 import StoreContext from '../../contexts/StoreContext';
-import useLogout from '../../hooks/auth/useLogout';
 
 // TODO: Move App.css to HomePage.css if I am not mistaken.
 const HomePage = () => {
@@ -9,20 +8,20 @@ const HomePage = () => {
   const email = singletonUserStore.getEmail();
   return (
     <div>
-      {email !== "" ? (
+      {email !== '' ? (
         <div>
-          <div className="welcome">
+          <div className='welcome'>
             <p>
               Welcome <span>{email}!</span>
             </p>
-            <button onClick={() => useLogout()}>Logout</button>
+            {/* There was a logout button here but I think I can put it on DASHBOARD */}
           </div>
         </div>
       ) : (
         <LoginForm />
       )}
     </div>
-  )
-}
+  );
+};
 
 export default HomePage;

@@ -1,12 +1,12 @@
 import React from 'react';
 import MainDash from '../MainDash/MainDash';
 import Sidebar from '../Sidebar/Sidebar';
-import './Dashboard.css';
+import './Orders.css';
 
-const Dashboard = () => {
+const Orders = () => {
   return (
-    <div className='dashboard-div'>
-      <div className='dashboard-glass'>
+    <div className='dashboard-div-orders'>
+      <div className='dashboard-glass-orders'>
         <Sidebar />
         <MainDash />
       </div>
@@ -14,4 +14,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Orders;

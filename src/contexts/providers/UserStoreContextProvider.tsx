@@ -1,21 +1,21 @@
-import { PropsWithChildren, ReactElement } from "react";
+import { PropsWithChildren, ReactElement } from 'react';
 
-import StoreContext from "../StoreContext";
-import StoreRoot from "../stores/StoreRoot";
+import StoreContext from '../StoreContext';
+import StoreRoot from '../stores/StoreRoot';
 
 export type StoreComponent = {
-    store?: StoreRoot;
-}
+  store?: StoreRoot;
+};
 
 const StoreContextProvider = ({
-    store,
-    children
+  store,
+  children,
 }: PropsWithChildren<StoreComponent>): ReactElement => {
-    const value = store || new StoreRoot();
+  const value = store || new StoreRoot();
 
-    return (
-        <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
-    );
-}
+  return (
+    <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
+  );
+};
 
-export default StoreContextProvider
+export default StoreContextProvider;

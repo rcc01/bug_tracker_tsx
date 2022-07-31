@@ -1,50 +1,44 @@
-import React, { useState } from "react"
-import "./Sidebar.css"
+import React, { useState } from 'react';
+import './Sidebar.css';
 import MenuIcon from '@mui/icons-material/Menu';
-import mainLogo from "../../Images/logo.png"
-import { motion } from "framer-motion"
-import { SidebarData } from "../../Data/Data";
+import mainLogo from '../../Images/logo.png';
+import { motion } from 'framer-motion';
+import { SidebarData } from '../../Data/Data';
+import { NavLink } from 'react-router-dom';
 
-
-const Sidebar: React.FC = () => {
-
+const Sidebar = () => {
   const [selected, setSelected] = useState(0);
   const [expanded, setExpanded] = useState(true);
 
   const sidebarVariants = {
     true: {
-      left: "0",
+      left: '0',
     },
     false: {
-      left: "-60%",
+      left: '-60%',
     },
   };
-
-
 
   return (
     <>
       <div
-        className="bars"
-        style={expanded ? { left: "55%" } : { left: "5%" }}
+        className='bars'
+        style={expanded ? { left: '55%' } : { left: '5%' }}
         onClick={() => setExpanded(!expanded)}
       >
-        I'm the sidebar
-
         <MenuIcon />
-
       </div>
 
       <motion.div
-        className="Sidebar"
+        className='Sidebar'
         variants={sidebarVariants}
-        animate={window.innerWidth <= 768 ? `${expanded}` : ""}
+        animate={window.innerWidth <= 768 ? `${expanded}` : ''}
       >
-        <div className="logo">
+        <div className='logo'>
           <img
             src={mainLogo}
-            alt=""
-            style={{ width: "3rem", height: "3rem" }}
+            alt=''
+            style={{ width: '3rem', height: '3rem' }}
           />
           <span>
             Sh<span>o</span>ps
@@ -52,34 +46,26 @@ const Sidebar: React.FC = () => {
         </div>
 
         {/* menu */}
-        <div className="menu">
+        <div className='menu'>
           {SidebarData.map((item, index) => {
             return (
-              <div
-                className={selected === index ? "menuItem active" : "menuItem"}
+              <NavLink
+                style={{ textDecoration: 'none', color: 'black' }}
+                to={item.path}
+                className={selected === index ? 'menuItem' : 'menuItem'}
                 key={index}
                 onClick={() => setSelected(index)}
               >
                 <item.icon />
                 <span>{item.heading}</span>
-              </div>
+              </NavLink>
             );
           })}
-
-          <div className="menuItem"></div>
+          <div className='menuItem'></div>
         </div>
       </motion.div>
-
-
-
-
     </>
+  );
+};
 
-  )
-}
-
-
-export { Sidebar }
-
-
-
+export default Sidebar;

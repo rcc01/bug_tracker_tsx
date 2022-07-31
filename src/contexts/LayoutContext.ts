@@ -1,13 +1,13 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 interface LayoutContextContent {
-    menuOpen: boolean;
-    isDesktop: boolean;
+  menuOpen: boolean;
+  isDesktop: boolean;
 }
 
 const LayoutContext = createContext<LayoutContextContent>({
-    menuOpen: false,
-    isDesktop: false
+  menuOpen: false,
+  isDesktop: false,
 } as LayoutContextContent);
 
 export default LayoutContext;
