@@ -12,7 +12,7 @@ const HomePage = () => {
         <div>
           <div className='welcome'>
             <p>
-              Welcome <span>{email}!</span>
+              Welcome <span>{email}! </span>
             </p>
             {/* There was a logout button here but I think I can put it on DASHBOARD */}
           </div>

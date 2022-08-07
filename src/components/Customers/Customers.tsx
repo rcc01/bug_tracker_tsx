@@ -1,4 +1,3 @@
-import React from 'react';
 import './Customers.css';
 import Sidebar from '../Sidebar/Sidebar';
 import MainDash from '../MainDash/MainDash';
@@ -8,7 +7,7 @@ const Customers = () => {
     <div className='dashboard-div-customers'>
       <div className='dashboard-glass-customers'>
         <Sidebar />
-        <MainDash />
+        <MainDash title='Customers' otherThing='otherThingBla' />
       </div>
     </div>
   );

@@ -11,7 +11,7 @@
   --activeItem: #f799a354;
 }
 
-.dashboard-div-orders {
+.dashboard-div-calendar {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(
     106.37deg,
@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.dashboard-glass-orders {
+.dashboard-glass-calendar {
   display: grid;
   height: 97%;
   width: 97%;

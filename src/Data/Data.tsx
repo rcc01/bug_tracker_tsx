@@ -15,18 +15,18 @@ export const SidebarData = [
   },
   {
     icon: InventoryIcon,
-    heading: 'Orders',
-    path: '/orders',
+    heading: 'Tickets',
+    path: '/tickets',
+  },
+  {
+    icon: ListAltIcon,
+    heading: 'Calendar',
+    path: '/calendar',
   },
   {
     icon: PeopleAltIcon,
     heading: 'Customers',
     path: '/customers',
-  },
-  {
-    icon: ListAltIcon,
-    heading: 'Products',
-    path: '/products',
   },
   {
     icon: StackedLineChartIcon,
@@ -38,7 +38,7 @@ export const SidebarData = [
 export const cardsData = [
   {
     id: 1,
-    title: 'Sales',
+    title: 'Tickets by Priority',
     color: {
       backGround: 'linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)',
       boxShadow: '0px 10px 20px 0px #e0c6f5',
@@ -55,7 +55,7 @@ export const cardsData = [
   },
   {
     id: 2,
-    title: 'Revenue',
+    title: 'Tickets by Type',
     color: {
       backGround: 'linear-gradient(180deg, #FF919D 0%, #FC929D 100%)',
       boxShadow: '0px 10px 20px 0px #FDC0C7',
@@ -72,7 +72,7 @@ export const cardsData = [
   },
   {
     id: 3,
-    title: 'Expenses',
+    title: 'Tickets by Status',
     color: {
       backGround:
         'linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)',
@@ -89,3 +89,28 @@ export const cardsData = [
     ],
   },
 ];
+
+export const UpdatesData = [
+  {
+    img: img1,
+    name: 'Andrew Thomas',
+    noti: 'has ordered Apple smart watch 2500mh battery.',
+    time: '25 seconds ago',
+  },
+  {
+    img: img2,
+    name: 'James Bond',
+    noti: 'has received Samsung gadget for charging battery.',
+    time: '30 minutes ago',
+  },
+  {
+    img: img3,
+    name: 'Iron Man',
+    noti: 'has ordered Apple smart watch, samsung Gear 2500mh battery.',
+    time: '2 hours ago',
+  },
+];
+
+import img1 from '../Images/img1.png';
+import img2 from '../Images/img2.png';
+import img3 from '../Images/img3.png';

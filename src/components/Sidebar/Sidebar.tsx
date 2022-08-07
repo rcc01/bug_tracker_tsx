@@ -38,10 +38,10 @@ const Sidebar = () => {
           <img
             src={mainLogo}
             alt=''
-            style={{ width: '3rem', height: '3rem' }}
+            style={{ width: '3rem', height: '3rem', paddingLeft: '40px' }}
           />
           <span>
-            Sh<span>o</span>ps
+            Bug <span>Tracker</span>
           </span>
         </div>
 

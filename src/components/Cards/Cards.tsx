@@ -1,9 +1,13 @@
 import React from 'react';
 import './Cards.css';
-import { cardsData } from '../../Data/Data';
-import Card from '../Card/Card';
+import Card, { CardProps } from '../Card/Card';
 
-const Cards = () => {
+export interface CardsProps {
+  cardsData: CardProps[];
+  children?: React.ReactNode;
+}
+
+const Cards = ({ cardsData }: CardsProps) => {
   return (
     <div className='Cards'>
       {cardsData.map((card, id) => {

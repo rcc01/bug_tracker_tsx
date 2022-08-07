@@ -3,10 +3,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './Card.css';
+import Chart from 'react-apexcharts';
 import CloseIcon from '@mui/icons-material/Close';
+import { ApexOptions } from 'apexcharts';
 
 //prototype for const - it can include functions(): type
-interface CardProps {
+export interface CardProps {
   title: string;
   color: {
     backGround: string;
@@ -83,6 +85,52 @@ const CompactCard = ({ cardProps, setExpanded }: SpecialisedCardProps) => {
 
 const ExpandedCard = ({ cardProps, setExpanded }: SpecialisedCardProps) => {
   // Create root and chart
+  const apexOptions: ApexOptions = {
+    chart: {
+      type: 'area',
+      height: 'auto',
+      dropShadow: {
+        enabled: false,
+        enabledOnSeries: undefined,
+        top: 0,
+        left: 0,
+        blur: 3,
+        color: '#000',
+        opacity: 0.35,
+      },
+    },
+    fill: {
+      colors: ['#fff'],
+      type: 'gradient',
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: 'smooth',
+      colors: ['white'],
+    },
+    tooltip: {
+      x: {
+        format: 'dd/MM/yy HH:mm',
+      },
+    },
+    grid: {
+      show: true,
+    },
+    xaxis: {
+      type: 'datetime',
+      categories: [
+        '2018-09-19T00:00:00.000Z',
+        '2018-09-19T01:30:00.000Z',
+        '2018-09-19T02:30:00.000Z',
+        '2018-09-19T03:30:00.000Z',
+        '2018-09-19T04:30:00.000Z',
+        '2018-09-19T05:30:00.000Z',
+        '2018-09-19T06:30:00.000Z',
+      ],
+    },
+  };
 
   return (
     <motion.div
@@ -101,8 +149,16 @@ const ExpandedCard = ({ cardProps, setExpanded }: SpecialisedCardProps) => {
       >
         <CloseIcon onClick={setExpanded} />
       </div>
+
       <span>{cardProps.title}</span>
-      <div className='chartContainer'></div>
+      <div className='chartContainer'>
+        <Chart
+          style={{ minHeight: '100.037px !important' }}
+          series={cardProps.series}
+          type='area'
+          options={apexOptions}
+        />
+      </div>
       <span>Last 24 hours</span>
     </motion.div>
   );
