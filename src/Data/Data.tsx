@@ -24,14 +24,14 @@ export const SidebarData = [
     path: '/calendar',
   },
   {
+    icon: StackedLineChartIcon,
+    heading: 'Kanban',
+    path: '/kanban',
+  },
+  {
     icon: PeopleAltIcon,
     heading: 'Customers',
     path: '/customers',
-  },
-  {
-    icon: StackedLineChartIcon,
-    heading: 'Analytics',
-    path: '/analytics',
   },
 ];
 

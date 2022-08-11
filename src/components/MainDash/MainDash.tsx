@@ -11,19 +11,11 @@ export interface MainDashProps {
   children?: React.ReactNode;
 }
 
-const MainDash = ({
-  title,
-  cardsProps,
-  whatever,
-  otherThing,
-  children,
-}: MainDashProps) => {
+const MainDash = ({ title, children }: MainDashProps) => {
   return (
     <div className='MainDash'>
       <h1>{title}</h1>
-      <h2>{whatever}</h2>
-      <h2>{otherThing}</h2>
-      <h2>{children}</h2>
+      <div>{children}</div>
     </div>
   );
 };

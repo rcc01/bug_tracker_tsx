@@ -8,7 +8,7 @@ const Tickets = () => {
     <div className='dashboard-div-tickets'>
       <div className='dashboard-glass-tickets'>
         <Sidebar />
-        <MainDash title='Tickets' whatever='solo'>
+        <MainDash title='Tickets'>
           <TicketsTable />
         </MainDash>
       </div>

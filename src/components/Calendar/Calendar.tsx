@@ -8,7 +8,7 @@ const Calendar = () => {
     <div className='dashboard-div-calendar'>
       <div className='dashboard-glass-calendar'>
         <Sidebar />
-        <MainDash title='Tickets' whatever='solo'>
+        <MainDash title='Calendar'>
           <CalendarTable />
         </MainDash>
       </div>
