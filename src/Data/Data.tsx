@@ -1,6 +1,7 @@
 import HomeIcon from '@mui/icons-material/Home';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import LogoutIcon from '@mui/icons-material/Logout';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
 import EuroIcon from '@mui/icons-material/Euro';
@@ -30,8 +31,13 @@ export const SidebarData = [
   },
   {
     icon: PeopleAltIcon,
-    heading: 'Customers',
-    path: '/customers',
+    heading: 'Employees',
+    path: '/employees',
+  },
+  {
+    icon: LogoutIcon,
+    heading: 'Logout',
+    path: '/',
   },
 ];
 

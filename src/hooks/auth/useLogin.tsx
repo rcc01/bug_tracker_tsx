@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StoreContext from '../../contexts/StoreContext';
 
@@ -14,7 +14,7 @@ const useLogin = ({ email, password }: LoginProps): string => {
   //const adminUser is type LoginProps interface
   const adminUser: LoginProps = {
     email: 'admin@admin.com',
-    password: 'admin123',
+    password: 'admin1234',
   };
 
   if (email === adminUser.email && password === adminUser.password) {

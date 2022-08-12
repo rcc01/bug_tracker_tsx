@@ -2,7 +2,6 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { darkTheme } from './styles/theme';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import StoreContextProvider from './contexts/providers/UserStoreContextProvider';
-
 import HomePage from './components/HomePage/HomePage';
 
 const App = () => {

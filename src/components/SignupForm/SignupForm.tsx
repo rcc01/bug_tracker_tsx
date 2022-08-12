@@ -92,7 +92,7 @@ const SignupForm = () => {
 
         <p>
           Already have an account?
-          <Link to='*'>Log in</Link>
+          <Link to='/'>Log in</Link>
         </p>
       </form>
     </div>

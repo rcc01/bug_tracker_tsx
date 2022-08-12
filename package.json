@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@material-ui/core": "^4.12.4",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.1",
     "@mui/x-data-grid": "^5.15.1",
@@ -79,6 +80,7 @@
     "@types/react-big-calendar": "^0.38.1",
     "@types/react-datepicker": "^4.4.2",
     "@types/react-modal": "^3.13.1",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
     "eslint-config-standard": "^17.0.0",

@@ -1,114 +1,200 @@
-import { useState } from 'react';
+import { useReducer, useEffect } from 'react';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import CardHeader from '@material-ui/core/CardHeader';
+import Button from '@material-ui/core/Button';
 
-import { useNavigate } from 'react-router-dom';
-import useLogin, { LoginProps } from '../../hooks/auth/useLogin';
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      width: 400,
+      margin: `${theme.spacing(0)} auto`,
+    },
+    loginBtn: {
+      marginTop: theme.spacing(2),
+      flexGrow: 1,
+    },
+    header: {
+      textAlign: 'center',
+      background: '#212121',
+      color: '#fff',
+    },
+    card: {
+      marginTop: theme.spacing(10),
+    },
+  })
+);
 
-const LoginForm = () => {
-  const [details, setDetails] = useState<LoginProps>({
-    email: '',
-    password: '',
-  });
-  const [error, setError] = useState('');
-  // should be const error = useLogin(details) and be put inside submitHandler
-  const a = useLogin(details);
+//state type
 
-  const submitHandler = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    setError(error);
+type State = {
+  username: string;
+  password: string;
+  isButtonDisabled: boolean;
+  helperText: string;
+  isError: boolean;
+};
+
+const initialState: State = {
+  username: '',
+  password: '',
+  isButtonDisabled: true,
+  helperText: '',
+  isError: false,
+};
+
+type Action =
+  | { type: 'setUsername'; payload: string }
+  | { type: 'setPassword'; payload: string }
+  | { type: 'setIsButtonDisabled'; payload: boolean }
+  | { type: 'loginSuccess'; payload: string }
+  | { type: 'loginFailed'; payload: string }
+  | { type: 'setIsError'; payload: boolean };
+
+const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case 'setUsername':
+      return {
+        ...state,
+        username: action.payload,
+      };
+    case 'setPassword':
+      return {
+        ...state,
+        password: action.payload,
+      };
+    case 'setIsButtonDisabled':
+      return {
+        ...state,
+        isButtonDisabled: action.payload,
+      };
+    case 'loginSuccess':
+      return {
+        ...state,
+        helperText: action.payload,
+        isError: false,
+      };
+    case 'loginFailed':
+      return {
+        ...state,
+        helperText: action.payload,
+        isError: true,
+      };
+    case 'setIsError':
+      return {
+        ...state,
+        isError: action.payload,
+      };
+  }
+};
+
+const Login = () => {
+  const classes = useStyles();
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    if (state.username.trim() && state.password.trim()) {
+      dispatch({
+        type: 'setIsButtonDisabled',
+        payload: false,
+      });
+    } else {
+      dispatch({
+        type: 'setIsButtonDisabled',
+        payload: true,
+      });
+    }
+  }, [state.username, state.password]);
+
+  const handleLogin = () => {
+    if (state.username === 'admin@admin.com' && state.password === 'admin123') {
+      dispatch({
+        type: 'loginSuccess',
+        payload: 'Login Successfully',
+      });
+    } else {
+      dispatch({
+        type: 'loginFailed',
+        payload: 'Incorrect username or password',
+      });
+    }
   };
 
-  const submitSignup = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    navigate('/register');
+  const handleKeyPress = (event: React.KeyboardEvent) => {
+    if (event.keyCode === 13 || event.which === 13) {
+      state.isButtonDisabled || handleLogin();
+    }
   };
 
-  let navigate = useNavigate();
+  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    dispatch({
+      type: 'setUsername',
+      payload: event.target.value,
+    });
+  };
 
+  const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    dispatch({
+      type: 'setPassword',
+      payload: event.target.value,
+    });
+  };
   return (
-    <div>
-      <div className='text-center'>
-        <img
-          src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp'
-          style={{ width: '185px' }}
-          alt='logo'
-        />
-        <h4 className='mt-1 mb-5 pb-1'>Bug Tracker Login </h4>
-      </div>
-
-      <form>
-        <div>
-          <p>Log into your account</p>
-          {/* Error message */}
-
-          {error !== '' ? (
-            <div
-              className='error'
-              style={{
-                border: '1px solid',
-                margin: '10px 0px',
-                padding: '15px 10px 15px 50px',
-                color: '#D8000C',
-                backgroundColor: '#FFBABA',
-                backgroundPosition: '10px center',
-                backgroundImage: "url('https://i.imgur.com/GnyDvKN.png')",
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
-              {error}
-            </div>
-          ) : (
-            ''
-          )}
-
+    <form className={classes.container} noValidate autoComplete='off'>
+      <Card className={classes.card}>
+        <CardHeader className={classes.header} title='Bug Tracker App' />
+        <CardContent>
           <div>
-            <input
+            <TextField
+              error={state.isError}
+              fullWidth
+              id='username'
               type='email'
-              placeholder='Email'
-              onChange={(e) =>
-                setDetails({
-                  ...details,
-                  email: e.target.value,
-                })
-              }
-              value={details.email}
+              label='Username'
+              placeholder='Username'
+              margin='normal'
+              onChange={handleUsernameChange}
+              onKeyPress={handleKeyPress}
             />
-            <label htmlFor=''>Username</label>
-          </div>
-
-          <div>
-            <input
+            <TextField
+              error={state.isError}
+              fullWidth
+              id='password'
               type='password'
-              onChange={(e) =>
-                setDetails({
-                  ...details,
-                  password: e.target.value,
-                })
-              }
-              value={details.password}
+              label='Password'
+              placeholder='Password'
+              margin='normal'
+              helperText={state.helperText}
+              onChange={handlePasswordChange}
+              onKeyPress={handleKeyPress}
             />
-            <label htmlFor=''>Password</label>
           </div>
-
-          <div>
-            <button
-              className='btn btn-primary btn-block gradient-custom-2 mb-3'
-              type='button'
-              onClick={submitHandler}
-            >
-              Log in
-            </button>
-          </div>
-
-          <div>
-            <p> Dont you have an account?</p>
-            <button type='button' onClick={submitSignup}>
-              Sign up
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+        </CardContent>
+        <CardActions>
+          <Button
+            variant='contained'
+            size='large'
+            color='secondary'
+            className={classes.loginBtn}
+            onClick={handleLogin}
+            disabled={state.isButtonDisabled}
+          >
+            Login
+          </Button>
+          {/* ADD REGISTER BUTTON */}
+        </CardActions>
+      </Card>
+    </form>
   );
 };
 
-export default LoginForm;
+export default Login;

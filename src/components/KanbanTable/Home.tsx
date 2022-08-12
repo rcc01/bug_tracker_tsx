@@ -7,6 +7,7 @@ import AddBoard from './AddBoard';
 import { useEffect, useRef, useState } from 'react';
 import { saveTasks } from '../../models/localStorage';
 import TaskTrashCan from './TaskTrashCan';
+import './Home.css';
 
 const Wrapper = styled.div`
   display: flex;

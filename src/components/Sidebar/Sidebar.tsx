@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Sidebar.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import mainLogo from '../../Images/logo.png';
