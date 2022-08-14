@@ -1,10 +1,22 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { useState } from 'react';
 import { darkTheme } from './styles/theme';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import StoreContextProvider from './contexts/providers/UserStoreContextProvider';
-import HomePage from './components/HomePage/HomePage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignupForm from './components/SignupForm/SignupForm';
+import Dashboard from './components/Dashboard/Dashboard';
+import Tickets from './components/Tickets/Tickets';
+import Employees from './components/Employees/Employees';
+import Calendar from './components/Calendar/Calendar';
+import Kanban from './components/Kanban/Kanban';
+import { RecoilRoot } from 'recoil';
+import LoginForm from './components/LoginForm/LoginForm';
+import ProtectedRoutes from './ProtectedRoutes';
 
 const App = () => {
+  const [isAuth, setIsAuth] = useState(false);
+
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyle />
@@ -28,7 +40,28 @@ const App = () => {
         </Helmet>
       </HelmetProvider>
       <StoreContextProvider>
-        <HomePage />
+        <Router>
+          <RecoilRoot>
+            <Routes>
+              {/* App or loginForm? in element? use both? */}
+              <Route path='/' element={<LoginForm setIsAuth={setIsAuth} />} />
+              <Route
+                path='login'
+                element={<LoginForm setIsAuth={setIsAuth} />}
+              />
+              <Route path='register' element={<SignupForm />} />
+              <Route path='/' element={<ProtectedRoutes isAuth={isAuth} />}>
+                <Route path='dashboard' element={<Dashboard />} />
+                <Route path='tickets' element={<Tickets />} />
+                <Route path='calendar' element={<Calendar />} />
+                <Route path='kanban' element={<Kanban />} />
+                <Route path='employees' element={<Employees />} />
+              </Route>
+
+              {/* <Route path='dashboard' element={<Dashboard />} /> */}
+            </Routes>
+          </RecoilRoot>
+        </Router>
       </StoreContextProvider>
     </ThemeProvider>
   );
