@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from 'react';
+import { useReducer, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
+import StoreContext from '../../contexts/StoreContext';
+import PermissionLevel from '../../models/PermissionLevel';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -94,14 +96,11 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-interface LoginProps {
-  setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const Login = ({ setIsAuth }: LoginProps) => {
+const Login = () => {
   const navigate = useNavigate();
   const classes = useStyles();
   const [state, dispatch] = useReducer(reducer, initialState);
+  const { singletonUserStore } = useContext(StoreContext);
 
   useEffect(() => {
     if (state.username.trim() && state.password.trim()) {
@@ -119,7 +118,9 @@ const Login = ({ setIsAuth }: LoginProps) => {
 
   const handleLogin = () => {
     if (state.username === 'admin@admin.com' && state.password === 'admin123') {
-      setIsAuth(true);
+      singletonUserStore.setName("Raúl");
+      singletonUserStore.setEmail(state.username);
+      singletonUserStore.setPermissionLevel(PermissionLevel.ADMIN);
       navigate('/dashboard');
       dispatch({
         type: 'loginSuccess',

@@ -1,5 +1,4 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { useState } from 'react';
 import { darkTheme } from './styles/theme';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import StoreContextProvider from './contexts/providers/UserStoreContextProvider';
@@ -15,8 +14,6 @@ import LoginForm from './components/LoginForm/LoginForm';
 import ProtectedRoutes from './ProtectedRoutes';
 
 const App = () => {
-  const [isAuth, setIsAuth] = useState(false);
-
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyle />
@@ -44,13 +41,13 @@ const App = () => {
           <RecoilRoot>
             <Routes>
               {/* App or loginForm? in element? use both? */}
-              <Route path='/' element={<LoginForm setIsAuth={setIsAuth} />} />
+              <Route path='/' element={<LoginForm />} />
               <Route
                 path='login'
-                element={<LoginForm setIsAuth={setIsAuth} />}
+                element={<LoginForm />}
               />
               <Route path='register' element={<SignupForm />} />
-              <Route path='/' element={<ProtectedRoutes isAuth={isAuth} />}>
+              <Route path='/' element={<ProtectedRoutes />}>
                 <Route path='dashboard' element={<Dashboard />} />
                 <Route path='tickets' element={<Tickets />} />
                 <Route path='calendar' element={<Calendar />} />
