@@ -47,6 +47,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # bug_tracker_tsx
 
-Random change - Merge conflict 1!!!
-
-Some other random change
+Random change - Merge conflict 2
