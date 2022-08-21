@@ -3,6 +3,8 @@ import Sidebar from '../Sidebar/Sidebar';
 import MainDash from '../MainDash/MainDash';
 import EmployeesTable from './EmployeesTable';
 
+// show only when user === admin
+
 const Customers = () => {
   return (
     <div className='dashboard-div-customers'>

@@ -118,7 +118,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (state.username === 'admin@admin.com' && state.password === 'admin123') {
-      singletonUserStore.setName("Raúl");
+      singletonUserStore.setName('Raúl');
       singletonUserStore.setEmail(state.username);
       singletonUserStore.setPermissionLevel(PermissionLevel.ADMIN);
       navigate('/dashboard');
@@ -199,7 +199,6 @@ const Login = () => {
           >
             Login
           </Button>
-          {/* ADD REGISTER BUTTON */}
         </CardActions>
 
         <h4
@@ -218,7 +217,6 @@ const Login = () => {
             color='secondary'
             className={classes.loginBtn}
             onClick={() => navigate('/register')}
-            disabled={state.isButtonDisabled}
           >
             Register
           </Button>

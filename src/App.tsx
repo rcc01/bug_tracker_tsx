@@ -42,10 +42,7 @@ const App = () => {
             <Routes>
               {/* App or loginForm? in element? use both? */}
               <Route path='/' element={<LoginForm />} />
-              <Route
-                path='login'
-                element={<LoginForm />}
-              />
+              <Route path='login' element={<LoginForm />} />
               <Route path='register' element={<SignupForm />} />
               <Route path='/' element={<ProtectedRoutes />}>
                 <Route path='dashboard' element={<Dashboard />} />
@@ -54,8 +51,6 @@ const App = () => {
                 <Route path='kanban' element={<Kanban />} />
                 <Route path='employees' element={<Employees />} />
               </Route>
-
-              {/* <Route path='dashboard' element={<Dashboard />} /> */}
             </Routes>
           </RecoilRoot>
         </Router>
