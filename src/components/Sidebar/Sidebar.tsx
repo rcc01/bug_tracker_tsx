@@ -23,7 +23,11 @@ const Sidebar = () => {
     <>
       <div
         className='bars'
-        style={expanded ? { left: '55%' } : { left: '5%' }}
+        style={
+          expanded
+            ? { top: '1.45%', left: '65%' }
+            : { top: '1.45%', left: '5%' }
+        }
         onClick={() => setExpanded(!expanded)}
       >
         <MenuIcon />

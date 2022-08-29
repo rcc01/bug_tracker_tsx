@@ -8,13 +8,16 @@
 
 .logo {
   display: flex;
-  height: 5rem;
   font-weight: bold;
   font-size: 22px;
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  height: 4%;
+  height: 0%;
+}
+
+.logo > span {
+  color: black;
 }
 
 .logo > span > span {
@@ -111,4 +114,39 @@
     padding: 10px;
     border-radius: 5px;
   }
+}
+
+@media (max-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .logo {
+    margin-top: 4em;
+    font-size: 1em;
+    margin-right: 4.5em;
+  }
+  .menu {
+    margin-top: 3.5em !important;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 100px !important; /*100px to give some room for the sidebar heading (without this, absolute position will make the nav overlap)*/
+    left: 0px !important; /* you can make this zero and add `padding-left: 15px` */
+    bottom: 15px !important; /* leave some room for copyright section */
+    right: 0px !important; /*this may vary from browser to browser (i suggest using the width of the widest scrollbar, then adjust for padding-right)*/
+    padding-right: 15px !important;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
 }

@@ -12,7 +12,7 @@
 }
 
 .dashboard-div {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(
     106.37deg,
     #ffe1bc 29.63%,
@@ -28,7 +28,7 @@
 .dashboard-glass {
   display: grid;
   height: 97%;
-  width: 97%;
+  width: 96%;
   border-radius: 2rem;
   background-color: var(--glass);
   overflow: hidden;
@@ -49,5 +49,11 @@
   }
   .dashboard-glass::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@media (min-width: 320px) {
+  .dashboard-glass {
+    overflow-x: scroll;
   }
 }

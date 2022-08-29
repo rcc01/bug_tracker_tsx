@@ -1,3 +1,11 @@
+h4 {
+  color: #3c3737;
+  font-weight: bold !important;
+  font-size: 25px !important;
+  margin-top: 3rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
 .MuiTableRow-root > * {
   padding: 10px;
 }
@@ -44,4 +52,8 @@ th {
     width: 33rem !important;
     margin-bottom: 30px !important;
   }
+}
+
+@media (min-width: 320px) {
+  /* make the table look like the css tricks */
 }

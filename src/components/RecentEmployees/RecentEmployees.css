@@ -1,7 +1,8 @@
 .Updates {
   width: 85%;
-  background: white;
+  background: #3c3737;
   border-radius: 0.7rem;
+  margin-top: 1.2rem;
   padding: 1rem;
   gap: 1rem;
   display: flex;
@@ -12,8 +13,8 @@
 .update {
   display: flex;
   gap: 0.5rem;
-  margin-top: 30px;
-  /* or margin-top:auto? */
+  margin-top: 15px;
+  padding: 10px;
 }
 
 .update > img {
@@ -23,4 +24,10 @@
 
 .noti > div > span:nth-of-type(1) {
   font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+  .Updates {
+    margin-top: 1rem;
+  }
 }

@@ -1,13 +1,10 @@
-import React from 'react';
-import Cards, { CardsProps } from '../Cards/Cards';
-import { cardsData } from '../../Data/Data';
+import { CardsProps } from '../Cards/Cards';
 import './MainDash.css';
 
 export interface MainDashProps {
   title?: string;
   cardsProps?: CardsProps;
   whatever?: string;
-  otherThing?: string;
   children?: React.ReactNode;
 }
 

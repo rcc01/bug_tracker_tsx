@@ -100,19 +100,19 @@ export const UpdatesData = [
   {
     img: img1,
     name: 'Andrew Thomas',
-    noti: 'has ordered Apple smart watch 2500mh battery.',
+    noti: 'has joined the team on 25-08-2022 as a Software Engineer.',
     time: '25 seconds ago',
   },
   {
     img: img2,
     name: 'James Bond',
-    noti: 'has received Samsung gadget for charging battery.',
+    noti: 'has created new Tickets for the X Project.',
     time: '30 minutes ago',
   },
   {
     img: img3,
     name: 'Iron Man',
-    noti: 'has ordered Apple smart watch, samsung Gear 2500mh battery.',
+    noti: 'has set up an online meeting on 5th September at 10 am CET time.',
     time: '2 hours ago',
   },
 ];
