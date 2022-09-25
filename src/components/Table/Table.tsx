@@ -1,98 +1,176 @@
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import './Table.css';
+import axios from 'axios';
+import { SetStateAction, useEffect, useState } from 'react';
+import '../styles/styles.css';
+import { v4 as uuidv4 } from 'uuid';
+import ReadOnlyRow from './ReadOnlyRow';
+import EditableRow from './EditableRow';
+import { async } from 'q';
 
-function createData(
-  name: string,
-  description: string,
-  contributors: string,
-  status: string
-) {
-  return { name, description, contributors, status };
-}
+const Table = () => {
+  const URL = 'http://localhost:8080/Project';
 
-const rows = [
-  //change the data for the table here
-  createData('Bug Tracker', 'Demo 1', 'A. Thomas', 'Approved'),
-  createData('Bug Tracker 2 ', 'Demo 2', 'A. Thomas, J.Bond', 'Pending'),
-  createData('Bug Tracker 3', 'Demo 3', 'A. Thomas', 'Approved'),
-  createData('Bug Tracker 4', 'Demo 4', 'A. Thomas', 'Delivered'),
-];
+  //GET!
 
-const makeStyle = (status: string) => {
-  if (status === 'Approved') {
-    return {
-      background: 'rgb(145 254 159 / 47%)',
-      color: 'green',
+  const getData = async () => {
+    const response = await axios.get(URL);
+    console.log(response);
+    return response;
+  };
+  // this is really recent projects..GET!
+  const [contacts, setContacts] = useState<any[]>([]);
+
+  useEffect(() => {
+    getData().then((response) => {
+      setContacts(response.data);
+    });
+  }, []);
+
+  // end of GET!
+
+  // POST
+
+  const [addFormData, setAddFormData] = useState({
+    title: '',
+    description: '',
+    contributors: '',
+    status: '',
+  });
+
+  //for POST:
+  const handleAddFormChange = (event: any) => {
+    event.preventDefault();
+    const { name, value } = event.target as HTMLTextAreaElement;
+    setAddFormData({
+      ...addFormData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const newContact = {
+      id: uuidv4(),
+      title: addFormData.title,
+      description: addFormData.description,
+      contributors: addFormData.contributors,
+      status: addFormData.status,
     };
-  } else if (status === 'Pending') {
-    return {
-      background: '#ffadad8f',
-      color: 'red',
-    };
-  } else {
-    return {
-      background: '#59bfff',
-      color: 'white',
-    };
-  }
-};
+    console.log(newContact); //tengo que enviar esto a post
 
-const BasicTable = () => {
+    const response = await axios.post(URL, newContact);
+  };
+
+  // PUT!!!!
+  // create EDIT button... toggle between readOnlyRow and EditableRow
+  const [editContactId, setEditContactId] = useState(null);
+
+  const handleEdit = async (event: any, contact: any) => {
+    event.preventDefault();
+    setEditContactId(contact.id);
+
+    const formValues = {
+      title: contact.title,
+      description: contact.description,
+      contributors: contact.contributors,
+      status: contact.status,
+    };
+    console.log(formValues); //tengo que enviar esto a PUT!!
+    const response = await axios.put(`${URL}`, formValues);
+
+    // misssing something?
+  };
+
+  const [editFormData, setEditFormData] = useState({
+    title: '',
+    description: '',
+    contributors: '',
+    status: '',
+  });
+
+  const handleEditFormChange = (event: any) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    setEditFormData({
+      ...editFormData,
+      [name]: value,
+    });
+  };
+
   return (
-    <div className='Table'>
-      <h4>Recent Projects</h4>
+    <div>
+      <h3>Recent Projects</h3>
+      <form action=''>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Contributors</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {contacts.map((contact, index) => {
+              return (
+                <>
+                  {editContactId === contact.id ? (
+                    <EditableRow
+                      editFormData={editFormData}
+                      handleEditFormChange={handleEditFormChange}
+                    />
+                  ) : (
+                    <ReadOnlyRow
+                      contact={contact}
+                      key={index}
+                      index={undefined}
+                      handleEdit={handleEdit}
+                    />
+                  )}
+                </>
+              );
+            })}
+          </tbody>
+        </table>
+      </form>
 
-      <TableContainer
-        component={Paper}
-        style={{
-          boxShadow: '0px 13px 20px 0px #80808029',
-          width: 'inherit',
-          padding: '2rem',
-          borderRadius: '0.7rem',
-        }}
-      >
-        <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-          <TableHead>
-            <TableRow>
-              <TableCell>Projects</TableCell>
-              <TableCell align='left'>Description</TableCell>
-              <TableCell align='left'>Contributors</TableCell>
-              <TableCell align='left'>Status</TableCell>
-              <TableCell align='left'></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell component='th' scope='row'>
-                  {row.name}
-                </TableCell>
-                <TableCell align='left'>{row.description}</TableCell>
-                <TableCell align='left'>{row.contributors}</TableCell>
-                <TableCell align='left'>
-                  <span className='status' style={makeStyle(row.status)}>
-                    {row.status}
-                  </span>
-                </TableCell>
-                <TableCell align='left' className='Details'>
-                  Details
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <h2>Add a Project</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type='text'
+          name='title'
+          required
+          placeholder='Project Name'
+          onChange={handleAddFormChange}
+        />
+        <input
+          type='text'
+          name='description'
+          required
+          placeholder='Description'
+          onChange={handleAddFormChange}
+        />
+        <input
+          type='text'
+          name='contributors'
+          required
+          placeholder='Contributors'
+          onChange={handleAddFormChange}
+        />
+        <label htmlFor='status'>Status:</label>
+        <select name='status' onChange={handleAddFormChange} required>
+          <option value='' disabled>
+            Choose
+          </option>
+          <option value='Completed'>Completed</option>
+          <option value='New'>New</option>
+          <option value='In Progress'>In Progress</option>
+        </select>
+        <button>Add</button>
+      </form>
     </div>
   );
 };
 
-export default BasicTable;
+export default Table;

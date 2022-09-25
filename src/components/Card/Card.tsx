@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -6,19 +6,18 @@ import './Card.css';
 import Chart from 'react-apexcharts';
 import CloseIcon from '@mui/icons-material/Close';
 import { ApexOptions } from 'apexcharts';
+import { cardsData } from '../../Data/Data';
 
 //prototype for const - it can include functions(): type
 export interface CardProps {
   title: string;
+  labels: string[];
   color: {
     backGround: string;
     boxShadow: string;
   };
-  barValue: number;
-  value: string;
-  png: any;
+  compactSeries: number[];
   series: {
-    name: string;
     data: number[];
   }[];
 }
@@ -53,7 +52,6 @@ const Card = (props: CardProps) => {
 // CompactCard
 // destructuring from SpecialisedCardProps
 const CompactCard = ({ cardProps, setExpanded }: SpecialisedCardProps) => {
-  const Png = cardProps.png;
   return (
     <motion.div
       className='CompactCard'
@@ -66,16 +64,16 @@ const CompactCard = ({ cardProps, setExpanded }: SpecialisedCardProps) => {
       whileTap={{ scale: 0.9 }}
     >
       <div className='radialBar'>
-        <CircularProgressbar
-          value={cardProps.barValue}
-          text={`${cardProps.barValue}% `}
+        <Chart
+          type='pie'
+          width={280}
+          height={129}
+          series={cardProps.compactSeries}
+          options={{
+            labels: cardProps.labels,
+          }}
         />
-        <span>{cardProps.title}</span>
-      </div>
-      <div className='detail'>
-        <Png />
-        <span>${cardProps.value}</span>
-        <span>Last 24 hours</span>
+        <span style={{ marginTop: '6px' }}>{cardProps.title}</span>
       </div>
     </motion.div>
   );

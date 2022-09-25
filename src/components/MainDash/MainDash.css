@@ -9,6 +9,7 @@ h1 {
   font-weight: bold !important;
   font-size: 30px !important;
   margin-top: -3rem !important;
+  margin-bottom: -1.5rem !important;
 }
 
 @media screen and (max-width: 1200px) {

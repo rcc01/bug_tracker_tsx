@@ -1,12 +1,11 @@
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { resolveModuleName } from 'typescript';
+import { useState, useEffect } from 'react';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import axios from 'axios';
 
-const columns: GridColDef[] = [
-  { field: 'project', headerName: 'Project', width: 160 },
-  { field: 'ticket', headerName: 'Ticket', width: 160 },
-  { field: 'status', headerName: 'Status', width: 110 },
-  { field: 'priority', headerName: 'Priority', width: 110 },
-];
+// 1. Try API here
+// 2. See if you can make it work first with the guide of freeCodeCamp
+// 3. After making it work, go to your API from swaggers
+// CORS is causing issues here => solved with
 
 const rows = [
   {
@@ -73,12 +72,37 @@ const rows = [
     priority: 'High',
   },
 ];
+const columns: GridColDef[] = [
+  { field: 'id', headerName: 'ID', width: 100 },
+  { field: 'name', headerName: 'Name', width: 160 },
+  { field: 'status', headerName: 'Status', width: 110 },
+  { field: 'gender', headerName: 'Gender', width: 110 },
+  { field: 'email', headerName: 'Email', width: 190 },
+];
 
 const TicketsTable = () => {
+  const [dataApi, setDataApi] = useState([]);
+
+  const URL = 'http://localhost:8080/Employee';
+  const showData = async () => {
+    const response = await fetch(URL);
+    const data = await response.json();
+    console.log(data);
+    setDataApi(data);
+  };
+
   return (
-    <div style={{ height: 360, width: '100%' }}>
+    <div
+      style={{
+        height: 360,
+        width: '100%',
+        position: 'relative',
+        top: '75px',
+        left: '30px',
+      }}
+    >
       <DataGrid
-        rows={rows}
+        rows={dataApi}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}

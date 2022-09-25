@@ -4,7 +4,6 @@ import './MainDash.css';
 export interface MainDashProps {
   title?: string;
   cardsProps?: CardsProps;
-  whatever?: string;
   children?: React.ReactNode;
 }
 

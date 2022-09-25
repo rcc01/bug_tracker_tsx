@@ -7,6 +7,7 @@ import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import './CalendarTable.css';
 
 const locales = {
   'en-GB': require('date-fns/locale/en-GB'),
@@ -71,10 +72,13 @@ const CalendarTable = () => {
           placeholderText='Start Date'
           selected={newEvent.start}
           onChange={(start) => setNewEvent({ ...newEvent, start })}
+          dateFormat='dd/MM/yyyy'
+          wrapperClassName='datePicker'
         />
         <DatePicker
           placeholderText='End Date'
           selected={newEvent.end}
+          dateFormat='dd/MM/yyyy'
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
       </div>

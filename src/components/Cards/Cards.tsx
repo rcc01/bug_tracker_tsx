@@ -1,4 +1,3 @@
-import React from 'react';
 import './Cards.css';
 import Card, { CardProps } from '../Card/Card';
 
@@ -15,10 +14,9 @@ const Cards = ({ cardsData }: CardsProps) => {
           <div className='parentContainer' key={id}>
             <Card
               title={card.title}
+              labels={card.labels}
               color={card.color}
-              barValue={card.barValue}
-              value={card.value}
-              png={card.png}
+              compactSeries={card.compactSeries}
               series={card.series}
             />
           </div>
