@@ -1,0 +1,40 @@
+.dashboard-div-customers {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(
+    106.37deg,
+    #ffe1bc 29.63%,
+    #ffcfd1 51.55%,
+    #f3c6f1 90.85%
+  );
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-glass-customers {
+  display: grid;
+  height: 97%;
+  width: 97%;
+  border-radius: 2rem;
+  background-color: var(--glass);
+  overflow: hidden;
+  grid-template-columns: 11rem auto 20rem;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .dashboard-glass {
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-glass {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-glass::-webkit-scrollbar {
+    display: none;
+  }
+}
