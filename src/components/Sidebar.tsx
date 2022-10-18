@@ -23,9 +23,7 @@ const Sidebar = () => {
       <div
         className='bars'
         style={
-          expanded
-            ? { top: '1.45%', left: '55%' }
-            : { top: '1.45%', left: '5%' }
+          expanded ? { top: '1.45%', left: '5%' } : { top: '1.45%', left: '5%' }
         }
         onClick={() => setExpanded(!expanded)}
       >
@@ -35,7 +33,7 @@ const Sidebar = () => {
       <motion.div
         className='sidebar'
         variants={sidebarVariants}
-        animate={window.innerWidth <= 1500 ? `${expanded}` : ''}
+        animate={window.innerWidth <= 2500 ? `${expanded}` : ''}
       >
         <div className='logo'>
           <img
