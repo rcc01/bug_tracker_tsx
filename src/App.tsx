@@ -1,4 +1,4 @@
-import StoreContextProvider from './contexts/providers/UserStoreContextProvider';
+import StoreContextProvider from './contexts/providers/StoreContextProvider';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Tickets from './components/Tickets';
