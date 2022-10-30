@@ -1,13 +1,13 @@
-import axios from 'axios';
-import { useState } from 'react';
+// import axios from 'axios'; // NOTE: Only uncomment when using API.
+import { useContext, useState } from 'react';
 import { Button, Card, Form, ListGroup, ListGroupItem } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import Modal from 'react-bootstrap/Modal';
+import StoreContext from '../../contexts/StoreContext';
 
 interface Props {
   handleShow: any;
-  setUpdateList: any;
-  updateList: any;
+  rerenderTable: () => void;
   employee: {
     country: string;
     designation: string;
@@ -20,11 +20,11 @@ interface Props {
 
 const CardEmployees = ({
   employee,
-  setUpdateList,
-  updateList,
+  rerenderTable,
   handleShow,
 }: Props) => {
-  const URL = 'http://localhost:8080/Employee';
+  // const URL = 'http://localhost:8080/Employee'; // NOTE: Only uncomment when using API.
+  const { singletonDataStore } = useContext(StoreContext);
 
   const handleDelete = () => {
     Swal.fire({
@@ -38,22 +38,38 @@ const CardEmployees = ({
       confirmButtonText: 'Delete',
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`${URL}/${employee.id}`).then((response) => {
-          if (response.status === 200) {
-            Swal.fire(
-              'Deleted!',
-              `Employee ${employee.id} deleted successfully!`,
-              'success'
-            );
-            setUpdateList(!updateList);
-          } else {
-            Swal.fire(
-              'Error!',
-              'There was an issue deleting the employee',
-              'error'
-            );
-          }
-        });
+        try {
+          singletonDataStore.deleteEmployee(employee.id);
+          Swal.fire(
+            'Deleted!',
+            `Employee ${employee.id} deleted successfully!`,
+            'success'
+          );
+          rerenderTable();
+        } catch (exception) { 
+          Swal.fire(
+            'Error!',
+            'There was an issue deleting the employee',
+            'error'
+          );
+        }
+        // NOTE: Only uncomment when using API.
+        // axios.delete(`${URL}/${employee.id}`).then((response) => {
+        //   if (response.status === 200) {
+        //     Swal.fire(
+        //       'Deleted!',
+        //       `Employee ${employee.id} deleted successfully!`,
+        //       'success'
+        //     );
+        //     rerenderTable();
+        //   } else {
+        //     Swal.fire(
+        //       'Error!',
+        //       'There was an issue deleting the employee',
+        //       'error'
+        //     );
+        //   }
+        // });
       }
     });
   };
@@ -90,24 +106,42 @@ const CardEmployees = ({
 
   const handleEditSubmit = async (e: any) => {
     e.preventDefault();
-    const response = await axios.put(`${URL}`, dataModal);
-    console.log(response);
-    if (response.status === 200) {
+    // const response = await axios.put(`${URL}`, dataModal); NOTE: Only uncomment when using API.
+    // console.log(response); NOTE: Only uncomment when using API.
+    try {
+      singletonDataStore.createUpdateEmployee(dataModal);
       Swal.fire(
         'Saved!',
-        `The data ${response.data} has been saved successfully!`,
+        `The data ${dataModal} has been saved successfully!`,
         'success'
       );
       handleEditClose();
-      setUpdateList(!updateList);
-    } else {
+      rerenderTable();
+    } catch (exception) {
       Swal.fire(
         'Error!',
         'There was an issue updating the information!',
         'error'
       );
-      console.log(response);
     }
+
+    // NOTE: Only uncomment when using API.
+    // if (response.status === 200) {
+    //   Swal.fire(
+    //     'Saved!',
+    //     `The data ${response.data} has been saved successfully!`,
+    //     'success'
+    //   );
+    //   handleEditClose();
+    //   rerenderTable();
+    // } else {
+    //   Swal.fire(
+    //     'Error!',
+    //     'There was an issue updating the information!',
+    //     'error'
+    //   );
+    //   console.log(response);
+    // }
   };
 
   return (

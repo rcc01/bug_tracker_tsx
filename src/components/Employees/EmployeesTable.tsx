@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/esm/Form';
 import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
 import '../../styles/styles.css';
-import axios from 'axios';
+// import axios from 'axios'; // NOTE: Only uncomment when using API.
 import Swal from 'sweetalert2';
 import Row from 'react-bootstrap/Row';
 import CardEmployees from './CardEmployees';
+import useRerender from '../../hooks/useRerender';
+import StoreContext from '../../contexts/StoreContext';
 
 export interface RowDataEmployee {
   country: string;
@@ -19,6 +21,7 @@ export interface RowDataEmployee {
 }
 
 const EmployeesTable = () => {
+  const { singletonDataStore } = useContext(StoreContext);
   // for post
   const [dataEmployee, setDataEmployee] = useState({
     hireDate: '',
@@ -28,8 +31,7 @@ const EmployeesTable = () => {
     imageUrl: '',
     reportsTo: '',
   });
-
-  const [updateList, setUpdateList] = useState(false);
+  const [renderState, rerenderTable] = useRerender();
   const [list, setList] = useState<any[]>([]);
 
   const handleChange = ({ target }: any) => {
@@ -55,39 +57,59 @@ const EmployeesTable = () => {
   // handle Save - Add new Employee from Modal
   const handleSaveSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(dataEmployee);
-    const response = await axios.post(
-      'http://localhost:8080/Employee',
-      dataEmployee
-    );
-    setUpdateList(!updateList);
-    if (response.status === 200) {
+    // console.log(dataEmployee);
+    // const response = await axios.post(
+    //   'http://localhost:8080/Employee',
+    //   dataEmployee
+    // );
+    try {
+      singletonDataStore.createUpdateEmployee(dataEmployee);
+      rerenderTable();
       Swal.fire('Saved!', `The record has been saved successfully!`);
-
       handleClose();
-    } else {
+    } catch (exception) {
       Swal.fire('Error!', 'There was a problem recording the data!', 'error');
     }
     clearForm();
+    // NOTE: Only uncomment when using API.
+    // if (response.status === 200) {
+    //   Swal.fire('Saved!', `The record has been saved successfully!`);
+    //   handleClose();
+    // } else {
+    //   Swal.fire('Error!', 'There was a problem recording the data!', 'error');
+    // }
   };
 
   // GET
 
-  const getData = async () => {
-    const response = await axios.get('http://localhost:8080/Employee');
-    response.data.forEach((element: any) => {
+  interface EmployeesGetResponseData {
+    data: RowDataEmployee[];
+  }
+
+  const getData: () => Promise<EmployeesGetResponseData> = async () => {
+    // NOTE: Only uncomment when using API.
+    // const response = await axios.get('http://localhost:8080/Employee');
+    // response.data.forEach((element: any) => {
+    //   if (element.hireDate !== '') {
+    //     element.hireDate = element.hireDate.slice(0, 10);
+    //   }
+    // });
+    const data = singletonDataStore.readEmployees();
+    data.forEach((element: any) => {
       if (element.hireDate !== '') {
         element.hireDate = element.hireDate.slice(0, 10);
       }
     });
-    return response;
+    return {
+      data: data
+    };
   };
 
   useEffect(() => {
     getData().then((response) => {
       setList(response.data);
     });
-  }, [updateList]);
+  }, [renderState]);
 
   //render here as well
 
@@ -231,8 +253,7 @@ const EmployeesTable = () => {
             <CardEmployees
               employee={employee}
               key={id}
-              setUpdateList={setUpdateList}
-              updateList={updateList}
+              rerenderTable={rerenderTable}
               handleShow={handleShow}
             />
           );
