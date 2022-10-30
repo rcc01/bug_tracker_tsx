@@ -9,11 +9,11 @@ import Swal from 'sweetalert2';
 import Row from 'react-bootstrap/Row';
 import CardEmployees from './CardEmployees';
 
-interface RowDataEmployee {
+export interface RowDataEmployee {
   country: string;
   designation: string;
-  hireDate: '2022-09-13T16:02:31.936Z';
-  id: '3fa85f64-5717-4562-b3fc-2c963f66afa6';
+  hireDate: string;
+  id: string;
   imageUrl: string;
   reportsTo: string;
 }

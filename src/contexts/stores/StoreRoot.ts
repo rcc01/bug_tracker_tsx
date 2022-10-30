@@ -1,3 +1,4 @@
+import SingletonDataStore from './SingletonDataStore';
 import SingletonUserStore from './SingletonUserStore';
 
 /**
@@ -6,8 +7,10 @@ import SingletonUserStore from './SingletonUserStore';
  */
 class StoreRoot {
   singletonUserStore: typeof SingletonUserStore;
+  singletonDataStore: typeof SingletonDataStore;
 
   constructor() {
+    this.singletonDataStore = SingletonDataStore;
     this.singletonUserStore = SingletonUserStore;
   }
 }
