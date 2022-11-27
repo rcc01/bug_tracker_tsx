@@ -1,30 +1,37 @@
-import axios from 'axios';
-import { FormEvent } from 'react';
-import apiUrls from '../../constants/apiUrls';
+// import axios from 'axios';
+import { FormEvent, useContext } from 'react';
+import StoreContext from '../../contexts/StoreContext';
+// import apiUrls from '../../constants/apiUrls';
 import { RowDataTicket } from './TicketsTable';
 
 interface Props {
-  contact: RowDataTicket;
+  ticketInfo: RowDataTicket;
   setEditable: any;
   rerenderTable: () => void;
 }
 
-const ReadOnlyTicketRow = ({ contact, setEditable, rerenderTable }: Props) => {
+const ReadOnlyTicketRow = ({
+  ticketInfo,
+  setEditable,
+  rerenderTable,
+}: Props) => {
+  const { singletonDataStore } = useContext(StoreContext);
   const deleteRow = async (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    await axios.delete(apiUrls.tickets.DELETE(contact.id));
+    singletonDataStore.deleteTicket(ticketInfo.id);
+    // await axios.delete(apiUrls.tickets.DELETE(ticketInfo.id));
     rerenderTable();
   };
 
   return (
-    <tr key={contact.id}>
-      <td>{contact.title}</td>
-      <td>{contact.type}</td>
-      <td>{contact.description}</td>
-      <td>{contact.status}</td>
-      <td>{contact.priority}</td>
+    <tr key={ticketInfo.id}>
+      <td>{ticketInfo.title}</td>
+      <td>{ticketInfo.type}</td>
+      <td>{ticketInfo.description}</td>
+      <td>{ticketInfo.status}</td>
+      <td>{ticketInfo.priority}</td>
       <td>
-        <button className='edit-btn' onClick={() => setEditable(contact.id)}>
+        <button className='edit-btn' onClick={() => setEditable(ticketInfo.id)}>
           Edit
         </button>
         <button className='dlt-btn' onClick={deleteRow}>

@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import RowData from '../Table/RowData';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useState, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import apiUrls from '../../constants/apiUrls';
 import axios from 'axios';
@@ -11,8 +11,7 @@ import useRerender from '../../hooks/useRerender';
 import EditableTicketRow from './EditableTicketRow';
 import ReadOnlyTicketRow from './ReadOnlyTicketRow';
 import Table from 'react-bootstrap/Table';
-import TableFooter from '@mui/material/TableFooter';
-import TablePagination from '@mui/material/TablePagination';
+import StoreContext from '../../contexts/StoreContext';
 
 // for a Modal to work, you need to use React Bootstrap, as this is a React-Typescript Project.
 // Normal  Bootstrap is for JS I guess?
@@ -28,6 +27,9 @@ export interface RowDataTicket {
 }
 
 const TicketsTable = () => {
+  // 1. add singleton
+  const { singletonDataStore } = useContext(StoreContext);
+
   const [rowDataTicket, setRowDataTicket] = useState<RowDataTicket[] | null>(
     null
   );
@@ -73,24 +75,44 @@ const TicketsTable = () => {
     };
     console.log(newTicket);
 
-    const response = await axios.post(apiUrls.tickets.POST, newTicket);
-    console.log(response);
+    singletonDataStore.createUpdateTickets(newTicket);
 
-    handleClose();
+    // const response = await axios.post(apiUrls.tickets.POST, newTicket);
+    // console.log(response)
     rerenderTable();
+    handleClose();
   };
 
+  interface TicketsGetResponseData {
+    data: RowDataTicket[];
+  }
+
+  const getData: () => Promise<TicketsGetResponseData> = async () => {
+    const data = singletonDataStore.readTickets();
+    return {
+      data: data,
+    };
+  };
+
+  useEffect(() => {
+    getData().then((result) => setRowDataTicket(result.data));
+  }, [renderState]);
+
   // GET
-  useEffect(() => {
-    axios
-      .get<RowData[]>(apiUrls.projects.GET)
-      .then((result) => setRowDataProject(result.data));
-  }, [renderState]);
-  useEffect(() => {
-    axios
-      .get<RowDataTicket[]>(apiUrls.tickets.GET)
-      .then((result) => setRowDataTicket(result.data));
-  }, [renderState]);
+
+  //
+
+  // useEffect(() => {
+  //   axios
+  //     .get<RowData[]>(apiUrls.projects.GET)
+  //     .then((result) => setRowDataProject(result.data));
+  // }, [renderState]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get<RowDataTicket[]>(apiUrls.tickets.GET)
+  //     .then((result) => setRowDataTicket(result.data));
+  // }, [renderState]);
 
   // PUT!
   const [editRowId, setEditRowId] = useState<string | null>(null);
@@ -230,18 +252,21 @@ const TicketsTable = () => {
           </thead>
           <tbody>
             {rowDataTicket !== null
-              ? rowDataTicket.map((item, index) => {
+              ? // if true... if the row it's not null - do map
+                rowDataTicket.map((item, index) => {
                   return (
                     <Fragment key={index}>
                       {editRowId === item.id ? (
+                        // if it's true....
                         <EditableTicketRow
                           data={item}
                           setEditable={setEditRowId}
                           rerenderTable={rerenderTable}
                         />
                       ) : (
+                        // if false... if !editRowId === item.id
                         <ReadOnlyTicketRow
-                          contact={item}
+                          ticketInfo={item}
                           key={index}
                           setEditable={setEditRowId}
                           rerenderTable={rerenderTable}
@@ -250,7 +275,8 @@ const TicketsTable = () => {
                     </Fragment>
                   );
                 })
-              : undefined}
+              : // if false.... undefined
+                undefined}
           </tbody>
         </Table>
       </div>

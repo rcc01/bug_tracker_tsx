@@ -21,6 +21,7 @@ export interface RowDataEmployee {
 }
 
 const EmployeesTable = () => {
+  // import Singlenton here to make it work!!!!
   const { singletonDataStore } = useContext(StoreContext);
   // for post
   const [dataEmployee, setDataEmployee] = useState({
@@ -86,6 +87,7 @@ const EmployeesTable = () => {
     data: RowDataEmployee[];
   }
 
+  // getData - for readEmployee
   const getData: () => Promise<EmployeesGetResponseData> = async () => {
     // NOTE: Only uncomment when using API.
     // const response = await axios.get('http://localhost:8080/Employee');
@@ -101,7 +103,7 @@ const EmployeesTable = () => {
       }
     });
     return {
-      data: data
+      data: data,
     };
   };
 

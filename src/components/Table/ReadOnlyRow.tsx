@@ -1,32 +1,38 @@
 import axios from 'axios';
-import { FormEvent } from 'react';
+import { FormEvent, useContext } from 'react';
 import apiUrls from '../../constants/apiUrls';
 import RowData from './RowData';
 import '../../styles/styles.css';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import StoreContext from '../../contexts/StoreContext';
 
 interface Props {
-  contact: RowData;
-  setEditable: (contactId: string | null) => void;
+  projectInfo: RowData;
+  setEditable: (projectInfoId: string | null) => void;
   rerenderTable: () => void;
 }
 
-const ReadOnlyRow = ({ contact, setEditable, rerenderTable }: Props) => {
+const ReadOnlyRow = ({ projectInfo, setEditable, rerenderTable }: Props) => {
+  const { singletonDataStore } = useContext(StoreContext);
   const deleteRow = async (event: FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    await axios.delete(apiUrls.projects.DELETE(contact.id));
+    // await axios.delete(apiUrls.projects.DELETE(projectInfo.id));
+    singletonDataStore.deleteProject(projectInfo.id);
     rerenderTable();
   };
 
   return (
-    <tr key={contact.id}>
-      <td>{contact.title}</td>
-      <td>{contact.description}</td>
-      <td>{contact.contributors}</td>
-      <td>{contact.status}</td>
+    <tr key={projectInfo.id}>
+      <td>{projectInfo.title}</td>
+      <td>{projectInfo.description}</td>
+      <td>{projectInfo.contributors}</td>
+      <td>{projectInfo.status}</td>
       <td>
-        <button className='edit-btn' onClick={() => setEditable(contact.id)}>
+        <button
+          className='edit-btn'
+          onClick={() => setEditable(projectInfo.id)}
+        >
           <EditOutlinedIcon />
         </button>
         <button className='dlt-btn' onClick={deleteRow}>

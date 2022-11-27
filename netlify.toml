@@ -1,0 +1,10 @@
+[build]
+  command = "yarn run build && cd functions/testFunction && yarn"
+  functions = "functions"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/blog/:splat"
+
+

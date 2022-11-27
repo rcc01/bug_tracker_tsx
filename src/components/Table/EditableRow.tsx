@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import apiUrls from '../../constants/apiUrls';
 import RowData from './RowData';
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import '../../styles/styles.css';
+import StoreContext from '../../contexts/StoreContext';
 
 interface Props {
   data: RowData;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const EditableRow = ({ data, setEditable, rerenderTable }: Props) => {
+  const { singletonDataStore } = useContext(StoreContext);
   const [editFormData, setEditFormData] = useState({
     id: data.id,
     title: data.title,
@@ -31,7 +33,8 @@ const EditableRow = ({ data, setEditable, rerenderTable }: Props) => {
 
   const update = async (event: FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    await axios.put(apiUrls.projects.PUT, editFormData);
+    // await axios.put(apiUrls.projects.PUT, editFormData);
+    singletonDataStore.createUpdateProjects(editFormData);
     setEditable(null);
     rerenderTable();
   };

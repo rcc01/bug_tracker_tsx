@@ -18,12 +18,9 @@ interface Props {
   };
 }
 
-const CardEmployees = ({
-  employee,
-  rerenderTable,
-  handleShow,
-}: Props) => {
+const CardEmployees = ({ employee, rerenderTable, handleShow }: Props) => {
   // const URL = 'http://localhost:8080/Employee'; // NOTE: Only uncomment when using API.
+
   const { singletonDataStore } = useContext(StoreContext);
 
   const handleDelete = () => {
@@ -46,7 +43,7 @@ const CardEmployees = ({
             'success'
           );
           rerenderTable();
-        } catch (exception) { 
+        } catch (exception) {
           Swal.fire(
             'Error!',
             'There was an issue deleting the employee',

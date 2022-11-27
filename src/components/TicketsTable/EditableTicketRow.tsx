@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import apiUrls from '../../constants/apiUrls';
+import StoreContext from '../../contexts/StoreContext';
 import { RowDataTicket } from './TicketsTable';
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const EditableTicketRow = ({ data, setEditable, rerenderTable }: Props) => {
+  const { singletonDataStore } = useContext(StoreContext);
   const [editFormData, setEditFormData] = useState({
     id: data.id,
     projectId: data.projectId,
@@ -31,7 +33,8 @@ const EditableTicketRow = ({ data, setEditable, rerenderTable }: Props) => {
 
   const update = async (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    await axios.put(apiUrls.tickets.PUT, editFormData);
+    // await axios.put(apiUrls.tickets.PUT);
+    singletonDataStore.createUpdateTickets(editFormData);
     setEditable(null);
     rerenderTable();
   };

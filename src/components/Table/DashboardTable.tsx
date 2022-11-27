@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import '../../styles/styles.css';
 import { v4 as uuidv4 } from 'uuid';
 import ReadOnlyRow from './ReadOnlyRow';
@@ -10,19 +10,36 @@ import useRerender from '../../hooks/useRerender';
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { Button, Form, Modal } from 'react-bootstrap';
-import TablePagination from '@mui/material/TablePagination';
+import StoreContext from '../../contexts/StoreContext';
+import { render } from 'react-dom';
 
 const DashboardTable = () => {
+  const { singletonDataStore } = useContext(StoreContext);
   const [rowData, setRowData] = useState<RowData[] | null>(null);
   const [renderState, rerenderTable] = useRerender();
 
-  useEffect(() => {
-    // GET within useEffect
-    // read more about useEffect
+  interface ProjectsGetResponseData {
+    data: RowData[];
+  }
 
-    const response = axios
-      .get<RowData[]>(apiUrls.projects.GET)
-      .then((result) => setRowData(result.data));
+  const getData: () => Promise<ProjectsGetResponseData> = async () => {
+    const data = singletonDataStore.readProjects();
+    return {
+      data: data,
+    };
+  };
+
+  // useEffect(() => {
+  //   // GET within useEffect
+  //   // read more about useEffect
+
+  //   const response = axios
+  //     .get<RowData[]>(apiUrls.projects.GET)
+  //     .then((result) => setRowData(result.data));
+  // }, [renderState]);
+
+  useEffect(() => {
+    getData().then((result) => setRowData(result.data));
   }, [renderState]);
 
   const [addFormData, setAddFormData] = useState({
@@ -53,11 +70,11 @@ const DashboardTable = () => {
       status: addFormData.status,
     };
     console.log(newContact); //tengo que enviar esto a post
+    singletonDataStore.createUpdateProjects(newContact);
 
-    const response = await axios.post(apiUrls.projects.POST, newContact);
-
-    handleClose();
+    // const response = await axios.post(apiUrls.projects.POST, newContact);
     rerenderTable();
+    handleClose();
   };
 
   // PUT!!!!
@@ -172,7 +189,7 @@ const DashboardTable = () => {
                         />
                       ) : (
                         <ReadOnlyRow
-                          contact={item}
+                          projectInfo={item}
                           key={index}
                           setEditable={setEditContactId}
                           rerenderTable={rerenderTable}
