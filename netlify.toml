@@ -1,11 +1,9 @@
 [build]
-  command = "yarn build"
-  build = "build"
-  functions = "functions"
-  publish = "dist"
+command = "yarn build"
+build = "build"
+functions = "functions"
+publish = "dist"
 
 [[redirects]]
-  from = "/*"
-  to = "/blog/:splat"
-
-
+from = "/*"
+to = "/blog/:splat"
