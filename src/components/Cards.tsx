@@ -101,7 +101,7 @@ const Cards = () => {
   }, []);
 
   if (rowDataTicket === null) {
-    return <>hola</>; // TODO: This can be a loader instead, the point is that we do not have data so we cannot render anything.
+    return <>hola - take it from bootstrap</>; // TODO: This can be a loader instead, the point is that we do not have data so we cannot render anything.
   }
 
   return (
