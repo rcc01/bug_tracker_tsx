@@ -1,5 +1,6 @@
 [build]
-  command = "yarn run build && cd functions/testFunction && yarn"
+  command = "yarn build"
+  build = "build"
   functions = "functions"
   publish = "dist"
 
