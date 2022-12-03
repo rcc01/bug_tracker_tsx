@@ -1,10 +1,11 @@
 import '../styles/styles.css';
 import Card from './Card/Card';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { RowDataTicket } from './TicketsTable/TicketsTable';
 import axios from 'axios';
 import apiUrls from '../constants/apiUrls';
-import Container from 'react-bootstrap/Container';
+import StoreContext from '../contexts/StoreContext';
+import useRerender from '../hooks/useRerender';
 
 export interface CardsProps {
   children?: React.ReactNode;
@@ -90,15 +91,33 @@ const cards = [
 ];
 
 const Cards = () => {
+  const { singletonDataStore } = useContext(StoreContext);
+  const [renderState, rerenderTable] = useRerender();
+
   const [rowDataTicket, setRowDataTicket] = useState<RowDataTicket[] | null>(
     null
   );
 
+  interface TicketsGetResponseData {
+    data: RowDataTicket[];
+  }
+
+  const getData: () => Promise<TicketsGetResponseData> = async () => {
+    const data = singletonDataStore.readTickets();
+    return {
+      data: data,
+    };
+  };
+
+  // useEffect(() => {
+  //   axios
+  //     .get<RowDataTicket[]>(apiUrls.tickets.GET)
+  //     .then((result) => setRowDataTicket(result.data));
+  // }, []);
+
   useEffect(() => {
-    axios
-      .get<RowDataTicket[]>(apiUrls.tickets.GET)
-      .then((result) => setRowDataTicket(result.data));
-  }, []);
+    getData().then((result) => setRowDataTicket(result.data));
+  }, [renderState]);
 
   if (rowDataTicket === null) {
     return <>hola - take it from bootstrap</>; // TODO: This can be a loader instead, the point is that we do not have data so we cannot render anything.
