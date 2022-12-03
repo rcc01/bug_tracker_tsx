@@ -2,7 +2,7 @@
 command = "yarn build"
 build = "build"
 functions = "functions"
-publish = "dist"
+publish = "build"
 
 [[redirects]]
 from = "/*"
