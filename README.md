@@ -1,4 +1,4 @@
-# LOGIN details
+# Login details
 
 Username: admin@admin.com 
 
