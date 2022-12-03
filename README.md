@@ -1,4 +1,6 @@
-Login details: admin@admin.com
+# LOGIN details
+
+Username: admin@admin.com
 Password: admin234
 
 
