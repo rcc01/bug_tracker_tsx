@@ -58,68 +58,69 @@ const RegisterForm = (e: any) => {
             </Carousel.Item>
           </Carousel>
         </div>
+        <div className='container__child carousel'>
+          <Form className=' signup__form'>
+            <Form.Group className='mb-3 '>
+              <Form.Label>Full Name</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter Full Name'
+                required
+                defaultValue='Raul Contreras'
+              />
+            </Form.Group>
 
-        <Form className='container__child signup__form'>
-          <Form.Group className='mb-3 '>
-            <Form.Label>Full Name</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='Enter Full Name'
-              required
-              defaultValue='Raul Contreras'
-            />
-          </Form.Group>
+            <Form.Group className='mb-3' controlId='formBasicEmail'>
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type='email'
+                placeholder='Enter email'
+                required
+                defaultValue='admin@admin.com'
+              />
+            </Form.Group>
 
-          <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='Enter email'
-              required
-              defaultValue='admin@admin.com'
-            />
-          </Form.Group>
+            <Form.Group className='mb-3' controlId='formBasicPassword'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type='password'
+                placeholder='Password'
+                required
+                defaultValue='admin123'
+              />
+            </Form.Group>
 
-          <Form.Group className='mb-3' controlId='formBasicPassword'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Password'
-              required
-              defaultValue='admin123'
-            />
-          </Form.Group>
+            <Form.Group className='mb-3' controlId='formBasicPassword2'>
+              <Form.Label>Password Repeat</Form.Label>
+              <Form.Control
+                type='password'
+                placeholder='Retype your Password'
+                required
+                defaultValue='admin123'
+              />
+            </Form.Group>
 
-          <Form.Group className='mb-3' controlId='formBasicPassword2'>
-            <Form.Label>Password Repeat</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Retype your Password'
-              required
-              defaultValue='admin123'
-            />
-          </Form.Group>
-
-          <Button
-            variant='outlined'
-            size='large'
-            color='secondary'
-            onClick={() => navigate('/dashboard')}
-          >
-            REGISTER
-          </Button>
-          <div
-            style={{ marginTop: '10px', textAlign: 'center' }}
-            className='mb-3'
-          >
-            <Link
-              to='/login'
-              style={{ textDecoration: 'none', color: 'white' }}
+            <Button
+              variant='outlined'
+              size='large'
+              color='secondary'
+              onClick={() => navigate('/dashboard')}
             >
-              <p id='already-member'>I ALREADY HAVE AN ACCOUNT</p>
-            </Link>
-          </div>
-        </Form>
+              REGISTER
+            </Button>
+            <div
+              style={{ marginTop: '10px', textAlign: 'center' }}
+              className='mb-3'
+            >
+              <Link
+                to='/login'
+                style={{ textDecoration: 'none', color: 'white' }}
+              >
+                <p id='already-member'>I ALREADY HAVE AN ACCOUNT</p>
+              </Link>
+            </div>
+          </Form>
+        </div>
       </div>
     </div>
   );

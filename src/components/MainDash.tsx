@@ -10,8 +10,15 @@ export interface MainDashProps {
 const MainDash = ({ title, children }: MainDashProps) => {
   return (
     <div className='MainDash'>
-      <h1 style={{ marginBottom: '10px' }}>{title}</h1>
-      {/* Aqui tienes tu Reusable component - children!!! */}
+      <h1
+        style={{
+          marginBottom: '10px',
+          fontFamily: 'Be Vietnam Pro, sans-serif',
+          fontWeight: '900',
+        }}
+      >
+        {title}
+      </h1>
       <div>{children}</div>
     </div>
   );

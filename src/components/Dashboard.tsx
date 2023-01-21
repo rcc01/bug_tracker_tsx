@@ -12,7 +12,6 @@ const Dashboard = () => {
         <Sidebar />
         <MainDash title='Dashboard'>
           <Cards />
-          <h3 className='recent-projects'>Recent Projects</h3>
           <DashboardTable />
         </MainDash>
         <RightSide />

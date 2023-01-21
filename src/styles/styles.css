@@ -158,7 +158,7 @@ table td {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -212,13 +212,14 @@ label {
 
 @media (min-width: 901px) {
   .signup__container {
-    position: relative;
-    top: 46%;
-    transform: translateY(-45%);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
     overflow: hidden;
     width: 85%;
     display: flex;
-    left: 75px;
+    left: 50%;
+    max-width: 50rem;
   }
   .signup__form {
     padding: 1.5rem;
@@ -259,14 +260,15 @@ label {
 
 @media (max-width: 900px) {
   .signup__container {
-    position: relative;
-    top: 46%;
-    transform: translateY(-45%);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
     overflow: hidden;
     width: 75%;
     display: flex;
     flex-direction: column;
-    left: 75px;
+    left: 50%;
+    max-width: 27rem;
   }
   .signup__form {
     padding: 1.5rem;
@@ -307,150 +309,9 @@ label {
   }
 }
 
-@media (max-width: 700px) {
-  .signup__container {
-    position: relative;
-    top: 46%;
-    transform: translateY(-45%);
-    overflow: hidden;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    left: 40px;
-  }
-  .carousel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: 260px;
-    border-radius: 25px 25px 0px 0px !important;
-  }
-  .carousel-inner > .active {
-    height: 261.567px;
-  }
-  .carousel-item > img {
-    width: 100%;
-    height: 105%;
-  }
-  .signup__form {
-    padding: 1.5rem;
-    background-color: #0093e9;
-    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-    border-radius: 0px 0px 25px 25px;
-    height: 475px;
-    margin-bottom: 25px;
-  }
-}
-
-@media (max-width: 432px) {
-  .signup__form {
-    padding: 1.5rem;
-    background-color: #0093e9;
-    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-    border-radius: 0px 0px 25px 25px;
-    height: 475px;
-    margin-bottom: 25px;
-  }
-  .signup__container {
-    position: relative;
-    top: 46%;
-    transform: translateY(-45%);
-    overflow: hidden;
-    left: 50px;
-    width: 80%;
-  }
-  .mb-3 {
-    margin-bottom: 0rem !important;
-  }
-  .container__child {
-    width: 95%;
-  }
+@media (max-width: 374px) {
   #already-member {
-    font-size: 14px;
-  }
-  .carousel-inner {
-    height: 200px;
-  }
-  .carousel-item > img {
-    width: 100%;
-    height: 90%;
-  }
-  p {
-    margin-top: 0px;
-    margin-bottom: 4rem;
-  }
-}
-
-@media (max-width: 390px) {
-  .signup__form {
-    padding: 1.5rem;
-    background-color: #0093e9;
-    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-    border-radius: 0px 0px 25px 25px;
-    height: 475px;
-    margin-bottom: 25px;
-  }
-  .carousel-inner {
-    height: 200px;
-  }
-  .container__child {
-    width: 90%;
-  }
-  #already-member {
-    font-size: 12.5px;
-  }
-  .carousel-item > img {
-    width: 100%;
-    height: 80%;
-  }
-  .carousel-caption > p {
-    display: none;
-  }
-  .carousel-caption > h3 {
-    position: absolute;
-    bottom: 7.25rem;
-    left: 8%;
-    padding-top: 1.25rem;
-    color: #fff;
-    text-align: center;
-  }
-  .signup__container {
-    position: relative;
-    top: 46%;
-    transform: translateY(-45%);
-    overflow: hidden;
-    left: 40px;
-    width: 90%;
-  }
-}
-
-@media (max-width: 375px) {
-  .container__child > .carousel {
-    display: none;
-  }
-  .signup__form {
-    padding: 1.5rem;
-    background-color: #0093e9;
-    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-    border-radius: 25px 25px 25px 25px;
-    height: 475px;
-    margin-bottom: 25px;
-  }
-  .signup__container {
-    position: absolute;
-    top: 48%;
-    left: 2px;
-    margin-right: auto;
-    margin-left: auto;
-    transform: translateY(-50%);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  .container__child {
-    width: 75%;
+    font-size: 13px;
   }
 }
 
@@ -474,13 +335,6 @@ label {
   .parentContainer {
     width: 94%;
     height: 8rem;
-  }
-  .MainDash {
-    display: flex;
-    flex-direction: column;
-    margin-top: 6rem;
-    margin-left: 1.2rem;
-    width: 80%;
   }
   .CompactCard {
     display: flex;
@@ -507,7 +361,7 @@ label {
   }
   .btn-div {
     margin-bottom: 33px;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
     width: 35%;
   }
   .table {
@@ -558,7 +412,8 @@ label {
     margin-top: 2rem;
   }
   .dashboard-glass {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     height: 97%;
     width: 96%;
     border-radius: 2rem;
@@ -834,13 +689,13 @@ h2 {
     /* grid-template-columns: 400px 255px; */
     grid-template-columns: 1fr auto;
   }
-  .MainDash {
+  /* .MainDash {
     display: flex;
     flex-direction: column;
     margin-top: 7.5rem;
     margin-left: 5rem;
     width: 100%;
-  }
+  } */
   .dashboard-glass-wider > .MainDash {
     width: 365%;
   }
@@ -924,7 +779,7 @@ h2 {
   }
   .btn-div {
     margin-bottom: 33px;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
     width: 32%;
   }
   .dimension-table {
@@ -994,7 +849,7 @@ h2 {
     display: flex;
     flex-direction: column;
     margin-top: 7.5rem;
-    margin-left: 5rem;
+    margin-left: 1.5rem;
     width: 100%;
   }
   .dashboard-glass-wider > .MainDash {

@@ -77,8 +77,7 @@ const DashboardTable = () => {
     handleClose();
   };
 
-  // PUT!!!!
-  //EDIT button... toggle between readOnlyRow and EditableRow
+  // PUT
   const [editContactId, setEditContactId] = useState<string | null>(null);
 
   const [show, setShow] = useState(false);
@@ -88,6 +87,15 @@ const DashboardTable = () => {
 
   return (
     <>
+      <h3
+        style={{
+          fontFamily: 'Be Vietnam Pro, sans-serif',
+          fontWeight: '900',
+        }}
+        className='recent-projects'
+      >
+        Recent Projects
+      </h3>
       <div className='btn-div'>
         <Button
           variant='primary'
@@ -147,9 +155,9 @@ const DashboardTable = () => {
                 onChange={handleAddFormChange}
               >
                 <option>Choose...</option>
-                <option value='Resolved'>Resolved</option>
                 <option value='New'>New</option>
                 <option value='In Progress'>In Progress</option>
+                <option value='Resolved'>Resolved</option>
               </Form.Select>
             </Form.Group>
           </Form>
