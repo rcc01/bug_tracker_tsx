@@ -91,13 +91,13 @@ export const UpdatesData = [
   },
   {
     img: img2,
-    name: 'James Bond',
+    name: 'Lulu Nicholson',
     noti: 'has created new Tickets for the X Project.',
     time: '30 minutes ago',
   },
   {
     img: img3,
-    name: 'Iron Man',
+    name: 'Emerson Stanley',
     noti: 'has set up an online meeting on 5th September at 10 am CET time.',
     time: '2 hours ago',
   },

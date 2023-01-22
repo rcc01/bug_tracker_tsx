@@ -97,13 +97,10 @@ const DashboardTable = () => {
         Recent Projects
       </h3>
       <div className='btn-div'>
-        <Button
-          variant='primary'
-          className='add-project-btn btn btn-primary'
-          onClick={handleShow}
-        >
-          New Project
-        </Button>
+        <button className='icon-btn add-btn' onClick={handleShow}>
+          <div className='add-icon'></div>
+          <div className='btn-txt'>New Project</div>
+        </button>
       </div>
 
       <Modal show={show} onHide={handleClose}>
@@ -172,7 +169,6 @@ const DashboardTable = () => {
         </Modal.Footer>
       </Modal>
 
-      {/* form tag was here - deleted to see how it works without it. In case of any issues, add it back*/}
       <div className='dimension-table'>
         <Table bordered hover responsive>
           <thead>

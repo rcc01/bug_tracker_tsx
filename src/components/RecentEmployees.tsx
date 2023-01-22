@@ -5,11 +5,7 @@ import '../styles/styles.css';
 function RecentEmployees() {
   return (
     <AnimatePresence>
-      <motion.div
-        className='updates'
-        whileHover={{ scale: 1.045 }}
-        whileTap={{ scale: 0.9 }}
-      >
+      <motion.div className='updates' whileHover={{ scale: 1.02 }}>
         {UpdatesData.map((update, id) => {
           return (
             <div className='update' key={id}>
@@ -19,7 +15,7 @@ function RecentEmployees() {
                   <span>{update.name}</span>
                   <span> {update.noti}</span>
                 </div>
-                <span>{update.time}</span>
+                <span style={{ fontSize: '10px' }}>{update.time}</span>
               </div>
             </div>
           );

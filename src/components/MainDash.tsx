@@ -1,5 +1,6 @@
 import { CardsProps } from './Cards';
 import '../styles/styles.css';
+import DashboardTable from './Table/DashboardTable';
 
 export interface MainDashProps {
   title?: string;
@@ -12,9 +13,9 @@ const MainDash = ({ title, children }: MainDashProps) => {
     <div className='MainDash'>
       <h1
         style={{
-          marginBottom: '10px',
           fontFamily: 'Be Vietnam Pro, sans-serif',
           fontWeight: '900',
+          marginTop: '6rem',
         }}
       >
         {title}
