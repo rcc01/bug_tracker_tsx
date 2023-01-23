@@ -748,9 +748,9 @@ h2 {
 
 /* MEDIA QUERIES  */
 
-/* pending min-width: 1101 */
+/* pending min-width: 1200 */
 
-@media (max-width: 1100px) {
+@media (min-width: 1201px) {
   .dashboard-div {
     background: linear-gradient(
       106.37deg,
@@ -767,7 +767,162 @@ h2 {
     max-height: 1200px;
     width: 96%;
     border-radius: 2rem;
-    /* background-color: var(--glass); */
+
+    background-color: #fcdede;
+    background-image: radial-gradient(
+        at 86% 37%,
+        hsla(181, 79%, 74%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 59% 8%, hsla(237, 66%, 62%, 1) 0px, transparent 50%),
+      radial-gradient(at 41% 81%, hsla(18, 88%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 52% 27%, hsla(274, 87%, 67%, 1) 0px, transparent 50%),
+      radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
+    grid-template-columns: 1fr auto;
+    margin: 2rem 1rem 2rem 0rem;
+  }
+  .MainDash {
+    margin-left: 3rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 365%;
+  }
+  .sidebar {
+    position: fixed;
+    z-index: 9;
+    background: #e0ffff;
+    width: 35%;
+    padding: 1rem;
+    height: 71%;
+    opacity: 0.9;
+    border-radius: 0px 35px 35px 0px;
+    padding-top: 5rem;
+    transition: all 300ms ease;
+    margin-top: 6rem;
+  }
+  .menuItem:hover {
+    cursor: pointer;
+    background-color: lightpink;
+  }
+  .bars {
+    display: flex;
+    position: fixed;
+    z-index: 9;
+    background: #ffe0e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 2rem;
+  }
+  .bars:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(4px);
+  }
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    justify-content: flex-start;
+    margin-left: -30%;
+    margin-top: 12rem;
+  }
+  .updates {
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    box-shadow: rgb(233, 225, 213) 0px 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 20px;
+  }
+  .parentContainer {
+    /* ? useful? the one below? */
+    /* max-width: 55%; */
+    height: 8rem;
+    width: 65%;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+  .CompactCard {
+    display: flex;
+    height: 11rem;
+    border-radius: 0.8rem;
+    color: white;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+  }
+  .recent-projects {
+    color: rgb(60, 55, 55);
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+  }
+  .btn-div {
+    margin-bottom: 33px;
+    width: 32%;
+  }
+  .dimension-table {
+    transform: perspective(1600px) rotateY(7deg);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    transition: transform 1s ease 0s;
+
+    width: 145%;
+    margin-bottom: 15%;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    background-color: rgba(232, 13, 197, 0.1);
+  }
+  table {
+    border-collapse: collapse;
+    max-width: 900px;
+    width: 100%;
+    margin: 2rem auto;
+  }
+  .table-responsive {
+    width: 100%;
+    min-width: 700px;
+  }
+  .dimension-ticket-table {
+    transform: rotate3d(0.5, -0.866, 0, 15deg) rotate(1deg);
+    box-shadow: 2em 4em 6em -2em rgba(0, 0, 0, 0.5),
+      1em 2em 3.5em -2.5em rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 0.5em;
+    width: 124%;
+    margin-top: 45px;
+  }
+
+  .dimension-ticket-table:hover {
+    transform: rotate3d(0, 0, 0, 0deg) rotate(0deg);
+  }
+}
+
+@media (max-width: 1200px) {
+  .dashboard-div {
+    background: linear-gradient(
+      106.37deg,
+      #ffe1bc 29.63%,
+      #ffcfd1 51.55%,
+      #f3c6f1 90.85%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dashboard-glass {
+    display: grid;
+    max-height: 1200px;
+    width: 96%;
+    border-radius: 2rem;
+
     background-color: #fcdede;
     background-image: radial-gradient(
         at 86% 37%,
@@ -821,10 +976,10 @@ h2 {
   .right-side {
     display: flex;
     flex-direction: column;
-    width: 124%;
+    width: 115%;
     justify-content: flex-start;
-    margin-left: -100%;
-    margin-top: 11.2rem;
+    margin-left: -41%;
+    margin-top: 12rem;
   }
   .updates {
     margin-top: 1rem;
@@ -844,14 +999,14 @@ h2 {
     margin-top: 20px;
   }
   .parentContainer {
-    max-width: 55%;
+    /* ? useful? the one below? */
+    /* max-width: 55%; */
     height: 8rem;
-    min-width: 55%;
+    width: 65%;
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
   .CompactCard {
     display: flex;
-    flex: 1 1;
     height: 11rem;
     border-radius: 0.8rem;
     color: white;
@@ -876,7 +1031,7 @@ h2 {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transition: transform 1s ease 0s;
 
-    width: 108%;
+    width: 145%;
     margin-bottom: 15%;
     border: 1px solid rgba(255, 255, 255, 0.125);
     background-color: rgba(232, 13, 197, 0.1);
@@ -906,9 +1061,15 @@ h2 {
   }
 }
 
+@media (max-width: 1024px) {
+  .dimension-table {
+    width: 127%;
+  }
+}
+
 @media (max-width: 855px) {
   .right-side {
-    margin-left: -120%;
+    margin-left: -105%;
     margin-top: 9rem;
   }
   .dimension-table {
@@ -916,13 +1077,107 @@ h2 {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+  .parentContainer {
+    width: 52%;
+  }
   .right-side {
-    margin-left: -120%;
-    margin-top: 9rem;
+    margin-left: -147%;
+    margin-top: 12rem;
+    width: 126%;
   }
   .dimension-table {
-    width: 103%;
+    width: 96%;
+  }
+  .table-responsive {
+    width: 62%;
+  }
+  .table {
+    width: 87% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-div {
+    height: 200vh;
+  }
+  .dashboard-glass {
+    display: flex;
+    flex-basis: content;
+    max-height: 9962px;
+    height: 195vh;
+  }
+  .parentContainer {
+    width: 95%;
+  }
+  .recent-projects {
+    margin-top: 41rem;
+  }
+  .dimension-table {
+    margin-top: 3rem;
+  }
+  .table-responsive {
+    width: 100%;
+    min-width: 518px !important;
+  }
+  .table {
+    width: 84% !important;
+  }
+  .right-side {
+    margin-left: -88%;
+    margin-top: 50rem;
+    width: 83%;
+  }
+  .table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block !important;
+  }
+  .thead tr {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+  .tr {
+    margin: 0 0 1rem 0 !important;
+  }
+  .tr:nth-child(odd) {
+    background: #ccc !important;
+  }
+  .td {
+    /* Behave  like a "row" */
+    border: none !important;
+    border-bottom: 1px solid #eee !important;
+    position: relative !important;
+    padding-left: 50% !important;
+  }
+  .td:before {
+    /* Now like a table header */
+    position: absolute !important;
+    /* Top/left values mimic padding */
+    top: 0 !important;
+    left: 6px !important;
+    width: 45% !important;
+    padding-right: 10px !important;
+    white-space: nowrap !important;
+  }
+  td:nth-of-type(1):before {
+    content: 'Name ';
+  }
+  td:nth-of-type(2):before {
+    content: 'Description ';
+  }
+  td:nth-of-type(3):before {
+    content: 'Contributors ';
+  }
+  td:nth-of-type(4):before {
+    content: 'Status ';
+  }
+  td:nth-of-type(5):before {
+    content: 'Actions ';
   }
 }
 
@@ -974,151 +1229,3 @@ h2 {
 }
 
 /* dashboard - 1300px */
-@media (min-width: 1101px) {
-  .dashboard-div {
-    background: linear-gradient(
-      106.37deg,
-      #ffe1bc 29.63%,
-      #ffcfd1 51.55%,
-      #f3c6f1 90.85%
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .dashboard-glass {
-    display: grid;
-    max-height: 1200px;
-    width: 96%;
-    border-radius: 2rem;
-    background-color: var(--glass);
-    overflow: scroll;
-    grid-template-columns: 1fr auto;
-  }
-  .MainDash {
-    display: flex;
-    flex-direction: column;
-    margin-top: 7.5rem;
-    margin-left: 5rem;
-    width: 115%;
-  }
-  .dashboard-glass-wider > .MainDash {
-    width: 415%;
-  }
-  .sidebar {
-    position: fixed;
-    z-index: 9;
-    background: #e0ffff;
-    width: 25%;
-    padding: 1rem;
-    height: 71%;
-    opacity: 0.9;
-    border-radius: 0px 35px 35px 0px;
-    padding-top: 5rem;
-    transition: all 300ms ease;
-    margin-top: 6rem;
-  }
-  .menuItem:hover {
-    cursor: pointer;
-    background-color: lightpink;
-  }
-  .bars {
-    display: flex;
-    position: fixed;
-    z-index: 9;
-    background: #ffe0e0;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 2rem;
-  }
-  .bars:active {
-    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
-    transform: translateY(4px);
-  }
-
-  .right-side {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    justify-content: flex-start;
-    /* margin-left: -25%; */
-    /* margin-top: 11.2rem; */
-    margin-top: 4.2rem;
-  }
-  .updates {
-    background: whitesmoke;
-    opacity: 0.9;
-    border-radius: 0.7rem;
-    margin-top: 2rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    box-shadow: rgb(233, 225, 213) 0px 10px 20px;
-  }
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    margin-top: 20px;
-  }
-  .parentContainer {
-    max-width: 55%;
-    width: 100%;
-    height: 8rem;
-  }
-  .CompactCard {
-    display: flex;
-    flex: 1 1;
-    height: 11rem;
-    border-radius: 0.8rem;
-    color: white;
-    padding: 1rem;
-    position: relative;
-    cursor: pointer;
-  }
-  .recent-projects {
-    color: rgb(60, 55, 55);
-    font-weight: bold;
-    font-size: 25px;
-    margin-top: 7rem;
-    margin-bottom: 3rem;
-  }
-  .btn-div {
-    margin-bottom: 33px;
-    margin-right: 2rem;
-    width: 32%;
-  }
-  .dimension-table {
-    transform: perspective(1500px) rotateY(5deg);
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    transition: transform 1s ease 0s;
-    background: linear-gradient(135deg, #f4dabf 50%, #1e5f75 50.1%);
-    max-width: 100%;
-    margin-bottom: 15%;
-  }
-  table {
-    border-collapse: collapse;
-    max-width: 900px;
-    width: 100%;
-    margin: 2rem auto;
-  }
-  .table-responsive {
-    max-width: 100%;
-    min-width: 700px;
-  }
-  .dimension-ticket-table {
-    transform: rotate3d(0.5, -0.866, 0, 15deg) rotate(1deg);
-    box-shadow: 2em 4em 6em -2em rgba(0, 0, 0, 0.5),
-      1em 2em 3.5em -2.5em rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 0.5em;
-    width: 130%;
-    margin-top: 45px;
-  }
-
-  .dimension-ticket-table:hover {
-    transform: rotate3d(0, 0, 0, 0deg) rotate(0deg);
-  }
-}
