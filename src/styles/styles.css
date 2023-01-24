@@ -1,3 +1,7 @@
+.p--new-projects {
+  font-family: Be Vietnam Pro, sans-serif;
+}
+
 /* LOGIN  */
 
 .login-container {
@@ -234,6 +238,7 @@ table td {
 .edit-btn,
 .dlt-btn {
   margin: 5px;
+  background: none;
 }
 
 .add-ticket-btn,
@@ -396,10 +401,10 @@ label {
     color: #fff;
     text-align: center;
   }
-  p {
+  /* p {
     margin-top: 0;
     margin-bottom: 5rem !important;
-  }
+  } */
 }
 
 @media (max-width: 374px) {
@@ -411,170 +416,6 @@ label {
 /* DASHBOARD */
 
 /* Huge size (Larger screen) max-width: 1281px and greater */
-
-@media (max-width: 413px) {
-  .parentContainer {
-    width: 94%;
-    height: 8rem;
-  }
-  .CompactCard {
-    display: flex;
-    flex: 1 1;
-    height: 11rem;
-    border-radius: 0.8rem;
-    color: white;
-    padding: 1rem;
-    position: relative;
-    cursor: pointer;
-  }
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    margin-top: 20px;
-  }
-  .recent-projects {
-    color: rgb(60, 55, 55);
-    font-weight: bold;
-    font-size: 25px;
-    margin-top: 7rem;
-    margin-bottom: 3rem;
-  }
-  .btn-div {
-    margin-bottom: 33px;
-    /* margin-right: 2rem; */
-    width: 35%;
-  }
-  .table {
-    width: calc(100% - 3px);
-  }
-  .right-side {
-    display: flex;
-    flex-direction: column;
-    width: 87%;
-    justify-content: flex-start;
-    margin-left: 1.2rem;
-    margin-top: 0rem;
-  }
-  .updates {
-    background: whitesmoke;
-    opacity: 0.9;
-    border-radius: 0.7rem;
-    margin-top: 2rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    box-shadow: rgb(233, 225, 213) 0px 10px 20px;
-  }
-  .employees-div {
-    margin-bottom: 2rem;
-  }
-  .bars {
-    display: flex;
-    position: fixed;
-    z-index: 9;
-    background: #ffe0e0;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 2rem;
-  }
-  .sidebar {
-    position: fixed;
-    z-index: 9;
-    background: #e0ffff;
-    width: 55%;
-    padding: 1rem;
-    height: 65%;
-    opacity: 0.9;
-    border-radius: 0px 35px 35px 0px;
-    padding-top: 5rem;
-    transition: all 300ms ease;
-    margin-top: 2rem;
-  }
-  .dashboard-glass {
-    display: flex;
-    flex-direction: column;
-    height: 97%;
-    width: 96%;
-    border-radius: 2rem;
-    background-color: var(--glass);
-    overflow: scroll;
-    grid-template-columns: 1fr;
-  }
-  .dashboard-div {
-    background: linear-gradient(
-      106.37deg,
-      #ffe1bc 29.63%,
-      #ffcfd1 51.55%,
-      #f3c6f1 90.85%
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .menuItem:hover {
-    cursor: pointer;
-    background-color: lightpink;
-  }
-  .dimension-table {
-    transform: perspective(1500px) rotateY(5deg);
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    transition: transform 1s ease 0s;
-    background: linear-gradient(135deg, #f4dabf 50%, #1e5f75 50.1%);
-    width: 100%;
-    margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 390px) {
-  .MainDash {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-    margin-left: 1.2rem;
-  }
-  .bars {
-    display: flex;
-    position: fixed;
-    z-index: 9;
-    background: #ffe0e0;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 0rem;
-  }
-  .sidebar {
-    position: fixed;
-    z-index: 9;
-    background: #e0ffff;
-    width: 55%;
-    padding: 1rem;
-    padding-top: 1rem;
-    height: 76%;
-    opacity: 0.9;
-    border-radius: 0px 35px 35px 0px;
-    padding-top: 5rem;
-    transition: all 300ms ease;
-    margin-top: 1rem;
-  }
-  .parentContainer {
-    width: 87%;
-    height: 8rem;
-  }
-  .right-side {
-    display: flex;
-    flex-direction: column;
-    width: 83%;
-    justify-content: flex-start;
-    margin-left: 1.2rem;
-    margin-top: 0rem;
-  }
-  .menuItem:hover {
-    cursor: pointer;
-    background-color: lightpink;
-  }
-}
 
 /* SIDEBAR */
 
@@ -1068,9 +909,13 @@ h2 {
 }
 
 @media (max-width: 855px) {
+  .parentContainer {
+    width: 60%;
+  }
   .right-side {
-    margin-left: -105%;
-    margin-top: 9rem;
+    margin-left: -117%;
+    margin-top: 10rem;
+    width: 125%;
   }
   .dimension-table {
     width: 103%;
@@ -1079,36 +924,37 @@ h2 {
 
 @media (max-width: 768px) {
   .parentContainer {
-    width: 52%;
+    width: 48%;
   }
   .right-side {
-    margin-left: -147%;
-    margin-top: 12rem;
-    width: 126%;
+    margin-left: -162%;
+    margin-top: 11.5rem;
+    width: 128%;
   }
   .dimension-table {
-    width: 96%;
+    width: 92%;
   }
   .table-responsive {
-    width: 62%;
+    width: 59%;
   }
   .table {
-    width: 87% !important;
+    width: 82% !important;
+    margin: 1rem 40px !important;
   }
 }
 
 @media (max-width: 600px) {
   .dashboard-div {
-    height: 200vh;
+    height: 184vh;
   }
   .dashboard-glass {
     display: flex;
     flex-basis: content;
     max-height: 9962px;
-    height: 195vh;
+    height: 178vh;
   }
   .parentContainer {
-    width: 95%;
+    width: 89%;
   }
   .recent-projects {
     margin-top: 41rem;
@@ -1124,64 +970,100 @@ h2 {
     width: 84% !important;
   }
   .right-side {
-    margin-left: -88%;
+    margin-left: -93%;
     margin-top: 50rem;
     width: 83%;
   }
-  .table,
+  table {
+    border-collapse: collapse;
+    border: 1px solid #cdcdcd;
+    font-family: Be Vietnam Pro, sans-serif;
+    width: 100%;
+  }
+  table tbody {
+    overflow: auto !important;
+    height: 186px !important;
+  }
+  td,
+  th {
+    border: 1px solid #cdcdcd;
+    padding: 2px;
+  }
+  table,
   thead,
   tbody,
   th,
   td,
   tr {
-    display: block !important;
+    display: block;
   }
-  .thead tr {
-    position: absolute !important;
-    top: -9999px !important;
-    left: -9999px !important;
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
-  .tr {
-    margin: 0 0 1rem 0 !important;
+  tr {
+    border-bottom: 1px solid #ccc;
   }
-  .tr:nth-child(odd) {
-    background: #ccc !important;
+  /* td afecta al th and tbody-td */
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
   }
-  .td {
-    /* Behave  like a "row" */
-    border: none !important;
-    border-bottom: 1px solid #eee !important;
-    position: relative !important;
-    padding-left: 50% !important;
+  td:before {
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
   }
-  .td:before {
-    /* Now like a table header */
-    position: absolute !important;
-    /* Top/left values mimic padding */
-    top: 0 !important;
-    left: 6px !important;
-    width: 45% !important;
-    padding-right: 10px !important;
-    white-space: nowrap !important;
+  td:after {
+    position: absolute;
+    top: 3px;
+    left: 16px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
   }
+
   td:nth-of-type(1):before {
-    content: 'Name ';
+    content: 'Name';
   }
   td:nth-of-type(2):before {
-    content: 'Description ';
+    content: 'Description';
   }
   td:nth-of-type(3):before {
-    content: 'Contributors ';
+    content: 'Contributors';
   }
   td:nth-of-type(4):before {
-    content: 'Status ';
+    content: 'Status';
   }
   td:nth-of-type(5):before {
-    content: 'Actions ';
+    content: 'Actions';
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 428px) {
+  .recent-employees {
+    margin-left: -5px;
+  }
+  .MainDash {
+    margin-left: 22rem;
+    margin-top: 18rem;
+  }
+  .parentContainer {
+    width: 72%;
+  }
+  .right-side {
+    margin-left: -48%;
+    width: 34%;
+    margin-top: 67rem;
+  }
   .bars {
     display: flex;
     position: fixed;
@@ -1194,38 +1076,53 @@ h2 {
   .sidebar {
     width: 51%;
   }
+  .table {
+    width: 60% !important;
+  }
 
   .menuItem:hover {
     cursor: pointer;
     background-color: lightpink;
   }
-  .dashboard-glass-wider {
-    height: 100vh;
+  .dashboard-div {
+    background: none;
+  }
+  .dashboard-glass {
+    height: auto;
+    width: auto;
+  }
+  .dimension-table {
+    margin-top: 2rem;
+    width: 72%;
   }
 }
 
 @media (max-width: 375px) {
-  .bars {
-    display: flex;
-    position: fixed;
-    z-index: 9;
-    background: #ffe0e0;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 0rem;
-  }
   .sidebar {
-    margin-top: 6rem;
+    margin-top: 25rem;
+  }
+  .title {
+    margin-top: 8rem;
+    margin-left: 25px;
   }
   .parentContainer {
-    width: 87%;
-    height: 8rem;
+    width: 62%;
+    margin-left: 2rem;
   }
-
-  .menuItem:hover {
-    cursor: pointer;
-    background-color: lightpink;
+  .recent-employees {
+    margin-left: 19px;
+  }
+  .right-side {
+    margin-left: -46%;
+    width: 30%;
+  }
+  .recent-projects {
+    margin-left: 27px;
+  }
+  .p--new-projects {
+    margin-left: 27px;
+  }
+  .btn-div {
+    margin-left: 27px;
   }
 }
-
-/* dashboard - 1300px */

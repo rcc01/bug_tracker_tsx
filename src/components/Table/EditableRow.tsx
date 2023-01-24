@@ -75,7 +75,6 @@ const EditableRow = ({ data, setEditable, rerenderTable }: Props) => {
         />
       </td>
       <td>
-        <label htmlFor='status'>Status:</label>
         <select
           name='status'
           required

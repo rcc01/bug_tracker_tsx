@@ -6,6 +6,7 @@ function RightSide() {
     <div className='right-side'>
       <div className='employees-div'>
         <h2
+          className='recent-employees'
           style={{
             fontFamily: 'Be Vietnam Pro, sans-serif',
             fontWeight: '900',

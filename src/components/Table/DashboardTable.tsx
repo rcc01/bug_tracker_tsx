@@ -96,6 +96,7 @@ const DashboardTable = () => {
       >
         Recent Projects
       </h3>
+      <p className='p--new-projects'>Use the + button to add a new project!</p>
       <div className='btn-div'>
         <button className='icon-btn add-btn' onClick={handleShow}>
           <div className='add-icon'></div>
@@ -170,7 +171,7 @@ const DashboardTable = () => {
       </Modal>
 
       <div className='dimension-table'>
-        <Table bordered hover responsive>
+        <Table bordered hover responsive size='sm' striped>
           <thead>
             <tr>
               <td>Name</td>
@@ -180,6 +181,7 @@ const DashboardTable = () => {
               <td>Actions</td>
             </tr>
           </thead>
+
           <tbody>
             {rowData !== null
               ? rowData.map((item, index) => {

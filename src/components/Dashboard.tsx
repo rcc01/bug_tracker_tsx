@@ -4,10 +4,11 @@ import Cards from './Cards';
 import DashboardTable from './Table/DashboardTable';
 import RightSide from './RightSide';
 import '../styles/styles.css';
+import { Container } from 'react-bootstrap';
 
 const Dashboard = () => {
   return (
-    <div className='dashboard-div'>
+    <Container className='dashboard-div' fluid>
       <div className='dashboard-glass'>
         <Sidebar />
         <MainDash title='Dashboard'>
@@ -16,7 +17,7 @@ const Dashboard = () => {
         </MainDash>
         <RightSide />
       </div>
-    </div>
+    </Container>
   );
 };
 

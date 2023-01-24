@@ -12,6 +12,7 @@ const MainDash = ({ title, children }: MainDashProps) => {
   return (
     <div className='MainDash'>
       <h1
+        className='title'
         style={{
           fontFamily: 'Be Vietnam Pro, sans-serif',
           fontWeight: '900',

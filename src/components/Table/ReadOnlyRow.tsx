@@ -3,7 +3,7 @@ import { FormEvent, useContext } from 'react';
 import apiUrls from '../../constants/apiUrls';
 import RowData from './RowData';
 import '../../styles/styles.css';
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import ModeEditTwoToneIcon from '@mui/icons-material/ModeEditTwoTone';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import StoreContext from '../../contexts/StoreContext';
 
@@ -33,7 +33,7 @@ const ReadOnlyRow = ({ projectInfo, setEditable, rerenderTable }: Props) => {
           className='edit-btn'
           onClick={() => setEditable(projectInfo.id)}
         >
-          <EditOutlinedIcon />
+          <ModeEditTwoToneIcon />
         </button>
         <button className='dlt-btn' onClick={deleteRow}>
           <DeleteOutlineOutlinedIcon />
