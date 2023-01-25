@@ -3,6 +3,7 @@ import { FormEvent, useContext, useState } from 'react';
 import apiUrls from '../../constants/apiUrls';
 import StoreContext from '../../contexts/StoreContext';
 import { RowDataTicket } from './TicketsTable';
+import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 
 interface Props {
   data: RowDataTicket;
@@ -52,7 +53,6 @@ const EditableTicketRow = ({ data, setEditable, rerenderTable }: Props) => {
         />
       </td>
       <td>
-        <label htmlFor='type'>Ticket Type:</label>
         <select
           name='type'
           required
@@ -78,7 +78,6 @@ const EditableTicketRow = ({ data, setEditable, rerenderTable }: Props) => {
         />
       </td>
       <td>
-        <label htmlFor='status'>Status:</label>
         <select
           name='status'
           required
@@ -93,7 +92,7 @@ const EditableTicketRow = ({ data, setEditable, rerenderTable }: Props) => {
           <option value='In Progress'>In Progress</option>
         </select>
       </td>
-      <label htmlFor='status'>Priority:</label>
+
       <select
         name='priority'
         required
@@ -109,7 +108,9 @@ const EditableTicketRow = ({ data, setEditable, rerenderTable }: Props) => {
         <option value='Low'>Low</option>
       </select>
       <td>
-        <button onClick={update}>Save</button>
+        <button className='save-btn' onClick={update}>
+          <SaveOutlinedIcon />
+        </button>
       </td>
     </tr>
   );

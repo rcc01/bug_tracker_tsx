@@ -90,7 +90,7 @@ const EditableRow = ({ data, setEditable, rerenderTable }: Props) => {
         </select>
       </td>
       <td>
-        <button onClick={update}>
+        <button className='save-btn' onClick={update}>
           <SaveOutlinedIcon />
         </button>
       </td>

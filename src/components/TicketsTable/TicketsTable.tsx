@@ -1,5 +1,4 @@
 import '../../styles/styles.css';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import RowData from '../Table/RowData';
@@ -119,16 +118,15 @@ const TicketsTable = () => {
 
   return (
     <>
-      {/* To move a button, you need to put it inside a div */}
-      <div className='btn-div-ticket'>
-        <Button
-          variant='primary'
-          className='add-ticket-btn btn btn-primary'
-          onClick={handleShow}
-        >
-          New Ticket
-        </Button>
+      <div className='btn-div__tickets'>
+        <button className='icon-btn add-btn' onClick={handleShow}>
+          <div className='add-icon'></div>
+          <div className='btn-txt'>New Ticket</div>
+        </button>
       </div>
+      <p className='p--new-projects-tickets'>
+        Use the + button to add a new ticket!
+      </p>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -138,7 +136,6 @@ const TicketsTable = () => {
         {/* onSubmit on the other input form */}
         <Modal.Body>
           <Form>
-            {/* TODO on submit here? */}
             <Form.Group className='mb-3'>
               <Form.Label>Ticket Title</Form.Label>
               <Form.Control
@@ -159,24 +156,6 @@ const TicketsTable = () => {
                 <option value='Feature'>Feature</option>
               </Form.Select>
             </Form.Group>
-
-            {/* <Form.Group className='mb-3'>
-              <Form.Label>Project</Form.Label>
-              <Form.Select
-                name='projectId'
-                required
-                onChange={handleAddFormChange}
-              >
-                <option>Project...</option>
-                {rowDataProject?.map((data: RowData) => {
-                  return (
-                    <option key={data.id} value={data.id}>
-                      {data.title}
-                    </option>
-                  );
-                })}
-              </Form.Select>
-            </Form.Group> */}
 
             <Form.Group className='mb-3'>
               <Form.Label>Ticket Description</Form.Label>
@@ -237,34 +216,31 @@ const TicketsTable = () => {
         </Modal.Footer>
       </Modal>
 
-      {/* is it okay to delete form tag? previous to table */}
-      <div className='dimension-ticket-table'>
-        <Table bordered hover responsive className='ticketsTable'>
+      <div className='dimension-table tickets-table'>
+        <Table bordered hover responsive size='sm' striped>
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Status</th>
-              <th>Priority</th>
-              <th>Actions</th>
+              <td>Title</td>
+              <td>Type</td>
+              <td>Description</td>
+              <td>Status</td>
+              <td>Priority</td>
+              <td>Actions</td>
             </tr>
           </thead>
+
           <tbody>
             {rowDataTicket !== null
-              ? // if true... if the row it's not null - do map
-                rowDataTicket.map((item, index) => {
+              ? rowDataTicket.map((item, index) => {
                   return (
                     <Fragment key={index}>
                       {editRowId === item.id ? (
-                        // if it's true....
                         <EditableTicketRow
                           data={item}
                           setEditable={setEditRowId}
                           rerenderTable={rerenderTable}
                         />
                       ) : (
-                        // if false... if !editRowId === item.id
                         <ReadOnlyTicketRow
                           ticketInfo={item}
                           key={index}
@@ -275,8 +251,7 @@ const TicketsTable = () => {
                     </Fragment>
                   );
                 })
-              : // if false.... undefined
-                undefined}
+              : undefined}
           </tbody>
         </Table>
       </div>

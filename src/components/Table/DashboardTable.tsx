@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, Fragment } from 'react';
 import '../../styles/styles.css';
 import { v4 as uuidv4 } from 'uuid';
 import ReadOnlyRow from './ReadOnlyRow';
@@ -7,7 +7,6 @@ import EditableRow from './EditableRow';
 import RowData from './RowData';
 import apiUrls from '../../constants/apiUrls';
 import useRerender from '../../hooks/useRerender';
-import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { Button, Form, Modal } from 'react-bootstrap';
 import StoreContext from '../../contexts/StoreContext';
@@ -187,7 +186,7 @@ const DashboardTable = () => {
             {rowData !== null
               ? rowData.map((item, index) => {
                   return (
-                    <React.Fragment key={index}>
+                    <Fragment key={index}>
                       {editContactId === item.id ? (
                         <EditableRow
                           data={item}
@@ -202,7 +201,7 @@ const DashboardTable = () => {
                           rerenderTable={rerenderTable}
                         />
                       )}
-                    </React.Fragment>
+                    </Fragment>
                   );
                 })
               : undefined}

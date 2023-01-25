@@ -3,6 +3,8 @@ import { FormEvent, useContext } from 'react';
 import StoreContext from '../../contexts/StoreContext';
 // import apiUrls from '../../constants/apiUrls';
 import { RowDataTicket } from './TicketsTable';
+import ModeEditTwoToneIcon from '@mui/icons-material/ModeEditTwoTone';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
 interface Props {
   ticketInfo: RowDataTicket;
@@ -32,10 +34,10 @@ const ReadOnlyTicketRow = ({
       <td>{ticketInfo.priority}</td>
       <td>
         <button className='edit-btn' onClick={() => setEditable(ticketInfo.id)}>
-          Edit
+          <ModeEditTwoToneIcon />
         </button>
         <button className='dlt-btn' onClick={deleteRow}>
-          Delete
+          <DeleteOutlineOutlinedIcon />
         </button>
       </td>
     </tr>

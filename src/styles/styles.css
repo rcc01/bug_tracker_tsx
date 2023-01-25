@@ -2,6 +2,15 @@
   font-family: Be Vietnam Pro, sans-serif;
 }
 
+.btn-div__tickets {
+  margin-top: 2rem;
+}
+
+.p--new-projects-tickets {
+  margin-top: 1rem;
+  font-family: Be Vietnam Pro, sans-serif;
+}
+
 /* LOGIN  */
 
 .login-container {
@@ -170,7 +179,6 @@ table th:first-child {
 thead {
   color: black;
   font-family: Be Vietnam Pro, sans-serif;
-
   text-align: center;
 }
 
@@ -232,11 +240,13 @@ table td {
 }
 
 .tickets-table {
-  margin-top: 4rem;
+  margin-top: 2rem;
+  width: 90% !important;
 }
 
 .edit-btn,
-.dlt-btn {
+.dlt-btn,
+.save-btn {
   margin: 5px;
   background: none;
 }
@@ -590,6 +600,7 @@ h2 {
     display: grid;
     width: 96%;
     border-radius: 2rem;
+    height: 100vh;
 
     background-color: #fcdede;
     background-image: radial-gradient(
@@ -946,6 +957,9 @@ h2 {
   .dimension-table {
     width: 103%;
   }
+  .tickets-table {
+    width: 96% !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -966,6 +980,9 @@ h2 {
   .table {
     width: 82% !important;
     margin: 1rem 40px !important;
+  }
+  .tickets-table {
+    width: 92% !important;
   }
 }
 
@@ -1074,11 +1091,17 @@ h2 {
   td:nth-of-type(5):before {
     content: 'Actions';
   }
+  .tickets-table {
+    width: 96% !important;
+  }
 }
 
 @media (max-width: 428px) {
   .instructions {
     font-size: 15px;
+  }
+  .cards {
+    margin-left: 5px;
   }
   .recent-employees {
     margin-left: -5px;
@@ -1087,15 +1110,15 @@ h2 {
     margin-top: 45rem;
   }
   .MainDash {
-    margin-left: 22rem;
+    margin-left: 2rem;
     margin-top: 18rem;
   }
   .parentContainer {
     width: 72%;
   }
   .right-side {
-    margin-left: -48%;
-    width: 34%;
+    margin-left: -88%;
+    width: 62%;
     margin-top: 75rem;
   }
   .bars {
@@ -1109,7 +1132,7 @@ h2 {
   }
   .sidebar {
     width: 55%;
-    margin-top: 10rem;
+    margin-top: 24rem;
   }
   .table {
     width: 60% !important;
@@ -1125,11 +1148,15 @@ h2 {
   }
   .dashboard-glass {
     height: 285vh;
-    width: auto;
+    width: 36rem;
+    margin-left: 9rem;
   }
   .dimension-table {
     margin-top: 2rem;
     width: 72%;
+  }
+  .tickets-table {
+    width: 73% !important;
   }
 }
 
@@ -1155,15 +1182,15 @@ h2 {
   }
   .parentContainer {
     width: 62%;
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
   .recent-employees {
-    margin-left: 19px;
+    margin-left: -6px;
   }
   .right-side {
-    margin-left: -46%;
-    width: 30%;
-    margin-top: 85rem;
+    margin-left: -90%;
+    width: 55%;
+    margin-top: 82rem;
   }
   .recent-projects {
     margin-left: 27px;
@@ -1173,5 +1200,22 @@ h2 {
   }
   .btn-div {
     margin-left: 27px;
+  }
+  .dimension-table {
+    margin-left: 2rem;
+    width: 60%;
+  }
+  .table {
+    width: 54% !important;
+    margin: 1rem 25px !important;
+  }
+  .btn-div__tickets {
+    margin-left: 2rem;
+  }
+  .p--new-projects-tickets {
+    margin-left: 2rem;
+  }
+  .tickets-table {
+    width: 60% !important;
   }
 }
