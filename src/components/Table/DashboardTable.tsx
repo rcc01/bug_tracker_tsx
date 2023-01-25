@@ -96,13 +96,14 @@ const DashboardTable = () => {
       >
         Recent Projects
       </h3>
-      <p className='p--new-projects'>Use the + button to add a new project!</p>
+
       <div className='btn-div'>
         <button className='icon-btn add-btn' onClick={handleShow}>
           <div className='add-icon'></div>
           <div className='btn-txt'>New Project</div>
         </button>
       </div>
+      <p className='p--new-projects'>Use the + button to add a new project!</p>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

@@ -465,12 +465,6 @@ label {
   margin-right: calc(1rem - 8px);
 }
 
-/* MainDash */
-
-/* MainDash - Cards */
-
-/* RIGHT SIDE */
-
 h2 {
   color: #3c3737;
   font-weight: bold !important;
@@ -496,17 +490,6 @@ h2 {
 }
 
 /* Tickets */
-
-.dashboard-glass-wider {
-  display: grid;
-  width: 96%;
-  border-radius: 2rem;
-  background-color: var(--glass);
-  overflow: scroll;
-  grid-template-columns: 12rem auto;
-  gap: 20px;
-  height: 110vh;
-}
 
 /* ticketsTable */
 
@@ -605,7 +588,6 @@ h2 {
   }
   .dashboard-glass {
     display: grid;
-    max-height: 1200px;
     width: 96%;
     border-radius: 2rem;
 
@@ -622,6 +604,27 @@ h2 {
     grid-template-columns: 1fr auto;
     margin: 2rem 1rem 2rem 0rem;
   }
+  .dashboard-glass-wider {
+    display: grid;
+    width: 96%;
+    border-radius: 2rem;
+    background-color: var(--glass);
+    overflow: scroll;
+    grid-template-columns: 12rem auto;
+    gap: 20px;
+    height: 100vh;
+    background-color: #fcdede;
+    background-image: radial-gradient(
+        at 86% 37%,
+        hsla(181, 79%, 74%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 59% 8%, hsla(237, 66%, 62%, 1) 0px, transparent 50%),
+      radial-gradient(at 41% 81%, hsla(18, 88%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 52% 27%, hsla(274, 87%, 67%, 1) 0px, transparent 50%),
+      radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
+    margin: 2rem 1rem 2rem 0rem;
+  }
   .MainDash {
     margin-left: 3rem;
   }
@@ -632,9 +635,9 @@ h2 {
     position: fixed;
     z-index: 9;
     background: #e0ffff;
-    width: 35%;
+    width: 22%;
     padding: 1rem;
-    height: 71%;
+    height: 74%;
     opacity: 0.9;
     border-radius: 0px 35px 35px 0px;
     padding-top: 5rem;
@@ -757,13 +760,13 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 170vh;
   }
   .dashboard-glass {
     display: grid;
-    max-height: 1200px;
+    height: 160vh;
     width: 96%;
     border-radius: 2rem;
-
     background-color: #fcdede;
     background-image: radial-gradient(
         at 86% 37%,
@@ -777,6 +780,27 @@ h2 {
     grid-template-columns: 1fr auto;
     margin: 2rem 1rem 2rem 0rem;
   }
+  .dashboard-glass-wider {
+    display: grid;
+    width: 96%;
+    border-radius: 2rem;
+    background-color: var(--glass);
+    overflow: scroll;
+    grid-template-columns: 12rem auto;
+    gap: 20px;
+    height: 100vh;
+    background-color: #fcdede;
+    background-image: radial-gradient(
+        at 86% 37%,
+        hsla(181, 79%, 74%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 59% 8%, hsla(237, 66%, 62%, 1) 0px, transparent 50%),
+      radial-gradient(at 41% 81%, hsla(18, 88%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 52% 27%, hsla(274, 87%, 67%, 1) 0px, transparent 50%),
+      radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
+    margin: 2rem 1rem 2rem 0rem;
+  }
   .MainDash {
     margin-left: 3rem;
   }
@@ -787,9 +811,9 @@ h2 {
     position: fixed;
     z-index: 9;
     background: #e0ffff;
-    width: 35%;
+    width: 22%;
     padding: 1rem;
-    height: 71%;
+    height: 75%;
     opacity: 0.9;
     border-radius: 0px 35px 35px 0px;
     padding-top: 5rem;
@@ -871,9 +895,7 @@ h2 {
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transition: transform 1s ease 0s;
-
     width: 145%;
-    margin-bottom: 15%;
     border: 1px solid rgba(255, 255, 255, 0.125);
     background-color: rgba(232, 13, 197, 0.1);
   }
@@ -909,6 +931,10 @@ h2 {
 }
 
 @media (max-width: 855px) {
+  .sidebar {
+    width: 30%;
+    height: 76%;
+  }
   .parentContainer {
     width: 60%;
   }
@@ -944,23 +970,25 @@ h2 {
 }
 
 @media (max-width: 600px) {
+  .sidebar {
+    width: 41%;
+  }
   .dashboard-div {
-    height: 184vh;
+    height: 246vh;
   }
   .dashboard-glass {
     display: flex;
     flex-basis: content;
-    max-height: 9962px;
-    height: 178vh;
+    height: 238vh;
   }
   .parentContainer {
     width: 89%;
   }
   .recent-projects {
-    margin-top: 41rem;
+    margin-top: 40rem;
   }
   .dimension-table {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   .table-responsive {
     width: 100%;
@@ -971,7 +999,7 @@ h2 {
   }
   .right-side {
     margin-left: -93%;
-    margin-top: 50rem;
+    margin-top: 56rem;
     width: 83%;
   }
   table {
@@ -1049,8 +1077,14 @@ h2 {
 }
 
 @media (max-width: 428px) {
+  .instructions {
+    font-size: 15px;
+  }
   .recent-employees {
     margin-left: -5px;
+  }
+  .recent-projects {
+    margin-top: 45rem;
   }
   .MainDash {
     margin-left: 22rem;
@@ -1062,7 +1096,7 @@ h2 {
   .right-side {
     margin-left: -48%;
     width: 34%;
-    margin-top: 67rem;
+    margin-top: 75rem;
   }
   .bars {
     display: flex;
@@ -1074,7 +1108,8 @@ h2 {
     margin-top: 1rem;
   }
   .sidebar {
-    width: 51%;
+    width: 55%;
+    margin-top: 10rem;
   }
   .table {
     width: 60% !important;
@@ -1086,9 +1121,10 @@ h2 {
   }
   .dashboard-div {
     background: none;
+    height: 216vh;
   }
   .dashboard-glass {
-    height: auto;
+    height: 285vh;
     width: auto;
   }
   .dimension-table {
@@ -1098,11 +1134,23 @@ h2 {
 }
 
 @media (max-width: 375px) {
+  .dashboard-div {
+    height: 216vh;
+  }
+  .dashboard-glass {
+    height: 308vh;
+  }
+  .instructions {
+    margin-left: 20px;
+    max-width: 350px;
+  }
   .sidebar {
-    margin-top: 25rem;
+    margin-top: 30rem;
+    height: 75%;
+    width: 60%;
   }
   .title {
-    margin-top: 8rem;
+    margin-top: 12rem !important;
     margin-left: 25px;
   }
   .parentContainer {
@@ -1115,6 +1163,7 @@ h2 {
   .right-side {
     margin-left: -46%;
     width: 30%;
+    margin-top: 85rem;
   }
   .recent-projects {
     margin-left: 27px;

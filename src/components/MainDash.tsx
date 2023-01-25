@@ -1,13 +1,13 @@
-import { CardsProps } from './Cards';
-import '../styles/styles.css';
-import DashboardTable from './Table/DashboardTable';
+// import { CardsProps } from './Cards';
+// import '../styles/styles.css';
 
 export interface MainDashProps {
-  title?: string;
-  cardsProps?: CardsProps;
-  children?: React.ReactNode;
+  title: string;
+  // cardsProps?: CardsProps;
+  children: React.ReactNode;
 }
 
+// MainDash as a reusable component
 const MainDash = ({ title, children }: MainDashProps) => {
   return (
     <div className='MainDash'>

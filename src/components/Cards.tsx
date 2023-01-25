@@ -7,9 +7,9 @@ import apiUrls from '../constants/apiUrls';
 import StoreContext from '../contexts/StoreContext';
 import useRerender from '../hooks/useRerender';
 
-export interface CardsProps {
-  children?: React.ReactNode;
-}
+// export interface CardsProps {
+//   children?: React.ReactNode;
+// }
 
 const priorities = ['Immediate', 'High', 'Medium', 'Low'];
 
@@ -125,6 +125,15 @@ const Cards = () => {
 
   return (
     <div className='cards'>
+      <p
+        className='instructions'
+        style={{ fontFamily: 'Be Vietnam Pro, sans-serif' }}
+      >
+        Go to Menu {'->'}
+        <span style={{ fontWeight: 'bold' }}> Tickets Section </span> to add a
+        new Ticket!
+      </p>
+
       {cards.map((card, id) => {
         // Grouping
         const groups = Object.entries(groupBy(rowDataTicket, card.groupBy));

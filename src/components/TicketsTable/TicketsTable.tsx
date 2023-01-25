@@ -160,7 +160,7 @@ const TicketsTable = () => {
               </Form.Select>
             </Form.Group>
 
-            <Form.Group className='mb-3'>
+            {/* <Form.Group className='mb-3'>
               <Form.Label>Project</Form.Label>
               <Form.Select
                 name='projectId'
@@ -176,10 +176,10 @@ const TicketsTable = () => {
                   );
                 })}
               </Form.Select>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className='mb-3'>
-              <Form.Label>Ticket Description...</Form.Label>
+              <Form.Label>Ticket Description</Form.Label>
               <Form.Control
                 type='text'
                 name='description'
