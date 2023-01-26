@@ -9,6 +9,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
 import StoreContext from '../contexts/StoreContext';
 import PermissionLevel from '../models/PermissionLevel';
+import { Container } from 'react-bootstrap';
 import '../styles/styles.css';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -158,7 +159,7 @@ const Login = () => {
     });
   };
   return (
-    <div className='login-container'>
+    <Container className='login-container' fluid>
       <form className={classes.container} noValidate autoComplete='off'>
         <Card className={classes.card}>
           <CardHeader className={classes.header} title='Bug Tracker App' />
@@ -215,7 +216,7 @@ const Login = () => {
           </CardActions>
         </Card>
       </form>
-    </div>
+    </Container>
   );
 };
 

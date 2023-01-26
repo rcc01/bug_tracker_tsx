@@ -20,7 +20,7 @@
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  /* height: 100vh; */
 }
 .employee {
   margin-left: -10px;
@@ -761,6 +761,17 @@ h2 {
 }
 
 @media (max-width: 1200px) {
+  .login-container {
+    height: 100vh;
+  }
+
+  .makeStyles-container-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    top: -5rem;
+    position: relative;
+  }
   .dashboard-div {
     background: linear-gradient(
       106.37deg,
@@ -929,7 +940,6 @@ h2 {
     width: 124%;
     margin-top: 45px;
   }
-
   .dimension-ticket-table:hover {
     transform: rotate3d(0, 0, 0, 0deg) rotate(0deg);
   }
@@ -1097,6 +1107,10 @@ h2 {
 }
 
 @media (max-width: 428px) {
+  .login-container {
+    height: 100vh;
+  }
+
   .instructions {
     font-size: 15px;
   }
