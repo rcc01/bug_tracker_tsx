@@ -793,6 +793,11 @@ h2 {
 }
 
 @media (max-width: 1200px) {
+  .employees-container {
+    margin-top: 2rem !important;
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
   .mb-2 {
     margin-bottom: 0.5rem !important;
     max-height: 12rem !important;
@@ -884,7 +889,7 @@ h2 {
     margin-left: 3rem;
   }
   .dashboard-glass-wider > .MainDash {
-    width: 365%;
+    width: 555%;
   }
   .sidebar {
     position: fixed;
@@ -921,10 +926,10 @@ h2 {
   .right-side {
     display: flex;
     flex-direction: column;
-    width: 115%;
+    width: 33%;
     justify-content: flex-start;
-    margin-left: -36%;
-    margin-top: 20rem;
+    margin-left: 57%;
+    margin-top: -81%;
   }
   .updates {
     margin-top: 1rem;
@@ -944,10 +949,8 @@ h2 {
     margin-top: 20px;
   }
   .parentContainer {
-    /* ? useful? the one below? */
-    /* max-width: 55%; */
     height: 8rem;
-    width: 65%;
+    width: 45%;
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
   .CompactCard {
@@ -975,7 +978,7 @@ h2 {
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transition: transform 1s ease 0s;
-    width: 130%;
+    width: 90%;
     border: 1px solid rgba(255, 255, 255, 0.125);
     background-color: rgba(232, 13, 197, 0.1);
     margin-bottom: 3rem;

@@ -123,7 +123,7 @@ const EmployeesTable = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <Container>
+    <Container className='employees-container'>
       <div className='btn-div'>
         <button className='icon-btn add-btn' onClick={handleShow}>
           <div className='add-icon'></div>
