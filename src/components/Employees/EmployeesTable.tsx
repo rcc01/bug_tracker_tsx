@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/esm/Form';
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import '../../styles/styles.css';
 // import axios from 'axios'; // NOTE: Only uncomment when using API.
@@ -21,7 +21,6 @@ export interface RowDataEmployee {
 }
 
 const EmployeesTable = () => {
-  // import Singlenton here to make it work!!!!
   const { singletonDataStore } = useContext(StoreContext);
   // for post
   const [dataEmployee, setDataEmployee] = useState({
@@ -55,7 +54,7 @@ const EmployeesTable = () => {
     });
   };
 
-  // handle Save - Add new Employee from Modal
+  // handle Save - Add new Employee
   const handleSaveSubmit = async (e: any) => {
     e.preventDefault();
     // console.log(dataEmployee);
@@ -125,15 +124,13 @@ const EmployeesTable = () => {
 
   return (
     <Container>
-      <div className='btn-div employee'>
-        <Button
-          className='add-employee-btn btn btn-primary'
-          variant='primary'
-          onClick={handleShow}
-        >
-          New Employee
-        </Button>
+      <div className='btn-div'>
+        <button className='icon-btn add-btn' onClick={handleShow}>
+          <div className='add-icon'></div>
+          <div className='btn-txt'>New Employee</div>
+        </button>
       </div>
+      <p className='p--new-projects'>Use the + button to add a new employee!</p>
 
       {/* Add new Employee Modal */}
       <Modal show={show} onHide={handleClose}>
@@ -142,7 +139,6 @@ const EmployeesTable = () => {
         </Modal.Header>
 
         <Modal.Body>
-          {/* Form within modal body, apply submit below? */}
           <Form>
             <Form.Group className='mb-3'>
               <Form.Label>Employee ID</Form.Label>
@@ -154,9 +150,6 @@ const EmployeesTable = () => {
                 onChange={handleChange}
                 required
               />
-              <Form.Text className='text-muted'>
-                Never share your ID with anyone else.
-              </Form.Text>
             </Form.Group>
 
             <Form.Group className='mb-3'>
@@ -200,23 +193,11 @@ const EmployeesTable = () => {
                 required
               >
                 <option value=''>Designation...</option>
-                <option value='Software Developer'>Software Developer</option>
-                <option value='DevOp'>DevOp</option>
+
+                <option value='DevOp'>DevOps</option>
                 <option value='Back-End Dev'>Back-End Dev</option>
                 <option value='Front-End Dev'>Front-End Dev</option>
               </Form.Select>
-            </Form.Group>
-
-            <Form.Group className='mb-3'>
-              <Form.Label>Hire Date</Form.Label>
-              <Form.Control
-                type='date'
-                name='hireDate'
-                placeholder='Hire Date'
-                value={dataEmployee.hireDate}
-                onChange={handleChange}
-                required
-              />
             </Form.Group>
 
             <Form.Group className='mb-3'>
@@ -229,9 +210,9 @@ const EmployeesTable = () => {
                 required
               >
                 <option value=''>Manager...</option>
+                <option value='Maribel Lopez'>Maribel Lopez</option>
                 <option value='Stephen Bell'>Stephen Bell</option>
                 <option value='Jordan Goodwin'>Jordan Goodwin</option>
-                <option value='Maribel Lopez'>Maribel Lopez</option>
               </Form.Select>
             </Form.Group>
           </Form>

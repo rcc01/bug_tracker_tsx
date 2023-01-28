@@ -11,6 +11,21 @@
   font-family: Be Vietnam Pro, sans-serif;
 }
 
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
 /* LOGIN  */
 
 .login-container {
@@ -20,7 +35,7 @@
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  /* height: 100vh; */
+  height: 155vh;
 }
 .employee {
   margin-left: -10px;
@@ -237,11 +252,6 @@ table th,
 table td {
   border: 2px solid #ddd;
   padding: 8px;
-}
-
-.tickets-table {
-  margin-top: 2rem;
-  width: 90% !important;
 }
 
 .edit-btn,
@@ -550,7 +560,6 @@ h2 {
 .demo-app {
   /* display: flex; */
   min-height: 100%;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
   width: 110%;
   margin: 3rem;
@@ -568,11 +577,6 @@ h2 {
   padding: 1em 2em;
 }
 
-.demo-app-main {
-  flex-grow: 1;
-  padding: 1em;
-}
-
 .fc {
   /* the calendar root */
   max-width: 1100px;
@@ -582,9 +586,36 @@ h2 {
 
 /* MEDIA QUERIES  */
 
-/* pending min-width: 1200 */
-
 @media (min-width: 1201px) {
+  .mb-2 {
+    margin-bottom: 0.5rem !important;
+    max-height: 12rem !important;
+    min-height: 12rem !important;
+    font-family: Be Vietnam Pro, sans-serif !important;
+  }
+  .list-group-item {
+    min-height: 4rem !important;
+  }
+  .row {
+    width: 130vh !important;
+    margin-top: 2rem !important;
+  }
+  .col-4 {
+    width: 25% !important;
+  }
+  .card {
+    border-radius: 2rem !important;
+    max-height: 37em !important;
+    min-height: 37em !important;
+    background: aliceblue !important;
+  }
+  .card-img-top {
+    max-width: 15rem;
+    max-height: 17rem;
+    min-height: 17rem;
+    min-width: 10rem;
+    padding: 1rem;
+  }
   .dashboard-div {
     background: linear-gradient(
       106.37deg,
@@ -595,13 +626,13 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: fit-content;
   }
   .dashboard-glass {
     display: grid;
     width: 96%;
     border-radius: 2rem;
-    height: 100vh;
-
+    height: fit-content;
     background-color: #fcdede;
     background-image: radial-gradient(
         at 86% 37%,
@@ -654,6 +685,7 @@ h2 {
     padding-top: 5rem;
     transition: all 300ms ease;
     margin-top: 6rem;
+    max-height: 60%;
   }
   .menuItem:hover {
     cursor: pointer;
@@ -761,10 +793,35 @@ h2 {
 }
 
 @media (max-width: 1200px) {
-  .login-container {
-    height: 100vh;
+  .mb-2 {
+    margin-bottom: 0.5rem !important;
+    max-height: 12rem !important;
+    min-height: 12rem !important;
+    font-family: Be Vietnam Pro, sans-serif !important;
   }
-
+  .list-group-item {
+    min-height: 4rem !important;
+  }
+  .row {
+    width: 130vh !important;
+    margin-top: 2rem !important;
+  }
+  .col-4 {
+    width: 25% !important;
+  }
+  .card {
+    border-radius: 2rem !important;
+    max-height: 37em !important;
+    min-height: 37em !important;
+    background: aliceblue !important;
+  }
+  .card-img-top {
+    max-width: 15rem;
+    max-height: 17rem;
+    min-height: 17rem;
+    min-width: 10rem;
+    padding: 1rem;
+  }
   .makeStyles-container-1 {
     display: flex;
     flex-wrap: wrap;
@@ -782,11 +839,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 170vh;
+    height: fit-content;
   }
   .dashboard-glass {
     display: grid;
-    height: 160vh;
+    height: fit-content;
     width: 96%;
     border-radius: 2rem;
     background-color: #fcdede;
@@ -799,7 +856,7 @@ h2 {
       radial-gradient(at 41% 81%, hsla(18, 88%, 74%, 1) 0px, transparent 50%),
       radial-gradient(at 52% 27%, hsla(274, 87%, 67%, 1) 0px, transparent 50%),
       radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
-    grid-template-columns: 1fr auto;
+
     margin: 2rem 1rem 2rem 0rem;
   }
   .dashboard-glass-wider {
@@ -841,6 +898,7 @@ h2 {
     padding-top: 5rem;
     transition: all 300ms ease;
     margin-top: 6rem;
+    overflow: scroll;
   }
   .menuItem:hover {
     cursor: pointer;
@@ -865,8 +923,8 @@ h2 {
     flex-direction: column;
     width: 115%;
     justify-content: flex-start;
-    margin-left: -41%;
-    margin-top: 12rem;
+    margin-left: -36%;
+    margin-top: 20rem;
   }
   .updates {
     margin-top: 1rem;
@@ -917,9 +975,10 @@ h2 {
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transition: transform 1s ease 0s;
-    width: 145%;
+    width: 130%;
     border: 1px solid rgba(255, 255, 255, 0.125);
     background-color: rgba(232, 13, 197, 0.1);
+    margin-bottom: 3rem;
   }
   table {
     border-collapse: collapse;
@@ -945,34 +1004,68 @@ h2 {
   }
 }
 
+@media (max-width: 1080px) {
+  .col-4 {
+    width: 23% !important;
+  }
+  .login-container {
+    height: 100vh;
+    overflow: scroll;
+  }
+}
+
 @media (max-width: 1024px) {
   .dimension-table {
-    width: 127%;
+    width: 112%;
+  }
+  .table {
+    width: 95%;
+  }
+  .col-4 {
+    width: 22% !important;
   }
 }
 
 @media (max-width: 855px) {
+  .row {
+    width: 96vh !important;
+  }
+  .col-4 {
+    width: 33% !important;
+  }
   .sidebar {
     width: 30%;
     height: 76%;
   }
   .parentContainer {
-    width: 60%;
+    width: 55%;
   }
   .right-side {
-    margin-left: -117%;
+    margin-left: -135%;
     margin-top: 10rem;
     width: 125%;
   }
   .dimension-table {
-    width: 103%;
+    width: 100%;
   }
   .tickets-table {
     width: 96% !important;
   }
+  .table {
+    width: 90% !important;
+  }
 }
 
 @media (max-width: 768px) {
+  .dashboard-glass-wider > .MainDash {
+    width: 280%;
+  }
+  .row {
+    width: 85vh !important;
+  }
+  .col-4 {
+    width: 33.333% !important;
+  }
   .parentContainer {
     width: 48%;
   }
@@ -997,11 +1090,20 @@ h2 {
 }
 
 @media (max-width: 600px) {
+  .dashboard-glass-wider > .MainDash {
+    width: 268% !important;
+  }
+  .row {
+    width: 66vh !important;
+  }
+  .col-4 {
+    width: 49.333% !important;
+  }
   .sidebar {
     width: 41%;
   }
   .dashboard-div {
-    height: 246vh;
+    height: fit-content;
   }
   .dashboard-glass {
     display: flex;
@@ -1107,10 +1209,22 @@ h2 {
 }
 
 @media (max-width: 428px) {
+  .card-img-top {
+    padding: 0;
+  }
+  .col-4 {
+    width: 49.333% !important;
+  }
+  .row {
+    width: 58vh !important;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 210% !important;
+    margin-left: 2rem;
+  }
   .login-container {
     height: 100vh;
   }
-
   .instructions {
     font-size: 15px;
   }
@@ -1124,16 +1238,15 @@ h2 {
     margin-top: 45rem;
   }
   .MainDash {
-    margin-left: 2rem;
-    margin-top: 18rem;
+    margin-left: 4rem;
   }
   .parentContainer {
     width: 72%;
   }
   .right-side {
-    margin-left: -88%;
-    width: 62%;
-    margin-top: 75rem;
+    margin-left: -107%;
+    width: 75%;
+    margin-top: 57rem;
   }
   .bars {
     display: flex;
@@ -1146,65 +1259,78 @@ h2 {
   }
   .sidebar {
     width: 55%;
-    margin-top: 24rem;
+    margin-top: 6rem;
   }
   .table {
     width: 60% !important;
   }
-
   .menuItem:hover {
     cursor: pointer;
     background-color: lightpink;
   }
   .dashboard-div {
     background: none;
-    height: 216vh;
+    height: fit-content;
   }
   .dashboard-glass {
-    height: 285vh;
-    width: 36rem;
-    margin-left: 9rem;
+    height: 245vh;
+    width: 30rem;
+    margin: 0;
+  }
+  .dashboard-glass-wider {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
   }
   .dimension-table {
     margin-top: 2rem;
     width: 72%;
   }
   .tickets-table {
-    width: 73% !important;
+    width: 92% !important;
   }
 }
 
 @media (max-width: 375px) {
-  .dashboard-div {
-    height: 216vh;
+  .card-img-top {
+    max-width: 14rem;
+    min-width: 14rem;
   }
-  .dashboard-glass {
-    height: 308vh;
+  .row {
+    width: 60vh !important;
+  }
+  .col-4 {
+    width: 60.333% !important;
+    margin-left: 3.5rem !important;
+  }
+  .dashboard-glass-wider > .MainDash {
+    margin-left: 0;
+  }
+  .dashboard-div {
+    padding: 0;
   }
   .instructions {
     margin-left: 20px;
     max-width: 350px;
   }
   .sidebar {
-    margin-top: 30rem;
     height: 75%;
     width: 60%;
   }
   .title {
-    margin-top: 12rem !important;
     margin-left: 25px;
   }
   .parentContainer {
-    width: 62%;
+    width: 59%;
     margin-left: 1rem;
   }
   .recent-employees {
     margin-left: -6px;
   }
   .right-side {
-    margin-left: -90%;
-    width: 55%;
-    margin-top: 82rem;
+    margin-left: -112%;
+    width: 68%;
+    margin-top: 57rem;
   }
   .recent-projects {
     margin-left: 27px;
@@ -1217,7 +1343,7 @@ h2 {
   }
   .dimension-table {
     margin-left: 2rem;
-    width: 60%;
+    width: 58%;
   }
   .table {
     width: 54% !important;
@@ -1230,6 +1356,6 @@ h2 {
     margin-left: 2rem;
   }
   .tickets-table {
-    width: 60% !important;
+    width: 81% !important;
   }
 }

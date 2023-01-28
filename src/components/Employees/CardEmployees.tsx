@@ -145,7 +145,6 @@ const CardEmployees = ({ employee, rerenderTable, handleShow }: Props) => {
     <>
       <div className='col-4 mb-3'>
         <Card>
-          {/* Change ID to Empoyee Name, do I need to modify the API swaggers? */}
           <Card.Title className='text-center m-2'>{employee.id}</Card.Title>
           <img
             src={employee.imageUrl}
@@ -162,21 +161,29 @@ const CardEmployees = ({ employee, rerenderTable, handleShow }: Props) => {
                 <strong>Designation: </strong>
                 {employee.designation}
               </ListGroupItem>
-              <ListGroupItem>
+              {/* <ListGroupItem>
                 <strong>Hire Date: </strong>
                 {employee.hireDate}
-              </ListGroupItem>
+              </ListGroupItem> */}
               <ListGroupItem>
                 <strong>Reports to: </strong>
                 {employee.reportsTo}
               </ListGroupItem>
             </ListGroup>
-            <button className='btn btn-danger m-2' onClick={handleDelete}>
-              Delete
-            </button>
-            <Button className='btn btn-primary m-2' onClick={handleEditButton}>
-              Edit
-            </Button>
+            <div className='flex-container center'>
+              <button
+                className='btn btn-danger m-2 flex-item'
+                onClick={handleDelete}
+              >
+                Delete
+              </button>
+              <button
+                className='btn btn-primary m-2 flex-item'
+                onClick={handleEditButton}
+              >
+                Edit
+              </button>
+            </div>
           </Card.Body>
         </Card>
 
@@ -244,23 +251,10 @@ const CardEmployees = ({ employee, rerenderTable, handleShow }: Props) => {
                   required
                 >
                   <option value=''>Designation...</option>
-                  <option value='Software Developer'>Software Developer</option>
-                  <option value='DevOp'>DevOp</option>
+                  <option value='DevOp'>DevOps</option>
                   <option value='Back-End Dev'>Back-End Dev</option>
                   <option value='Front-End Dev'>Front-End Dev</option>
                 </Form.Select>
-              </Form.Group>
-
-              <Form.Group className='mb-3'>
-                <Form.Label>Hire Date</Form.Label>
-                <Form.Control
-                  type='date'
-                  name='hireDate'
-                  placeholder='Hire Date'
-                  value={dataModal.hireDate}
-                  onChange={handleChangeModal}
-                  required
-                />
               </Form.Group>
 
               <Form.Group className='mb-3'>
@@ -273,9 +267,9 @@ const CardEmployees = ({ employee, rerenderTable, handleShow }: Props) => {
                   required
                 >
                   <option value=''>Manager...</option>
+                  <option value='Maribel Lopez'>Maribel Lopez</option>
                   <option value='Stephen Bell'>Stephen Bell</option>
                   <option value='Jordan Goodwin'>Jordan Goodwin</option>
-                  <option value='Maribel Lopez'>Maribel Lopez</option>
                 </Form.Select>
               </Form.Group>
             </Form>

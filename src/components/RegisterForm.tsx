@@ -116,7 +116,16 @@ const RegisterForm = (e: any) => {
                 to='/login'
                 style={{ textDecoration: 'none', color: 'white' }}
               >
-                <p id='already-member'>I ALREADY HAVE AN ACCOUNT</p>
+                <p
+                  id='already-member'
+                  style={{
+                    fontFamily: 'Be Vietnam Pro',
+                    marginTop: '15px',
+                    textDecorationLine: 'underline',
+                  }}
+                >
+                  I ALREADY HAVE AN ACCOUNT
+                </p>
               </Link>
             </div>
           </Form>

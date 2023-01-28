@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap';
 const Tickets = () => {
   return (
     <Container className='dashboard-div' fluid>
-      <div className='dashboard-glass'>
+      <div className='dashboard-glass-wider'>
         <Sidebar />
         <MainDash title='Tickets' className='MainDash-tickets'>
           <TicketsTable />

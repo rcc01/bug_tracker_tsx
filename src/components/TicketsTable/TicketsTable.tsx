@@ -12,9 +12,6 @@ import ReadOnlyTicketRow from './ReadOnlyTicketRow';
 import Table from 'react-bootstrap/Table';
 import StoreContext from '../../contexts/StoreContext';
 
-// for a Modal to work, you need to use React Bootstrap, as this is a React-Typescript Project.
-// Normal  Bootstrap is for JS I guess?
-
 export interface RowDataTicket {
   id: string;
   projectId: string;

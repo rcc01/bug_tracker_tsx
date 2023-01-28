@@ -35,6 +35,7 @@ const CalendarTable = () => {
       clickInfo.event.remove();
     }
   }, []);
+
   return (
     <div className='demo-app'>
       <div className='demo-app-main'>
