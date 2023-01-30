@@ -120,11 +120,12 @@ const RegisterForm = (e: any) => {
                   id='already-member'
                   style={{
                     fontFamily: 'Be Vietnam Pro',
-                    marginTop: '15px',
+                    marginTop: '1.5rem',
                     textDecorationLine: 'underline',
+                    fontSize: '0.8rem',
                   }}
                 >
-                  I ALREADY HAVE AN ACCOUNT
+                  I already have an account!
                 </p>
               </Link>
             </div>
