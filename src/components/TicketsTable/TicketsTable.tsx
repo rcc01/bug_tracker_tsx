@@ -115,7 +115,7 @@ const TicketsTable = () => {
 
   return (
     <>
-      <div className='btn-div__tickets'>
+      <div className='btn-div tickets'>
         <button className='icon-btn add-btn' onClick={handleShow}>
           <div className='add-icon'></div>
           <div className='btn-txt'>New Ticket</div>

@@ -124,7 +124,7 @@ const EmployeesTable = () => {
 
   return (
     <Container className='employees-container'>
-      <div className='btn-div'>
+      <div className='btn-div tickets'>
         <button className='icon-btn add-btn' onClick={handleShow}>
           <div className='add-icon'></div>
           <div className='btn-txt'>New Employee</div>

@@ -2,8 +2,9 @@
   font-family: Be Vietnam Pro, sans-serif;
 }
 
-.btn-div__tickets {
+.btn-div {
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .p--new-projects-tickets {
@@ -444,19 +445,13 @@ h2 {
     margin-bottom: 20px;
     margin-right: 1rem;
   }
-  .table-responsive {
+  /* .table-responsive {
     max-width: 82%;
-    min-width: 446px;
-  }
-  .parentContainer {
+  } */
+  /* .parentContainer {
     max-width: 100%;
     width: 95%;
-  }
-
-  .dashboard-glass-wider > .MainDash {
-    margin-left: 1.2rem;
-    width: 236%;
-  }
+  } */
 
   .card {
     margin-bottom: 1rem;
@@ -736,10 +731,6 @@ h2 {
   .list-group-item {
     min-height: 4rem !important;
   }
-  .row {
-    margin-top: 2rem;
-  }
-
   .card {
     border-radius: 2rem !important;
     max-height: 37em !important;
@@ -810,9 +801,6 @@ h2 {
       radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
     margin: 2rem 1rem 2rem 0rem;
   }
-  .MainDash {
-    margin-left: 3rem;
-  }
   .dashboard-glass-wider > .MainDash {
     width: 555%;
   }
@@ -845,13 +833,15 @@ h2 {
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
     transform: translateY(4px);
   }
-  .right-side {
+  /* .right-side {
     display: flex;
     flex-direction: column;
-    width: 33%;
+    width: 30%;
     justify-content: flex-start;
     margin-left: 57%;
-  }
+    margin-top: -106%;
+  } */
+
   .updates {
     margin-top: 1rem;
     background-color: rgba(255, 255, 255, 0.15);
@@ -867,11 +857,11 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
   .parentContainer {
     height: 8rem;
-    width: 45%;
+    /* width: 45%; */
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
   .CompactCard {
@@ -888,18 +878,13 @@ h2 {
     font-weight: bold;
     font-size: 25px;
     margin-top: 7rem;
-    margin-bottom: 3rem;
-  }
-  .btn-div {
-    margin-bottom: 33px;
-    width: 32%;
   }
   .dimension-table {
     transform: perspective(1600px) rotateY(7deg);
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transition: transform 1s ease 0s;
-    width: 90%;
+
     border: 1px solid rgba(255, 255, 255, 0.125);
     background-color: rgba(232, 13, 197, 0.1);
   }
@@ -947,12 +932,10 @@ h2 {
     height: 31.5rem;
     border-radius: 25px 0px 0px 25px;
   }
-  .dashboard-glass-wider > .MainDash {
+  /* .dashboard-glass-wider > .MainDash {
     width: 475%;
-  }
-  .dimension-table {
-    width: 93%;
-  }
+  } */
+
   .table {
     width: 95%;
   }
@@ -986,18 +969,15 @@ h2 {
   .carousel-inner > .active {
     height: 21rem;
   }
-  .parentContainer {
-    width: 55%;
-  }
   .carousel-item > img {
     width: 100%;
   }
 
-  .tickets-table {
+  /* .tickets-table {
     width: 96% !important;
-  }
+  } */
   .table {
-    width: 90% !important;
+    width: 90%;
   }
 }
 
@@ -1020,36 +1000,13 @@ h2 {
     display: none;
   }
 
-  .dashboard-glass-wider > .MainDash {
-    width: 360%;
-  }
-  .row {
-    width: 85vh !important;
-  }
-  .col-4 {
-    width: 33.333% !important;
-  }
-  .parentContainer {
-    width: 48%;
-  }
-  .right-side {
-    margin-left: 56%;
-    margin-top: -120%;
-    width: 35%;
-  }
-  .dimension-table {
-    width: 92%;
-  }
-  .table-responsive {
-    width: 59%;
-  }
   .table {
-    width: 82% !important;
-    margin: 1rem 40px !important;
+    /* width: 82%; */
+    margin: 1rem 40px;
   }
-  .tickets-table {
+  /* .tickets-table {
     width: 92% !important;
-  }
+  } */
 }
 
 @media (max-width: 600px) {
@@ -1068,41 +1025,33 @@ h2 {
   .signup__form {
     border-radius: 25px 25px 25px 25px;
   }
-  .dashboard-glass-wider > .MainDash {
-    width: 268% !important;
-  }
-  .row {
-    width: 66vh !important;
-  }
-  .col-4 {
-    width: 49.333% !important;
-  }
+
   .sidebar {
     width: 41%;
   }
-  .dashboard-div {
+  /* .dashboard-div {
     height: fit-content;
-  }
+  } */
   .dashboard-glass {
     display: flex;
     flex-basis: content;
     height: 238vh;
   }
-  .parentContainer {
+  /* .parentContainer {
     width: 89%;
-  }
-  .recent-projects {
+  } */
+  /* .recent-projects {
     margin-top: 40rem;
-  }
+  } */
   .dimension-table {
     margin-top: 2rem;
   }
-  .table-responsive {
+  /* .table-responsive {
     width: 100%;
-  }
-  .table {
-    width: 84% !important;
-  }
+  } */
+  /* .table {
+    width: 84%;
+  } */
   .right-side {
     margin-left: -93%;
     margin-top: 56rem;
@@ -1179,9 +1128,9 @@ h2 {
   td:nth-of-type(5):before {
     content: 'Actions';
   }
-  .tickets-table {
+  /* .tickets-table {
     width: 96% !important;
-  }
+  } */
 }
 
 @media (max-width: 428px) {
@@ -1195,25 +1144,15 @@ h2 {
   .card-img-top {
     padding: 0;
   }
-  .col-4 {
-    width: 49.333% !important;
-  }
-  .row {
-    width: 58vh !important;
-  }
-  .dashboard-glass-wider > .MainDash {
-    width: 210% !important;
-    margin-left: 2rem;
-  }
   .login-container {
     height: 100vh;
   }
   .recent-employees {
     margin-left: -5px;
   }
-  .recent-projects {
+  /* .recent-projects {
     margin-top: 45rem;
-  }
+  } */
   .right-side {
     margin-top: 57rem;
   }
@@ -1226,33 +1165,30 @@ h2 {
     border-radius: 5px;
     margin-top: 1rem;
   }
-  .table {
-    width: 60% !important;
-  }
+  /* .table {
+    width: 60%;
+  } */
   .menuItem:hover {
     cursor: pointer;
     background-color: lightpink;
   }
-  .dashboard-div {
+  /* .dashboard-div {
     background: none;
     height: fit-content;
     padding: 0;
-  }
-  .dashboard-glass {
+  } */
+  /* .dashboard-glass {
     width: 30rem;
     margin: 0;
-  }
+  } */
   .dashboard-glass-wider {
     width: 100%;
     margin: 0;
     border-radius: 0;
   }
-  .dimension-table {
-    margin-top: 2rem;
-  }
-  .tickets-table {
+  /* .tickets-table {
     width: 92% !important;
-  }
+  } */
 }
 
 @media (max-width: 375px) {
@@ -1265,68 +1201,56 @@ h2 {
     height: 0%;
   }
 
-  .col-4 {
+  /* .col-4 {
     width: 60.333% !important;
     margin-left: 3.5rem !important;
-  }
-  .dashboard-glass-wider > .MainDash {
-    margin-left: 0;
-  }
-  .dashboard-div {
-    padding: 0;
-  }
+  } */
   .instructions {
-    margin-left: 20px;
-    max-width: 350px;
+    max-width: 20rem;
+    margin-bottom: 0;
   }
-  .title {
-    margin-left: 25px;
-  }
-  .parentContainer {
-    width: 59%;
+  /* .parentContainer {
     margin-left: 1rem;
-  }
+  } */
 
-  .right-side {
+  /* .right-side {
     margin-left: -112%;
     width: 68%;
-    margin-top: 57rem;
-  }
-  .recent-projects {
-    margin-left: 27px;
-  }
-  .p--new-projects {
-    margin-left: 27px;
-  }
-  .btn-div {
-    margin-left: 27px;
-  }
-  .dimension-table {
-    margin-left: 2rem;
-    width: 58%;
-  }
+  } */
   .table {
-    width: 54% !important;
-    margin: 1rem 25px !important;
+    width: 54%;
+    margin: 1rem 25px;
   }
   .btn-div__tickets {
     margin-left: 2rem;
   }
-  .p--new-projects-tickets {
+  /* .p--new-projects-tickets {
     margin-left: 2rem;
-  }
-  .tickets-table {
+  } */
+  /* .tickets-table {
     width: 81% !important;
-  }
+  } */
 }
 
 /* IPHONE SE 2nd GEN */
 @media only screen and (device-width: 375px) and (device-height: 667px) and (orientation: portrait) {
+  .dashboard-glass-wider > .MainDash {
+    margin-left: 1.5rem;
+  }
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 183%;
+  }
+  .parentContainer {
+    width: 97%;
+  }
   .row {
-    width: 75vh !important;
+    width: 65vh !important;
   }
   .card-img-top {
-    padding: 1rem;
+    padding: 2rem;
     max-width: 14rem;
     min-width: 14rem;
   }
@@ -1339,40 +1263,229 @@ h2 {
   }
   .dashboard-glass {
     height: 300vh;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
   }
   .sidebar {
-    height: 77%;
+    height: 78%;
     width: 55%;
     margin-top: 5rem;
   }
   .recent-employees {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     margin-bottom: 3rem;
   }
   .recent-projects {
-    margin-left: 2rem;
     margin-top: 45rem;
+  }
+  .right-side {
+    margin-left: -87%;
+    width: 85%;
+  }
+  .btn-div {
+    margin-bottom: 1rem;
+    width: 32%;
+    margin-top: 2rem;
+  }
+  .dimension-table {
+    margin-top: 3rem;
+    width: 96%;
+  }
+  .table-responsive {
+    overflow-x: none;
+    max-width: 95%;
+  }
+  .table {
+    width: 100%;
+  }
+  .col-4 {
+    width: 63.333% !important;
+    margin-left: 2.5rem !important;
   }
 }
 @media only screen and (device-width: 667px) and (device-height: 375px) and (orientation: landscape) {
+  .dashboard-glass-wider {
+    width: 100%;
+    margin: 0;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 330%;
+  }
+  p {
+    margin: 0;
+  }
+  .right-side {
+    margin-left: 58%;
+    margin-top: -124%;
+    width: 35%;
+    position: absolute;
+    top: 66rem;
+  }
   .dashboard-div {
-    width: 115%;
+    overflow: clip;
+    width: 102%;
+    padding: 0;
+  }
+  .dashboard-glass {
+    width: 100%;
+    margin: 0;
   }
   .sidebar {
-    margin-top: 3rem;
+    margin-top: 5rem;
     overflow: scroll;
     width: 35%;
   }
+  .MainDash {
+    margin-top: 1rem;
+    margin-left: 2rem;
+  }
+  .parentContainer {
+    width: 50%;
+  }
+  .dimension-table {
+    width: 94%;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
+  .table-responsive {
+    width: 100%;
+  }
+  .table {
+    width: 90% !important;
+  }
+  .row {
+    width: 173vh;
+  }
 }
+
+/* IPHONE 12/13 MINI */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (orientation: portrait) {
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .dashboard-div {
+    overflow: clip;
+    padding: 0 !important;
+  }
+  .dashboard-glass {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+  .sidebar {
+    margin-top: 6rem;
+    width: 57%;
+    height: 71%;
+  }
+  .parentContainer {
+    width: 100%;
+    margin-left: 0;
+  }
+  .right-side {
+    margin-left: -85%;
+    width: 80%;
+  }
+  .recent-projects {
+    margin-top: 43rem;
+  }
+  .dimension-table {
+    margin-left: 0;
+    width: 100%;
+  }
+  .tickets-table {
+    width: 30%;
+  }
+  .table-responsive {
+    overflow-x: none;
+  }
+  .table {
+    width: 85%;
+  }
+  .row {
+    width: 23rem;
+    margin-top: 2rem;
+  }
+  .col-4 {
+    width: 75.333% !important;
+    margin-left: 3rem;
+  }
+}
+@media only screen and (device-width: 812px) and (device-height: 375px) and (orientation: landscape) {
+  .dashboard-div {
+    padding: 0 !important;
+  }
+  .dashboard-glass {
+    width: 100%;
+    margin: 0;
+  }
+  .dashboard-glass-wider {
+    width: 100%;
+    margin: 0;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 398%;
+  }
+  .p--new-projects-tickets {
+    margin-bottom: 1rem;
+  }
+  .MainDash {
+    margin-left: 3rem;
+  }
+  .parentContainer {
+    width: 25rem;
+  }
+  .register-page-cover {
+    height: 170vh;
+  }
+  .signup__container {
+    top: 80%;
+  }
+  .sidebar {
+    overflow: scroll;
+    margin-top: 5rem;
+    width: 13rem;
+  }
+  .right-side {
+    margin-top: -65rem;
+    position: absolute;
+    top: 81rem;
+    left: 31rem;
+    width: 17rem;
+  }
+  .row {
+    width: 198vh;
+    margin-top: 2rem;
+  }
+  .col-4 {
+    width: 33.3% !important;
+  }
+  .dimension-table {
+    margin-bottom: 4rem;
+    width: 97%;
+  }
+}
+
+/* IPHONE 12/12 + PRO */
+
+/* START HERE */
 
 /* IPHONE 12/13 PRO MAX */
 
 @media only screen and (device-width: 428px) and (device-height: 926px) and (orientation: portrait) {
+  .dashboard-glass-wider > .MainDash {
+    width: 213%;
+    margin-left: 2rem;
+  }
   .dashboard-div {
     overflow: clip;
+    padding: 0 !important;
   }
   .dashboard-glass {
     height: 218vh;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
   }
   .dashboard-glass-wider {
     padding: 0;
@@ -1382,7 +1495,7 @@ h2 {
   }
   .right-side {
     width: 69%;
-    margin-left: -79%;
+    margin-left: -86%;
   }
   .instructions {
     font-size: 1rem;
@@ -1390,22 +1503,39 @@ h2 {
   }
   .MainDash {
     width: 24rem;
-    margin-left: 4.5rem;
+    margin-left: 2rem;
   }
   .dimension-table {
-    width: 91%;
+    width: 94%;
   }
   .table-responsive {
-    min-width: 493px;
+    min-width: 22rem;
   }
   .sidebar {
     margin-top: 6rem;
     width: 14rem;
     height: 66%;
   }
+  .row {
+    width: 44vh;
+  }
+  .col-4 {
+    width: 49.333% !important;
+  }
+  .recent-projects {
+    margin-top: 45rem;
+  }
+  .table {
+    width: 83%;
+  }
 }
-
 @media only screen and (device-width: 926px) and (device-height: 428px) and (orientation: landscape) {
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 435%;
+  }
   .register-page-cover {
     height: 150vh;
   }
@@ -1420,42 +1550,17 @@ h2 {
     height: 77%;
   }
   .right-side {
-    margin-top: -106%;
+    width: 30%;
+    margin-left: 57%;
+    position: absolute;
+    top: 18.5rem;
   }
-}
-
-/* IPHONE 12/13 MINI */
-
-@media only screen and (device-width: 375px) and (device-height: 812px) and (orientation: portrait) {
-  .dashboard-div {
-    overflow: clip;
-  }
-  .sidebar {
-    margin-top: 6rem;
-    width: 57%;
-    height: 71%;
-  }
-}
-
-@media only screen and (device-width: 812px) and (device-height: 375px) and (orientation: landscape) {
-  .register-page-cover {
-    height: 170vh;
-  }
-  .signup__container {
-    top: 80%;
-  }
-  .sidebar {
-    overflow: scroll;
-    margin-top: 3rem;
-  }
-  .right-side {
-    margin-top: -65rem;
+  .dimension-table {
+    width: 93%;
+    margin-bottom: 3rem;
   }
   .row {
-    width: 198vh;
-  }
-  .col-4 {
-    width: 33%;
+    width: 53rem;
   }
 }
 
@@ -1546,10 +1651,10 @@ h2 {
 }
 
 /* KINDLE FIRE HDX */
-
 @media only screen and (device-width: 800px) and (device-height: 1280px) and (orientation: portrait) {
   .dashboard-div {
     overflow: clip;
+    height: 100vh;
   }
   .dashboard-glass {
     height: fit-content;
@@ -1566,7 +1671,8 @@ h2 {
   .right-side {
     position: absolute;
     top: 17.5rem;
-    left: 2rem;
+    /* ? este de abajo me esta jodiendo */
+    left: 30rem;
     max-height: 40rem;
     width: 30%;
   }
@@ -1575,11 +1681,13 @@ h2 {
     height: 47%;
     margin-top: 5rem;
   }
+  .MainDash {
+    margin-left: 2rem;
+  }
   .dashboard-glass-wider > .MainDash {
     width: 362%;
   }
 }
-
 @media only screen and (device-width: 1280px) and (device-height: 800px) and (orientation: landscape) {
   .right-side {
     width: 75%;
