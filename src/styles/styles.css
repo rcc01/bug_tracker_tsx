@@ -1029,34 +1029,6 @@ h2 {
   .sidebar {
     width: 41%;
   }
-  /* .dashboard-div {
-    height: fit-content;
-  } */
-  .dashboard-glass {
-    display: flex;
-    flex-basis: content;
-    height: 238vh;
-  }
-  /* .parentContainer {
-    width: 89%;
-  } */
-  /* .recent-projects {
-    margin-top: 40rem;
-  } */
-  .dimension-table {
-    margin-top: 2rem;
-  }
-  /* .table-responsive {
-    width: 100%;
-  } */
-  /* .table {
-    width: 84%;
-  } */
-  .right-side {
-    margin-left: -93%;
-    margin-top: 56rem;
-    width: 83%;
-  }
   table {
     border-collapse: collapse;
     border: 1px solid #cdcdcd;
@@ -1153,9 +1125,6 @@ h2 {
   /* .recent-projects {
     margin-top: 45rem;
   } */
-  .right-side {
-    margin-top: 57rem;
-  }
   .bars {
     display: flex;
     position: fixed;
@@ -1466,12 +1435,7 @@ h2 {
   }
 }
 
-/* IPHONE 12/12 + PRO */
-
-/* START HERE */
-
-/* IPHONE 12/13 PRO MAX */
-
+/* IPHONE 12/13  PRO MAX */
 @media only screen and (device-width: 428px) and (device-height: 926px) and (orientation: portrait) {
   .dashboard-glass-wider > .MainDash {
     width: 213%;
@@ -1564,21 +1528,31 @@ h2 {
   }
 }
 
-/* IPHONE 12/13 PRO */
+/* IPHONE 12/13 + PRO */
 
 @media only screen and (device-width: 390px) and (device-height: 844px) and (orientation: portrait) {
   .dashboard-div {
     overflow: clip;
+    padding: 0 !important;
   }
   .dashboard-glass {
-    height: 238vh;
+    height: 225vh;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 23rem;
+    overflow-x: clip;
   }
   .parentContainer {
     width: 89%;
   }
   .right-side {
-    width: 69%;
-    margin-left: -79%;
+    width: 84%;
+    position: absolute;
+    top: 55rem;
+    left: 2rem;
   }
   .instructions {
     font-size: 1rem;
@@ -1586,40 +1560,175 @@ h2 {
   }
   .MainDash {
     width: 24rem;
-    margin-left: 4.5rem;
+    margin-left: 2rem;
   }
   .dimension-table {
-    width: 91%;
+    width: 89%;
   }
   .table-responsive {
-    min-width: 493px;
+    min-width: 22rem;
   }
   .sidebar {
     margin-top: 5rem;
     width: 14rem;
   }
+  .recent-projects {
+    margin-top: 42rem;
+  }
+  .table {
+    width: 77%;
+  }
+  .row {
+    width: 24.5rem;
+  }
+  .col-4 {
+    width: 48.333% !important;
+  }
 }
-
 @media only screen and (device-width: 844px) and (device-height: 390px) and (orientation: landscape) {
+  .dashboard-div {
+    padding: 0 !important;
+  }
+  .dashboard-glass {
+    width: 100%;
+    margin: 0;
+  }
+  .dashboard-glass-wider {
+    width: 100%;
+    margin: 0;
+  }
+  .MainDash {
+    margin-left: 3rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 414%;
+  }
   .register-page-cover {
-    height: 170vh;
+    height: 150vh;
   }
   .signup__container {
-    top: 89%;
-    width: 80%;
+    top: 73%;
+    width: 75%;
+  }
+  .parentContainer {
+    width: 50%;
   }
   .sidebar {
+    margin-top: 5rem;
     overflow: scroll;
-    margin-top: 3rem;
+    width: 25%;
+    height: 77%;
   }
   .right-side {
-    margin-top: -122%;
+    width: 30%;
+    margin-left: 63%;
+    position: absolute;
+    top: 17.5rem;
+  }
+  .dimension-table {
+    width: 93%;
+    margin-bottom: 3rem;
+  }
+  .row {
+    width: 50rem;
   }
 }
 
-/*  */
-
+/* IPHONE 11 PRO MAX */
+@media only screen and (max-device-width: 414px) and (max-device-height: 896px) and (orientation: portrait) {
+  .dashboard-div {
+    padding: 0 !important;
+    overflow: clip;
+  }
+  .dashboard-glass {
+    width: 100%;
+    margin: 0;
+  }
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .parentContainer {
+    width: 93%;
+  }
+  .right-side {
+    width: 84%;
+    position: absolute;
+    top: 55rem;
+    left: 2rem;
+  }
+  .sidebar {
+    margin-top: 5rem;
+    width: 14rem;
+  }
+  .recent-projects {
+    margin-top: 40rem;
+  }
+  .dimension-table {
+    position: relative;
+    width: 22rem;
+    margin-bottom: 4rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 24rem;
+  }
+  .row {
+    width: 25rem;
+  }
+  .col-4 {
+    width: 49.333% !important;
+  }
+}
 @media only screen and (max-device-width: 896px) and (max-device-height: 414px) and (orientation: landscape) {
+  .dashboard-div {
+    padding: 0 !important;
+  }
+  .dashboard-glass {
+    width: 100%;
+    margin: 0;
+  }
+  .dashboard-glass-wider {
+    width: 100%;
+    margin: 0;
+  }
+  .MainDash {
+    margin-left: 3rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 414%;
+  }
+  .register-page-cover {
+    height: 150vh;
+  }
+  .signup__container {
+    top: 73%;
+    width: 75%;
+  }
+  .parentContainer {
+    width: 50%;
+  }
+  .sidebar {
+    margin-top: 5rem;
+    overflow: scroll;
+    width: 25%;
+    height: 77%;
+  }
+  .right-side {
+    width: 30%;
+    margin-left: 63%;
+    position: absolute;
+    top: 17.5rem;
+  }
+  .dimension-table {
+    width: 93%;
+    margin-bottom: 3rem;
+  }
+  .row {
+    width: 54rem;
+  }
+  .col-4 {
+    width: 24.333% !important;
+  }
+
   .register-page-cover {
     height: 170vh;
   }
@@ -1628,6 +1737,10 @@ h2 {
     width: 80%;
   }
 }
+
+/* IPHONE 11 PRO */
+
+/*  */
 
 /* SAMSUNG S20 ULTRA GALAXY ANDROID 11 */
 @media only screen and (device-width: 915px) and (device-height: 412px) and (orientation: landscape) {
@@ -1654,7 +1767,7 @@ h2 {
 @media only screen and (device-width: 800px) and (device-height: 1280px) and (orientation: portrait) {
   .dashboard-div {
     overflow: clip;
-    height: 100vh;
+    height: fit-content;
   }
   .dashboard-glass {
     height: fit-content;
@@ -1670,8 +1783,7 @@ h2 {
   }
   .right-side {
     position: absolute;
-    top: 17.5rem;
-    /* ? este de abajo me esta jodiendo */
+    top: 16.5rem;
     left: 30rem;
     max-height: 40rem;
     width: 30%;
@@ -1686,6 +1798,9 @@ h2 {
   }
   .dashboard-glass-wider > .MainDash {
     width: 362%;
+  }
+  .parentContainer {
+    width: 50%;
   }
 }
 @media only screen and (device-width: 1280px) and (device-height: 800px) and (orientation: landscape) {
