@@ -22,9 +22,11 @@ const Sidebar = () => {
     <>
       <div
         className='bars'
-        style={
-          expanded ? { top: '1.45%', left: '5%' } : { top: '1.45%', left: '5%' }
-        }
+        style={{
+          top: '1.45%',
+          left: '5%',
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        }}
         onClick={() => setExpanded(!expanded)}
       >
         <MenuIcon />
@@ -50,7 +52,6 @@ const Sidebar = () => {
           </span>
         </div>
 
-        {/* menu */}
         <div className='menu'>
           {SidebarData.map((item, index) => {
             return (

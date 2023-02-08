@@ -120,7 +120,12 @@ const Cards = () => {
   }, [renderState]);
 
   if (rowDataTicket === null) {
-    return <>hola - take it from bootstrap</>; // TODO: This can be a loader instead, the point is that we do not have data so we cannot render anything.
+    return (
+      <div className='spinner-border' role='status'>
+        <span className='sr-only'>Loading...</span>
+      </div>
+    );
+    // TODO: This can be a loader instead, the point is that we do not have data so we cannot render anything.
   }
 
   return (

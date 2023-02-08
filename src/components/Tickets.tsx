@@ -9,7 +9,7 @@ const Tickets = () => {
     <Container className='dashboard-div' fluid>
       <div className='dashboard-glass-wider'>
         <Sidebar />
-        <MainDash title='Tickets' className='MainDash-tickets'>
+        <MainDash title='Tickets'>
           <TicketsTable />
         </MainDash>
       </div>

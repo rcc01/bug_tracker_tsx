@@ -5,13 +5,12 @@ export interface MainDashProps {
   title: string;
   // cardsProps?: CardsProps;
   children: React.ReactNode;
-  className?: string;
 }
 
 // MainDash as a reusable component
-const MainDash = ({ title, children, className }: MainDashProps) => {
+const MainDash = ({ title, children }: MainDashProps) => {
   return (
-    <div className='MainDash '>
+    <div className='MainDash'>
       <h1
         className='title'
         style={{
