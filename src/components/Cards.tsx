@@ -12,9 +12,7 @@ import useRerender from '../hooks/useRerender';
 // }
 
 const priorities = ['Immediate', 'High', 'Medium', 'Low'];
-
 const types = ['Issue', 'Bug', 'Feature'];
-
 const statuses = ['New', 'In Progress', 'Resolved'];
 
 const groupBy = <T, K extends keyof any>(arr: T[], key: (i: T) => K) =>

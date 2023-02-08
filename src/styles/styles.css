@@ -28,6 +28,27 @@
   grid-template-columns: 1fr auto;
   margin: 2rem 1rem 2rem 0rem;
 }
+.dashboard-glass-wider {
+  display: grid;
+  width: 96%;
+  border-radius: 2rem;
+  background-color: var(--glass);
+  overflow: scroll;
+  grid-template-columns: 12rem auto;
+  gap: 20px;
+  height: 100vh;
+  background-color: #fcdede;
+  background-image: radial-gradient(
+      at 86% 37%,
+      hsla(181, 79%, 74%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 59% 8%, hsla(237, 66%, 62%, 1) 0px, transparent 50%),
+    radial-gradient(at 41% 81%, hsla(18, 88%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 27%, hsla(274, 87%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
+  margin: 2rem 1rem 2rem 0rem;
+}
 
 .CompactCard {
   display: flex;
@@ -55,6 +76,17 @@
   font-size: 14px;
   box-shadow: rgb(233, 225, 213) 0px 10px 20px;
   border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.dimension-table {
+  transform: perspective(1600px) rotateY(7deg);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  transition: transform 1s ease 0s;
+  width: 133%;
+  margin-bottom: 15%;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  background-color: rgba(232, 13, 197, 0.1);
 }
 
 /*  */
@@ -607,27 +639,6 @@ h2 {
     padding: 1rem;
   }
 
-  .dashboard-glass-wider {
-    display: grid;
-    width: 96%;
-    border-radius: 2rem;
-    background-color: var(--glass);
-    overflow: scroll;
-    grid-template-columns: 12rem auto;
-    gap: 20px;
-    height: 100vh;
-    background-color: #fcdede;
-    background-image: radial-gradient(
-        at 86% 37%,
-        hsla(181, 79%, 74%, 1) 0px,
-        transparent 50%
-      ),
-      radial-gradient(at 59% 8%, hsla(237, 66%, 62%, 1) 0px, transparent 50%),
-      radial-gradient(at 41% 81%, hsla(18, 88%, 74%, 1) 0px, transparent 50%),
-      radial-gradient(at 52% 27%, hsla(274, 87%, 67%, 1) 0px, transparent 50%),
-      radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
-    margin: 2rem 1rem 2rem 0rem;
-  }
   .MainDash {
     margin-left: 3rem;
   }
@@ -661,16 +672,7 @@ h2 {
     margin-bottom: 33px;
     width: 32%;
   }
-  .dimension-table {
-    transform: perspective(1600px) rotateY(7deg);
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    transition: transform 1s ease 0s;
-    width: 133%;
-    margin-bottom: 15%;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    background-color: rgba(232, 13, 197, 0.1);
-  }
+
   table {
     border-collapse: collapse;
     max-width: 900px;
@@ -746,29 +748,6 @@ h2 {
     top: -5rem;
     position: relative;
   }
-
-  .dashboard-glass-wider {
-    display: grid;
-    width: 96%;
-    border-radius: 2rem;
-    background-color: var(--glass);
-    overflow: scroll;
-    grid-template-columns: 12rem auto;
-    gap: 20px;
-    height: 100vh;
-    background-color: #fcdede;
-    background-image: radial-gradient(
-        at 86% 37%,
-        hsla(181, 79%, 74%, 1) 0px,
-        transparent 50%
-      ),
-      radial-gradient(at 59% 8%, hsla(237, 66%, 62%, 1) 0px, transparent 50%),
-      radial-gradient(at 41% 81%, hsla(18, 88%, 74%, 1) 0px, transparent 50%),
-      radial-gradient(at 52% 27%, hsla(274, 87%, 67%, 1) 0px, transparent 50%),
-      radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
-    margin: 2rem 1rem 2rem 0rem;
-  }
-
   .cards {
     display: flex;
     flex-direction: column;
@@ -779,15 +758,6 @@ h2 {
     font-weight: bold;
     font-size: 25px;
     margin-top: 7rem;
-  }
-  .dimension-table {
-    transform: perspective(1600px) rotateY(7deg);
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    transition: transform 1s ease 0s;
-
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    background-color: rgba(232, 13, 197, 0.1);
   }
   table {
     border-collapse: collapse;
@@ -1609,9 +1579,170 @@ h2 {
   }
 }
 
-/* IPAD PRO */
+/* IPAD */
+@media only screen and (device-width: 810px) and (device-height: 1080px) and (orientation: portrait) {
+  .dashboard-div {
+    overflow: clip;
+    height: fit-content;
+    padding: 0 !important;
+  }
+  .dashboard-glass {
+    height: fit-content;
+  }
+  .dimension-table {
+    width: 96%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .table-responsive {
+    min-width: 670px;
+    width: 100%;
+  }
+  .right-side {
+    position: absolute;
+    top: 16.5rem;
+    left: 30rem;
+    max-height: 40rem;
+    width: 30%;
+  }
+  .sidebar {
+    width: 30%;
+    height: 55%;
+  }
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 382%;
+  }
+  .parentContainer {
+    width: 50%;
+  }
+  .table {
+    width: 98%;
+  }
+  .col-4 {
+    width: 33.333% !important;
+  }
+}
 
-/*  */
+@media only screen and (device-width: 1080px) and (device-height: 810px) and (orientation: landscape) {
+  .dashboard-div {
+    height: fit-content;
+  }
+  .dashboard-glass {
+    height: fit-content;
+  }
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .right-side {
+    width: 75%;
+    margin-left: -12%;
+    margin-top: 50%;
+  }
+  .dimension-table {
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    width: 148%;
+  }
+  .table-responsive {
+    width: 99%;
+    min-width: 581px;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 310%;
+  }
+  .row {
+    width: 125vh;
+    margin-top: 2rem;
+  }
+  .col-4 {
+    width: 25% !important;
+  }
+}
+
+/* IPAD PRO (11-inch)*/
+@media only screen and (device-width: 834px) and (device-height: 1194px) and (orientation: portrait) {
+  .dashboard-div {
+    overflow: clip;
+    height: fit-content;
+    padding: 0 !important;
+  }
+  .dashboard-glass {
+    height: fit-content;
+  }
+  .dimension-table {
+    width: 96%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .table-responsive {
+    min-width: 670px;
+    width: 100%;
+  }
+  .right-side {
+    position: absolute;
+    top: 16.5rem;
+    left: 30rem;
+    max-height: 40rem;
+    width: 30%;
+  }
+  .sidebar {
+    width: 30%;
+    height: 47%;
+  }
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 382%;
+  }
+  .parentContainer {
+    width: 50%;
+  }
+  .table {
+    width: 98%;
+  }
+  .col-4 {
+    width: 33.333% !important;
+  }
+}
+@media only screen and (device-width: 1194px) and (device-height: 834px) and (orientation: landscape) {
+  .dashboard-div {
+    height: fit-content;
+  }
+  .dashboard-glass {
+    height: fit-content;
+  }
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .right-side {
+    width: 75%;
+    margin-left: -12%;
+    margin-top: 50%;
+  }
+  .dimension-table {
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    width: 169%;
+  }
+  .table-responsive {
+    width: 99%;
+    min-width: 581px;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 310%;
+  }
+  .row {
+    width: 135vh;
+    margin-top: 2rem;
+  }
+  .col-4 {
+    width: 25% !important;
+  }
+}
 
 /* KINDLE FIRE HDX */
 @media only screen and (device-width: 800px) and (device-height: 1280px) and (orientation: portrait) {

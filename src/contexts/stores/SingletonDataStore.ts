@@ -14,7 +14,6 @@ class DataStoreClass {
   }
 
   // PROJECTS
-
   // 1. Create & update
   createUpdateProjects(inputProjects: RowData) {
     const index = this.projects.findIndex(
@@ -28,7 +27,6 @@ class DataStoreClass {
   }
 
   // 2. Read
-
   readProjects(): RowData[] {
     return this.projects;
   }

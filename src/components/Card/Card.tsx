@@ -3,8 +3,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import Chart from 'react-apexcharts';
 import '../../styles/styles.css';
 
-//prototype for const - it can include functions(): type
-export interface CardProps {
+interface CardProps {
   title: string;
   labels: string[];
   color: {

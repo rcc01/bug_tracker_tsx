@@ -3,7 +3,6 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ListAltIcon from '@mui/icons-material/ListAlt';
-import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
 
 export const SidebarData = [
   {
