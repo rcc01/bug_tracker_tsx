@@ -49,7 +49,18 @@
     radial-gradient(at 94% 67%, hsla(263, 92%, 76%, 1) 0px, transparent 50%);
   margin: 2rem 1rem 2rem 0rem;
 }
-
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 20px;
+}
+.right-side {
+  width: 31%;
+  position: absolute;
+  top: 21rem;
+  left: 44rem;
+}
 .CompactCard {
   display: flex;
   height: 11rem;
@@ -83,10 +94,26 @@
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   transition: transform 1s ease 0s;
-  width: 133%;
-  margin-bottom: 15%;
+  width: 90%;
+  margin-bottom: 10%;
   border: 1px solid rgba(255, 255, 255, 0.125);
   background-color: rgba(232, 13, 197, 0.1);
+}
+.dimension-table:hover {
+  transform: perspective(3000px) rotateY(5deg);
+}
+
+.dimension-ticket-table {
+  transform: rotate3d(0.5, -0.866, 0, 15deg) rotate(1deg);
+  box-shadow: 2em 4em 6em -2em rgba(0, 0, 0, 0.5),
+    1em 2em 3.5em -2.5em rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 0.5em;
+  width: 124%;
+  margin-top: 45px;
+}
+.dimension-ticket-table:hover {
+  transform: rotate3d(0, 0, 0, 0deg) rotate(0deg);
 }
 
 /*  */
@@ -286,10 +313,6 @@
 /* DASHBOARD */
 
 /* DASHBOARD-TABLE */
-
-.dimension-table:hover {
-  transform: perspective(3000px) rotateY(5deg);
-}
 
 table th:last-child {
   border-radius: 0 30px 0px 0;
@@ -646,21 +669,6 @@ h2 {
     width: 365%;
   }
 
-  .right-side {
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    justify-content: flex-start;
-    margin-left: -30%;
-    margin-top: 87%;
-  }
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    margin-top: 20px;
-  }
-
   .recent-projects {
     color: rgb(60, 55, 55);
     font-weight: bold;
@@ -681,24 +689,13 @@ h2 {
   }
   .table-responsive {
     width: 100%;
-    min-width: 700px;
-  }
-  .dimension-ticket-table {
-    transform: rotate3d(0.5, -0.866, 0, 15deg) rotate(1deg);
-    box-shadow: 2em 4em 6em -2em rgba(0, 0, 0, 0.5),
-      1em 2em 3.5em -2.5em rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 0.5em;
-    width: 124%;
-    margin-top: 45px;
-  }
-
-  .dimension-ticket-table:hover {
-    transform: rotate3d(0, 0, 0, 0deg) rotate(0deg);
   }
 }
 
 @media (max-width: 1200px) {
+  .MainDash {
+    margin-left: 3rem;
+  }
   .register-page-cover {
     height: 100vh;
   }
@@ -748,11 +745,6 @@ h2 {
     top: -5rem;
     position: relative;
   }
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-  }
   .recent-projects {
     color: rgb(60, 55, 55);
     font-weight: bold;
@@ -765,19 +757,6 @@ h2 {
     width: 100%;
     margin: 2rem auto;
   }
-
-  .dimension-ticket-table {
-    transform: rotate3d(0.5, -0.866, 0, 15deg) rotate(1deg);
-    box-shadow: 2em 4em 6em -2em rgba(0, 0, 0, 0.5),
-      1em 2em 3.5em -2.5em rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 0.5em;
-    width: 124%;
-    margin-top: 45px;
-  }
-  .dimension-ticket-table:hover {
-    transform: rotate3d(0, 0, 0, 0deg) rotate(0deg);
-  }
 }
 
 @media (max-width: 1080px) {
@@ -785,9 +764,15 @@ h2 {
     height: 100vh;
     overflow: scroll;
   }
+  .cards {
+    width: 42rem;
+  }
+  .right-side {
+    left: 38rem;
+  }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
   .register-page-cover {
     height: 100vh;
   }
@@ -809,6 +794,10 @@ h2 {
 }
 
 @media (max-width: 855px) {
+  .right-side {
+    left: 59%;
+    top: 37%;
+  }
   .carousel-caption {
     left: 0%;
   }
@@ -839,10 +828,6 @@ h2 {
   .carousel-item > img {
     width: 100%;
   }
-
-  /* .tickets-table {
-    width: 96% !important;
-  } */
   .table {
     width: 90%;
   }
@@ -963,9 +948,6 @@ h2 {
   td:nth-of-type(5):before {
     content: 'Actions';
   }
-  /* .tickets-table {
-    width: 96% !important;
-  } */
 }
 
 @media (max-width: 428px) {
@@ -975,9 +957,6 @@ h2 {
   }
   .signup__container {
     top: 12rem;
-  }
-  .card-img-top {
-    padding: 0;
   }
   .login-container {
     height: 100vh;
@@ -1016,6 +995,9 @@ h2 {
 
 /* IPHONE SE 2nd GEN */
 @media only screen and (device-width: 375px) and (device-height: 667px) and (orientation: portrait) {
+  .cards {
+    width: 20rem;
+  }
   .dashboard-glass-wider > .MainDash {
     margin-left: 1.5rem;
     width: 183%;
@@ -1097,10 +1079,10 @@ h2 {
     margin: 0;
   }
   .right-side {
-    margin-left: 62%;
     width: 35%;
     position: absolute;
-    top: 14rem;
+    top: 63%;
+    left: 61%;
   }
   .dashboard-div {
     overflow: clip;
@@ -1140,6 +1122,9 @@ h2 {
 
 /* IPHONE 12/13 MINI */
 @media only screen and (device-width: 375px) and (device-height: 812px) and (orientation: portrait) {
+  .cards {
+    width: 20rem;
+  }
   .MainDash {
     margin-left: 2rem;
   }
@@ -1162,24 +1147,23 @@ h2 {
     margin-left: 0;
   }
   .right-side {
-    margin-left: -85%;
-    width: 80%;
+    width: 78%;
+    left: 12%;
+    top: 107%;
   }
   .recent-projects {
     margin-top: 43rem;
   }
   .dimension-table {
     margin-left: 0;
-    width: 100%;
+    width: 94%;
   }
   .tickets-table {
-    width: 30%;
+    width: 93%;
   }
   .table-responsive {
-    overflow-x: none;
-  }
-  .table {
-    width: 85%;
+    overflow-x: none !important;
+    width: 87%;
   }
   .row {
     width: 23rem;
@@ -1191,6 +1175,13 @@ h2 {
   }
   .dashboard-glass-wider > .MainDash {
     width: 177%;
+  }
+  .card-img-top {
+    padding: 0;
+    min-width: 13rem;
+  }
+  .table {
+    width: 90% !important;
   }
 }
 @media only screen and (device-width: 812px) and (device-height: 375px) and (orientation: landscape) {
@@ -1245,10 +1236,20 @@ h2 {
     margin-bottom: 4rem;
     width: 97%;
   }
+  .table-responsive {
+    width: 95%;
+    margin: 2%;
+  }
 }
 
 /* IPHONE 12/13  PRO MAX */
 @media only screen and (device-width: 428px) and (device-height: 926px) and (orientation: portrait) {
+  .cards {
+    width: 24rem;
+  }
+  .card-img-top {
+    padding: 0;
+  }
   .dashboard-glass-wider > .MainDash {
     width: 213%;
     margin-left: 2rem;
@@ -1329,9 +1330,9 @@ h2 {
   }
   .right-side {
     width: 30%;
-    margin-left: 57%;
     position: absolute;
-    top: 18.5rem;
+    top: 69%;
+    left: 53%;
   }
   .dimension-table {
     width: 93%;
@@ -1345,12 +1346,116 @@ h2 {
   }
 }
 
-/* IPHONE 12/13 + PRO */
+/* SAMSUNG GALAXY 20+ */
+@media only screen and (device-width: 384px) and (device-height: 854px) and (orientation: portrait) {
+  .dashboard-glass-wider > .MainDash {
+    width: 213%;
+    margin-left: 2rem;
+  }
+  .dashboard-div {
+    overflow: clip;
+    padding: 0 !important;
+    height: fit-content;
+  }
+  .dashboard-glass {
+    height: 226vh;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+  .dashboard-glass-wider {
+    padding: 0;
+  }
+  .parentContainer {
+    width: 89%;
+  }
+  .right-side {
+    width: 80%;
+    position: absolute;
+    left: 2rem;
+    top: 57rem;
+  }
+  .instructions {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .MainDash {
+    width: 24rem;
+    margin-left: 2rem;
+  }
+  .dimension-table {
+    width: 94%;
+  }
+  .table-responsive {
+    min-width: 22rem;
+  }
+  .sidebar {
+    margin-top: 6rem;
+    width: 14rem;
+    height: 66%;
+  }
+  .row {
+    width: 44vh;
+  }
+  .col-4 {
+    width: 49.333% !important;
+  }
+  .recent-projects {
+    margin-top: 45rem;
+  }
+  .table {
+    width: 84% !important;
+  }
+  .card-img-top {
+    padding: 0.5rem;
+  }
+}
+@media only screen and (device-width: 854px) and (device-height: 384px) and (orientation: landscape) {
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 435%;
+  }
+  .register-page-cover {
+    height: 150vh;
+  }
+  .signup__container {
+    top: 73%;
+    width: 75%;
+  }
+  .sidebar {
+    margin-top: 3rem;
+    overflow: scroll;
+    width: 25%;
+    height: 77%;
+  }
+  .right-side {
+    width: 30%;
+    margin-left: 57%;
+    position: absolute;
+    top: 18.5rem;
+  }
+  .dimension-table {
+    width: 93%;
+    margin-bottom: 3rem;
+  }
+  .row {
+    width: 50rem;
+  }
+  .parentContainer {
+    width: 49%;
+  }
+}
 
+/* IPHONE 12/13 + PRO */
 @media only screen and (device-width: 390px) and (device-height: 844px) and (orientation: portrait) {
   .dashboard-div {
     overflow: clip;
     padding: 0 !important;
+  }
+  .cards {
+    width: 23rem;
   }
   .dashboard-glass {
     height: 225vh;
@@ -1380,10 +1485,7 @@ h2 {
     margin-left: 2rem;
   }
   .dimension-table {
-    width: 89%;
-  }
-  .table-responsive {
-    min-width: 22rem;
+    width: 88%;
   }
   .sidebar {
     width: 14rem;
@@ -1392,13 +1494,16 @@ h2 {
     margin-top: 42rem;
   }
   .table {
-    width: 77%;
+    width: 80% !important;
   }
   .row {
     width: 24.5rem;
   }
   .col-4 {
     width: 48.333% !important;
+  }
+  .card-img-top {
+    padding: 0.5rem;
   }
 }
 @media only screen and (device-width: 844px) and (device-height: 390px) and (orientation: landscape) {
@@ -1436,7 +1541,6 @@ h2 {
   }
   .right-side {
     width: 30%;
-    margin-left: 63%;
     position: absolute;
     top: 17.5rem;
   }
@@ -1448,12 +1552,18 @@ h2 {
     width: 51rem;
   }
   .col-4 {
-    width: 27.33% !important;
+    width: 32.33% !important;
+  }
+  .table {
+    width: 95% !important;
   }
 }
 
 /* IPHONE 11 PRO MAX */
 @media only screen and (device-width: 414px) and (device-height: 896px) and (orientation: portrait) {
+  .cards {
+    width: 23rem;
+  }
   .dashboard-div {
     padding: 0 !important;
     overflow: clip;
@@ -1494,6 +1604,9 @@ h2 {
   .col-4 {
     width: 49.333% !important;
   }
+  .table {
+    width: 86% !important;
+  }
 }
 @media only screen and (device-width: 896px) and (device-height: 414px) and (orientation: landscape) {
   .dashboard-div {
@@ -1529,10 +1642,8 @@ h2 {
     height: 77%;
   }
   .right-side {
-    width: 30%;
-    margin-left: 63%;
-    position: absolute;
     top: 17.5rem;
+    left: 34rem;
   }
   .dimension-table {
     width: 93%;
@@ -1556,8 +1667,6 @@ h2 {
 
 /* IPHONE 11 PRO */
 
-/*  */
-
 /* SAMSUNG S20 ULTRA GALAXY ANDROID 11 */
 @media only screen and (device-width: 915px) and (device-height: 412px) and (orientation: landscape) {
   .register-page-cover {
@@ -1576,6 +1685,88 @@ h2 {
   .signup__container {
     top: 12%;
     width: 85%;
+  }
+}
+
+/* IPAD AIR */
+@media only screen and (device-width: 820px) and (device-height: 1180px) and (orientation: portrait) {
+  .dashboard-div {
+    overflow: clip;
+    height: fit-content;
+    padding: 0 !important;
+  }
+  .dashboard-glass {
+    height: fit-content;
+  }
+  .dimension-table {
+    width: 96%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .table-responsive {
+    min-width: 670px;
+    width: 100%;
+  }
+  .right-side {
+    position: absolute;
+    top: 16.5rem;
+    left: 30rem;
+    max-height: 40rem;
+    width: 30%;
+  }
+  .sidebar {
+    width: 30%;
+    height: 55%;
+  }
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 382%;
+  }
+  .parentContainer {
+    width: 50%;
+  }
+  .table {
+    width: 98%;
+  }
+  .col-4 {
+    width: 33.333% !important;
+  }
+}
+@media only screen and (device-width: 1180px) and (device-height: 820px) and (orientation: landscape) {
+  .dashboard-div {
+    height: fit-content;
+  }
+  .dashboard-glass {
+    height: fit-content;
+  }
+  .MainDash {
+    margin-left: 2rem;
+  }
+  .right-side {
+    width: 75%;
+    margin-left: -12%;
+    margin-top: 50%;
+  }
+  .dimension-table {
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    width: 148%;
+  }
+  .table-responsive {
+    width: 99%;
+    min-width: 581px;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 310%;
+  }
+  .row {
+    width: 125vh;
+    margin-top: 2rem;
+  }
+  .col-4 {
+    width: 25% !important;
   }
 }
 
@@ -1625,7 +1816,6 @@ h2 {
     width: 33.333% !important;
   }
 }
-
 @media only screen and (device-width: 1080px) and (device-height: 810px) and (orientation: landscape) {
   .dashboard-div {
     height: fit-content;
@@ -1752,7 +1942,7 @@ h2 {
     padding: 0 !important;
   }
   .dashboard-glass {
-    height: 100vh;
+    height: fit-content;
   }
   .dimension-table {
     width: 96%;
@@ -1789,20 +1979,22 @@ h2 {
 }
 @media only screen and (device-width: 1280px) and (device-height: 800px) and (orientation: landscape) {
   .right-side {
-    width: 75%;
-    margin-left: -12%;
-    margin-top: 50%;
+    width: 30%;
+    top: 20rem;
+    left: 44rem;
+  }
+  .cards {
+    width: 50rem;
   }
   .dimension-table {
     margin-top: 2rem;
-    width: 169%;
+    width: 89%;
   }
   .table-responsive {
     width: 99%;
-    min-width: 581px;
   }
   .dashboard-glass-wider > .MainDash {
-    width: 310%;
+    width: 500%;
   }
   .row {
     width: 144vh;
