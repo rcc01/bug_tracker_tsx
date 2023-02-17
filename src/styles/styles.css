@@ -54,6 +54,7 @@
   flex-direction: column;
   gap: 60px;
   margin-top: 20px;
+  width: 70%;
 }
 .right-side {
   width: 31%;
@@ -757,6 +758,9 @@ h2 {
     width: 100%;
     margin: 2rem auto;
   }
+  .right-side {
+    left: 41rem;
+  }
 }
 
 @media (max-width: 1080px) {
@@ -791,9 +795,15 @@ h2 {
   .table {
     width: 95%;
   }
+  .right-side {
+    left: 60%;
+  }
 }
 
 @media (max-width: 855px) {
+  .cards {
+    width: 75%;
+  }
   .right-side {
     left: 59%;
     top: 37%;
