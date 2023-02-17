@@ -60,7 +60,7 @@
   width: 31%;
   position: absolute;
   top: 21rem;
-  left: 44rem;
+  left: 58%;
 }
 .CompactCard {
   display: flex;
@@ -70,12 +70,14 @@
   padding: 1rem;
   position: relative;
   cursor: pointer;
+  max-width: 750px;
 }
 
 .parentContainer {
   height: 8rem;
   width: 65%;
   border: 1px solid rgba(255, 255, 255, 0.125);
+  max-width: 750px;
 }
 
 .updates {
@@ -769,7 +771,7 @@ h2 {
     overflow: scroll;
   }
   .cards {
-    width: 42rem;
+    width: 78%;
   }
   .right-side {
     left: 38rem;
@@ -806,7 +808,7 @@ h2 {
   }
   .right-side {
     left: 59%;
-    top: 37%;
+    top: 32%;
   }
   .carousel-caption {
     left: 0%;
@@ -863,12 +865,8 @@ h2 {
   }
 
   .table {
-    /* width: 82%; */
     margin: 1rem 40px;
   }
-  /* .tickets-table {
-    width: 92% !important;
-  } */
 }
 
 @media (max-width: 600px) {
@@ -1675,8 +1673,6 @@ h2 {
   }
 }
 
-/* IPHONE 11 PRO */
-
 /* SAMSUNG S20 ULTRA GALAXY ANDROID 11 */
 @media only screen and (device-width: 915px) and (device-height: 412px) and (orientation: landscape) {
   .register-page-cover {
@@ -1700,6 +1696,9 @@ h2 {
 
 /* IPAD AIR */
 @media only screen and (device-width: 820px) and (device-height: 1180px) and (orientation: portrait) {
+  .cards {
+    width: 93%;
+  }
   .dashboard-div {
     overflow: clip;
     height: fit-content;
@@ -1782,6 +1781,9 @@ h2 {
 
 /* IPAD */
 @media only screen and (device-width: 810px) and (device-height: 1080px) and (orientation: portrait) {
+  .cards {
+    width: 95%;
+  }
   .dashboard-div {
     overflow: clip;
     height: fit-content;
@@ -1864,6 +1866,9 @@ h2 {
 
 /* IPAD PRO (11-inch)*/
 @media only screen and (device-width: 834px) and (device-height: 1194px) and (orientation: portrait) {
+  .cards {
+    width: 95%;
+  }
   .dashboard-div {
     overflow: clip;
     height: fit-content;
@@ -1946,9 +1951,12 @@ h2 {
 
 /* KINDLE FIRE HDX */
 @media only screen and (device-width: 800px) and (device-height: 1280px) and (orientation: portrait) {
+  .cards {
+    width: 100%;
+  }
   .dashboard-div {
     overflow: clip;
-    height: fit-content;
+    height: 100vh;
     padding: 0 !important;
   }
   .dashboard-glass {
@@ -1988,6 +1996,9 @@ h2 {
   }
 }
 @media only screen and (device-width: 1280px) and (device-height: 800px) and (orientation: landscape) {
+  .dashboard-div {
+    height: fit-content;
+  }
   .right-side {
     width: 30%;
     top: 20rem;
@@ -2012,5 +2023,121 @@ h2 {
   }
   .col-4 {
     width: 25% !important;
+  }
+}
+
+/* Galaxy Note 20  */
+@media only screen and (device-width: 412px) and (device-height: 915px) and (orientation: portrait) {
+  .dashboard-div {
+    overflow: clip;
+    padding: 0 !important;
+  }
+  .cards {
+    width: 23rem;
+  }
+  .dashboard-glass {
+    height: 225vh;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 23rem;
+    overflow-x: clip;
+  }
+  .parentContainer {
+    width: 89%;
+  }
+  .right-side {
+    width: 84%;
+    position: absolute;
+    top: 55rem;
+    left: 2rem;
+  }
+  .instructions {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .MainDash {
+    width: 24rem;
+    margin-left: 2rem;
+  }
+  .dimension-table {
+    width: 88%;
+  }
+  .sidebar {
+    width: 14rem;
+  }
+  .recent-projects {
+    margin-top: 42rem;
+  }
+  .table {
+    width: 80% !important;
+  }
+  .row {
+    width: 24.5rem;
+  }
+  .col-4 {
+    width: 48.333% !important;
+  }
+  .card-img-top {
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (device-width: 915px) and (device-height: 412px) and (orientation: landscape) {
+  .dashboard-div {
+    padding: 0 !important;
+  }
+  .dashboard-glass {
+    width: 100%;
+    margin: 0;
+  }
+  .dashboard-glass-wider {
+    width: 100%;
+    margin: 0;
+  }
+  .MainDash {
+    margin-left: 3rem;
+  }
+  .dashboard-glass-wider > .MainDash {
+    width: 414%;
+  }
+  .register-page-cover {
+    height: 150vh;
+  }
+  .signup__container {
+    top: 73%;
+    width: 75%;
+  }
+  .parentContainer {
+    width: 50%;
+  }
+  .sidebar {
+    overflow: scroll;
+    width: 25%;
+    height: 77%;
+  }
+  .right-side {
+    top: 17.5rem;
+    left: 34rem;
+  }
+  .dimension-table {
+    width: 93%;
+    margin-bottom: 3rem;
+  }
+  .row {
+    width: 56rem;
+  }
+  .col-4 {
+    width: 24.333% !important;
+  }
+
+  .register-page-cover {
+    height: 170vh;
+  }
+  .signup__container {
+    top: 89%;
+    width: 80%;
   }
 }

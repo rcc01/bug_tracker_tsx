@@ -233,7 +233,7 @@ const CardEmployees = ({ employee, rerenderTable, handleShow }: Props) => {
                 <Form.Control
                   type='text'
                   name='imageUrl'
-                  placeholder='Image Url'
+                  placeholder='url image'
                   value={dataModal.imageUrl}
                   onChange={handleChangeModal}
                   required
