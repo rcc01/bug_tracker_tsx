@@ -175,7 +175,7 @@ const EmployeesTable = () => {
               <Form.Control
                 type='text'
                 name='imageUrl'
-                placeholder='image url'
+                placeholder='Image Url'
                 value={dataEmployee.imageUrl}
                 onChange={handleChange}
                 required
